@@ -1,6 +1,7 @@
 import { ShieldCheck, Wrench, FileText, Users } from "lucide-react";
 import { Page, Reveal } from "../components/motion";
 import Seo from "../components/site/Seo";
+import PageHero from "../components/site/PageHero";
 import InquiryForm from "../components/site/InquiryForm";
 
 const SERVICES = [
@@ -17,21 +18,15 @@ export default function Management() {
                 title="Property Management in Ormond Beach, Volusia & Flagler | Culver Realty"
                 description="Hands-on property management: tenant screening, proactive maintenance, and transparent reporting for owners across Volusia and Flagler Counties. Call 386.414.3445."
             />
-            <section className="bg-navy text-bone py-20 md:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-                    <Reveal>
-                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Property management</p>
-                        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight font-medium max-w-3xl leading-[1.08]">
-                            Your investment, managed like it's ours
-                        </h1>
-                        <p className="text-bone/75 mt-6 max-w-2xl leading-relaxed">
-                            Our property management division offers hands-on, proactive management to ensure properties
-                            are well maintained, tenants are carefully screened, and owners enjoy peace of mind — all
-                            handled with transparency and professionalism.
-                        </p>
-                    </Reveal>
-                </div>
-            </section>
+            <PageHero
+                eyebrow="Property management"
+                title="Your investment, managed like it's ours"
+                sub="Our property management division offers hands-on, proactive management to ensure properties are well maintained, tenants are carefully screened, and owners enjoy peace of mind — all handled with transparency and professionalism."
+                video="/api/uploads/seed/video/management-towers"
+                poster="/api/uploads/seed/video/management-towers-poster.jpg"
+                alt="Aerial view of beachfront condominium towers in Daytona Beach"
+                testid="management-hero"
+            />
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {SERVICES.map((s, i) => (

@@ -7,6 +7,7 @@ import { Page, Reveal } from "../components/motion";
 import ListingCard from "../components/site/ListingCard";
 import InquiryForm from "../components/site/InquiryForm";
 import Seo from "../components/site/Seo";
+import PageHero from "../components/site/PageHero";
 
 export default function Rentals() {
     const [rentals, setRentals] = useState([]);
@@ -25,19 +26,16 @@ export default function Rentals() {
                 title="Exclusive Rentals in Ormond Beach & Volusia County | Culver Realty"
                 description="Find your perfect rental home in Volusia and Flagler Counties. Exclusive rentals professionally managed by Culver Realty & Property Management."
             />
-            <section className="bg-navy text-bone py-16 md:py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-                    <Reveal>
-                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Exclusive rentals</p>
-                        <h1 className="font-serif text-4xl sm:text-5xl tracking-tight font-medium">Find your perfect rental home today</h1>
-                        <p className="text-bone/75 mt-5 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Culver Realty &amp; Property Management specializes in helping you find rental homes in
-                            beautiful Volusia and Flagler Counties. Our dedicated team ensures a seamless rental
-                            process, with a variety of homes to suit your lifestyle and budget.
-                        </p>
-                    </Reveal>
-                </div>
-            </section>
+            <PageHero
+                eyebrow="Exclusive rentals"
+                title="Find your perfect rental home today"
+                sub="Culver Realty & Property Management specializes in helping you find rental homes in beautiful Volusia and Flagler Counties. Our dedicated team ensures a seamless rental process, with a variety of homes to suit your lifestyle and budget."
+                video="/api/uploads/seed/video/rentals-shoreline"
+                poster="/api/uploads/seed/video/rentals-shoreline-poster.jpg"
+                alt="Aerial view of the Volusia County shoreline"
+                size="md"
+                testid="rentals-hero"
+            />
 
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-14 md:py-20" data-testid="rentals-grid-section">
                 {loading ? (

@@ -4,6 +4,9 @@ WORKDIR /app/frontend
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci
 COPY frontend/ ./
+# Same-origin API. Set explicitly so the build never depends on frontend/.env,
+# which is gitignored and therefore absent from the uploaded build context.
+ENV REACT_APP_BACKEND_URL=""
 RUN npm run build
 
 # Stage 2: FastAPI serves /api + the built frontend from one process

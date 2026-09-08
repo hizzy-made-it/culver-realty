@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import { Page, Reveal } from "../components/motion";
 import Seo from "../components/site/Seo";
+import PageHero from "../components/site/PageHero";
 import InquiryForm from "../components/site/InquiryForm";
 
 const STEPS = [
@@ -17,21 +18,12 @@ export default function Sellers() {
                 title="Sell Your Home in Ormond Beach & Volusia County | Culver Realty"
                 description="Pricing, marketing, negotiation, and seamless closings across Volusia and Flagler Counties. Request a home valuation from Culver Realty & Property Management."
             />
-            <section className="bg-navy text-bone py-20 md:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-                    <Reveal>
-                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">For sellers</p>
-                        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight font-medium max-w-3xl leading-[1.08]">
-                            Selling well is a craft. We treat it that way.
-                        </h1>
-                        <p className="text-bone/75 mt-6 max-w-2xl leading-relaxed">
-                            Selling a property can be long and complicated — regardless of how good the market is.
-                            Whether you're a first-time seller or an experienced pro, our team will help you through
-                            every step, from pricing to marketing to finding your next home.
-                        </p>
-                    </Reveal>
-                </div>
-            </section>
+            <PageHero
+                eyebrow="For sellers"
+                title="Selling well is a craft. We treat it that way."
+                sub="Selling a property can be long and complicated — regardless of how good the market is. Whether you're a first-time seller or an experienced pro, our team will help you through every step, from pricing to marketing to finding your next home."
+                testid="sellers-hero"
+            />
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {STEPS.map((s, i) => (

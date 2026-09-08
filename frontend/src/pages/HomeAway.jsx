@@ -1,6 +1,7 @@
 import { CalendarCheck, ShieldCheck, SlidersHorizontal, MapPin, Phone } from "lucide-react";
 import { Page, Reveal } from "../components/motion";
 import Seo from "../components/site/Seo";
+import PageHero from "../components/site/PageHero";
 import InquiryForm from "../components/site/InquiryForm";
 import { BRAND } from "../lib/site";
 
@@ -34,23 +35,16 @@ export default function HomeAway() {
                 title="Home Away — Home Watch & Care for 2nd Homeowners | Culver Realty, Ormond Beach"
                 description="Home inspection and home watch services in Volusia & Flagler Counties for second homeowners, snowbirds, and travelers. Weekly inspections and customizable plans. Call 386.414.3445."
             />
-            <section className="relative min-h-[70vh] flex items-end overflow-hidden" data-testid="home-away-hero">
-                <img src="/api/uploads/seed/home-away-hero.jpg" alt="Coastal Florida home cared for by Home Away" className="absolute inset-0 w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy/40 to-navy/10" />
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pb-16 pt-40 w-full">
-                    <Reveal>
-                        <p className="text-xs uppercase tracking-[0.3em] text-gold font-semibold mb-4">Home Away by Culver Realty</p>
-                        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight font-medium text-bone max-w-3xl leading-[1.08]">
-                            Peace of mind while you're away
-                        </h1>
-                        <p className="text-bone/80 mt-6 max-w-2xl leading-relaxed">
-                            Second homeowners, snowbirds, and travelers — discover peace of mind with Culver Realty's
-                            Home Away care. Our home inspection services ensure your property remains secure and
-                            well-maintained while you're away.
-                        </p>
-                    </Reveal>
-                </div>
-            </section>
+            <PageHero
+                eyebrow="Home Away by Culver Realty"
+                title="Peace of mind while you're away"
+                sub="Second homeowners, snowbirds, and travelers — discover peace of mind with Culver Realty's Home Away care. Our home inspection services ensure your property remains secure and well-maintained while you're away."
+                video="/api/uploads/seed/video/home-away-sunset"
+                poster="/api/uploads/seed/video/home-away-sunset-poster.jpg"
+                alt="Pelicans over a Florida beach at sunset"
+                minHeight="min-h-[70vh]"
+                testid="home-away-hero"
+            />
 
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24">
                 <Reveal>

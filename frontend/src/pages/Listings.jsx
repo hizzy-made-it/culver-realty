@@ -7,6 +7,7 @@ import { BRAND } from "../lib/site";
 import { Page } from "../components/motion";
 import ListingCard from "../components/site/ListingCard";
 import Seo from "../components/site/Seo";
+import PageHero from "../components/site/PageHero";
 
 const TABS = [
     { key: "sale", label: "For Sale" },
@@ -85,18 +86,17 @@ export default function Listings() {
                 title="Homes for Sale & Rent in Ormond Beach, Daytona & Flagler | Culver Realty"
                 description="Browse homes for sale and exclusive rentals in Ormond Beach, Daytona Beach, Volusia and Flagler Counties with Culver Realty & Property Management."
             />
-            <section className="bg-navy text-bone py-16 md:py-20" data-testid="listings-header">
-                <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-                    <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Listings</p>
-                    <h1 className="font-serif text-4xl sm:text-5xl tracking-tight font-medium">
-                        Properties on the Halifax coast
-                    </h1>
-                    <p className="text-bone/70 mt-4 max-w-xl text-sm md:text-base">
-                        Homes for sale, exclusive rentals, and a record of recent results across Ormond Beach, Daytona
-                        Beach, Volusia and Flagler Counties.
-                    </p>
-                </div>
-            </section>
+            <PageHero
+                eyebrow="Listings"
+                title="Properties on the Halifax coast"
+                sub="Homes for sale, exclusive rentals, and a record of recent results across Ormond Beach, Daytona Beach, Volusia and Flagler Counties."
+                video="/api/uploads/seed/video/listings-oceanfront"
+                poster="/api/uploads/seed/video/listings-oceanfront-poster.jpg"
+                alt="Aerial view of oceanfront condominiums on the Halifax coast"
+                size="sm"
+                minHeight="min-h-[52vh]"
+                testid="listings-header"
+            />
 
             <section className="sticky top-16 md:top-20 z-30 bg-bone/95 backdrop-blur-xl border-b border-navy/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-3 flex items-center justify-between gap-3">

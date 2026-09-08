@@ -1,6 +1,9 @@
 import axios from "axios";
 
-export const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+// Unset (the default) means same-origin "/api" — FastAPI serves the build and the API
+// from one process. Set a full URL only for a split deployment. Falling back to "" here
+// matters: without it an unset var compiles to the literal string "undefined/api".
+export const API = `${process.env.REACT_APP_BACKEND_URL || ""}/api`;
 
 const api = axios.create({ baseURL: API, withCredentials: true });
 

@@ -1,5 +1,6 @@
 import { Page, Reveal } from "../components/motion";
 import Seo from "../components/site/Seo";
+import PageHero from "../components/site/PageHero";
 import { BRAND } from "../lib/site";
 
 const TEAM = [
@@ -62,21 +63,12 @@ export default function Team() {
                 title="Meet the Team | Culver Realty & Property Management, Ormond Beach"
                 description="Meet the experienced real estate and property management team at Culver Realty & Property Management in Ormond Beach, FL — serving Volusia and Flagler Counties."
             />
-            <section className="bg-navy text-bone py-20 md:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-                    <Reveal>
-                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Meet the team</p>
-                        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight font-medium max-w-3xl leading-[1.08]">
-                            Introducing the experienced team at Culver Realty
-                        </h1>
-                        <p className="text-bone/75 mt-6 max-w-2xl leading-relaxed">
-                            Our dedicated team of professionals is committed to helping you navigate the complexities
-                            of buying, selling, or managing properties with ease. Choose Culver Realty for a
-                            personalized approach that ensures your satisfaction and success.
-                        </p>
-                    </Reveal>
-                </div>
-            </section>
+            <PageHero
+                eyebrow="Meet the team"
+                title="Introducing the experienced team at Culver Realty"
+                sub="Our dedicated team of professionals is committed to helping you navigate the complexities of buying, selling, or managing properties with ease. Choose Culver Realty for a personalized approach that ensures your satisfaction and success."
+                testid="team-hero"
+            />
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24">
                 <div className="space-y-16 md:space-y-24">
                     {TEAM.map((member, i) => (
@@ -111,7 +103,7 @@ export default function Team() {
                     <h2 className="font-serif text-2xl sm:text-3xl font-medium">Work with a team that puts relationships first</h2>
                     <p className="text-sm text-bone/70 mt-3">Call {BRAND.phone} or email {BRAND.email}</p>
                     <div className="flex flex-wrap justify-center gap-4 mt-7">
-                        <a href={BRAND.phoneHref} data-testid="team-call-button" className="inline-flex items-center justify-center px-7 py-3.5 bg-gold text-white text-sm font-semibold tracking-wider uppercase hover:bg-gold-hover transition-all min-h-[44px]">
+                        <a href={BRAND.phoneHref} data-testid="team-call-button" className="btn-sheen inline-flex items-center justify-center px-7 py-3.5 bg-gold text-white text-sm font-semibold tracking-wider uppercase hover:bg-gold-hover transition-all min-h-[44px]">
                             Call {BRAND.phone}
                         </a>
                         <a href="/contact" data-testid="team-contact-button" className="inline-flex items-center justify-center px-7 py-3.5 border border-bone/40 text-bone text-sm font-semibold tracking-wider uppercase hover:bg-bone hover:text-navy transition-all min-h-[44px]">

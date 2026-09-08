@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Page, Reveal } from "../components/motion";
 import Seo from "../components/site/Seo";
+import PageHero from "../components/site/PageHero";
 import InquiryForm from "../components/site/InquiryForm";
 import { BRAND } from "../lib/site";
 
@@ -11,18 +12,13 @@ export default function Contact() {
                 title="Contact Culver Realty & Property Management | Ormond Beach, FL"
                 description="Call 386.414.3445 or email Tracie.Culver@tculverrealty.com. Office: 2412 John Anderson Drive, Ormond Beach, FL 32176."
             />
-            <section className="bg-navy text-bone py-16 md:py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-                    <Reveal>
-                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Contact</p>
-                        <h1 className="font-serif text-4xl sm:text-5xl tracking-tight font-medium">Let's start the conversation</h1>
-                        <p className="text-bone/75 mt-5 max-w-xl text-sm md:text-base">
-                            Buying, selling, investing, or looking for a rental or a manager you can trust — we're a
-                            phone call away.
-                        </p>
-                    </Reveal>
-                </div>
-            </section>
+            <PageHero
+                eyebrow="Contact"
+                title="Let's start the conversation"
+                sub="Buying, selling, investing, or looking for a rental or a manager you can trust — we're a phone call away."
+                size="md"
+                testid="contact-hero"
+            />
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-14 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12">
                 <Reveal className="lg:col-span-5">
                     <div className="space-y-2" data-testid="contact-info">

@@ -245,9 +245,9 @@ export default function Home() {
                             One local team for every real estate goal
                         </h2>
                     </Reveal>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
-                        {PILLARS.map((pillar, i) => (
-                            <Reveal key={pillar.title} delay={i * 0.08}>
+                    <StaggerGroup className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
+                        {PILLARS.map((pillar) => (
+                            <StaggerItem key={pillar.title}>
                                 <Link to={pillar.to} className="group block h-full" data-testid={pillar.testid}>
                                     <div className="relative aspect-[16/10] overflow-hidden mb-6">
                                         <img
@@ -267,9 +267,9 @@ export default function Home() {
                                         Learn more <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />
                                     </span>
                                 </Link>
-                            </Reveal>
+                            </StaggerItem>
                         ))}
-                    </div>
+                    </StaggerGroup>
                 </div>
             </section>
 
@@ -360,7 +360,7 @@ export default function Home() {
                             <Link
                                 to="/contact"
                                 data-testid="final-cta-contact-button"
-                                className="inline-flex items-center justify-center px-7 py-3.5 bg-gold text-white text-sm font-semibold tracking-wider uppercase hover:bg-gold-hover active:scale-[0.98] transition-all shadow-md min-h-[44px]"
+                                className="btn-sheen inline-flex items-center justify-center px-7 py-3.5 bg-gold text-white text-sm font-semibold tracking-wider uppercase hover:bg-gold-hover active:scale-[0.98] transition-all shadow-md min-h-[44px]"
                             >
                                 Schedule a conversation
                             </Link>

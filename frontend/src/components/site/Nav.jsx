@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { BRAND } from "../../lib/site";
 
@@ -19,6 +19,7 @@ const LINKS = [
 
 export default function Nav() {
     const [open, setOpen] = useState(false);
+    const reduce = useReducedMotion();
     return (
         <header className="sticky top-0 z-40 w-full backdrop-blur-xl bg-bone/90 border-b border-navy/10" data-testid="site-nav">
             <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between h-16 md:h-20">
@@ -36,12 +37,23 @@ export default function Nav() {
                             to={l.to}
                             data-testid={`nav-${l.label.toLowerCase()}-link`}
                             className={({ isActive }) =>
-                                `text-sm font-medium tracking-wide transition-colors hover:text-gold ${
+                                `relative text-sm font-medium tracking-wide transition-colors hover:text-gold ${
                                     isActive ? "text-gold" : "text-navy"
                                 }`
                             }
                         >
-                            {l.label}
+                            {({ isActive }) => (
+                                <>
+                                    {l.label}
+                                    {isActive && (
+                                        <motion.span
+                                            layoutId="nav-underline"
+                                            className="absolute -bottom-1.5 left-0 right-0 h-px bg-gold"
+                                            transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 380, damping: 32 }}
+                                        />
+                                    )}
+                                </>
+                            )}
                         </NavLink>
                     ))}
                 </nav>

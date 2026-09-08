@@ -179,7 +179,7 @@ export default function ListingDetail() {
                             />
                         </div>
                         <div className="grid grid-cols-2 gap-3">
-                            <a href={BRAND.phoneHref} data-testid="detail-call-button" className="inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-gold text-white text-xs font-semibold tracking-wider uppercase hover:bg-gold-hover transition-all min-h-[44px]">
+                            <a href={BRAND.phoneHref} data-testid="detail-call-button" className="btn-sheen inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-gold text-white text-xs font-semibold tracking-wider uppercase hover:bg-gold-hover transition-all min-h-[44px]">
                                 <Phone size={14} /> Call
                             </a>
                             <a href={BRAND.emailHref} data-testid="detail-email-button" className="inline-flex items-center justify-center gap-2 px-4 py-3.5 border border-navy text-navy text-xs font-semibold tracking-wider uppercase hover:bg-navy hover:text-bone transition-all min-h-[44px]">
