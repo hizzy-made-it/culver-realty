@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone, Mail } from "lucide-react";
 import { Page, Reveal } from "../components/motion";
 import Seo from "../components/site/Seo";
+import PageHero from "../components/site/PageHero";
 import { BRAND } from "../lib/site";
 
 const VALUES = [
@@ -17,16 +18,11 @@ export default function About() {
                 title="About Culver Realty & Property Management | Ormond Beach, FL"
                 description="A full-service brokerage and property management company with deep roots in Volusia and Flagler Counties. Relationships come first."
             />
-            <section className="bg-navy text-bone py-20 md:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-                    <Reveal>
-                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">About us</p>
-                        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight font-medium max-w-3xl leading-[1.08]">
-                            Deep roots on the Halifax coast
-                        </h1>
-                    </Reveal>
-                </div>
-            </section>
+            <PageHero
+                eyebrow="About us"
+                title="Deep roots on the Halifax coast"
+                testid="about-hero"
+            />
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12">
                 <Reveal className="lg:col-span-7">
                     <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-tight font-medium text-navy">
@@ -78,7 +74,7 @@ export default function About() {
                             />
                         </div>
                     </div>
-                    <Link to="/contact" data-testid="about-contact-button" className="mt-6 inline-flex items-center justify-center gap-2 w-full px-7 py-3.5 bg-gold text-white text-sm font-semibold tracking-wider uppercase hover:bg-gold-hover transition-all min-h-[44px]">
+                    <Link to="/contact" data-testid="about-contact-button" className="btn-sheen mt-6 inline-flex items-center justify-center gap-2 w-full px-7 py-3.5 bg-gold text-white text-sm font-semibold tracking-wider uppercase hover:bg-gold-hover transition-all min-h-[44px]">
                         Get in touch <ArrowRight size={15} />
                     </Link>
                 </Reveal>

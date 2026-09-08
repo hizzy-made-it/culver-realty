@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Phone } from "lucide-react";
 import { Page, Reveal } from "../components/motion";
 import Seo from "../components/site/Seo";
+import PageHero from "../components/site/PageHero";
 import { BRAND } from "../lib/site";
 
 const FAQS = [
@@ -40,17 +41,13 @@ export default function Faq() {
                 description="Answers about maintenance requests, leasing a property, and paying rent with Culver Realty & Property Management in Ormond Beach, FL."
                 jsonLd={FAQ_LD}
             />
-            <section className="bg-navy text-bone py-16 md:py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-                    <Reveal>
-                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">FAQ</p>
-                        <h1 className="font-serif text-4xl sm:text-5xl tracking-tight font-medium">Frequently asked questions</h1>
-                        <p className="text-bone/75 mt-5 max-w-xl text-sm md:text-base">
-                            Straight answers for tenants, owners, buyers, and sellers. Anything else — we're one call away.
-                        </p>
-                    </Reveal>
-                </div>
-            </section>
+            <PageHero
+                eyebrow="FAQ"
+                title="Frequently asked questions"
+                sub="Straight answers for tenants, owners, buyers, and sellers. Anything else — we're one call away."
+                size="md"
+                testid="faq-hero"
+            />
             <section className="max-w-4xl mx-auto px-4 sm:px-8 py-14 md:py-20" data-testid="faq-list">
                 <div className="border-t border-navy/10">
                     {FAQS.map((faq, i) => (
@@ -97,7 +94,7 @@ export default function Faq() {
                         <h2 className="font-serif text-2xl font-medium">Still have a question?</h2>
                         <p className="text-sm text-bone/70 mt-2">Our team is happy to help — no online forms required.</p>
                     </div>
-                    <a href={BRAND.phoneHref} data-testid="faq-call-button" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold text-white text-sm font-semibold tracking-wider uppercase hover:bg-gold-hover transition-all min-h-[44px] shrink-0">
+                    <a href={BRAND.phoneHref} data-testid="faq-call-button" className="btn-sheen inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold text-white text-sm font-semibold tracking-wider uppercase hover:bg-gold-hover transition-all min-h-[44px] shrink-0">
                         <Phone size={15} /> Call {BRAND.phone}
                     </a>
                 </Reveal>

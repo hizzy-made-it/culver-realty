@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import { Page, Reveal } from "../components/motion";
 import Seo from "../components/site/Seo";
+import PageHero from "../components/site/PageHero";
 import { BRAND } from "../lib/site";
 
 const POINTS = [
@@ -18,21 +19,12 @@ export default function Buyers() {
                 title="Buy a Home in Ormond Beach & Volusia County | Culver Realty"
                 description="First-home and move-up buyers on the Halifax coast trust Culver Realty & Property Management for local expertise and honest guidance. Call 386.414.3445."
             />
-            <section className="bg-navy text-bone py-20 md:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-                    <Reveal>
-                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">For buyers</p>
-                        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight font-medium max-w-3xl leading-[1.08]">
-                            Find your place on the coast — with someone who lives here
-                        </h1>
-                        <p className="text-bone/75 mt-6 max-w-2xl leading-relaxed">
-                            We like to consider ourselves experts in the areas we serve — because we live here, shop
-                            here, and have fun here. Whether it's your first home or your forever home, we understand
-                            the unique needs that come with what could be the largest purchase of your life.
-                        </p>
-                    </Reveal>
-                </div>
-            </section>
+            <PageHero
+                eyebrow="For buyers"
+                title="Find your place on the coast — with someone who lives here"
+                sub="We like to consider ourselves experts in the areas we serve — because we live here, shop here, and have fun here. Whether it's your first home or your forever home, we understand the unique needs that come with what could be the largest purchase of your life."
+                testid="buyers-hero"
+            />
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <Reveal className="lg:col-span-6">
                     <div className="aspect-[4/3] overflow-hidden">

@@ -3,7 +3,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 
 /**
  * Ambient background video for hero sections.
- * - `src` is a path WITHOUT extension; `${src}.webm`, `${src}.mp4` and `${src}-mobile.mp4` are expected.
+ * - `src` is a path WITHOUT extension; `${src}.mp4` and `${src}-mobile.mp4` are expected.
  * - Poster paints instantly; the video cross-fades in once it can play.
  * - Reduced-motion users (and browsers that refuse autoplay) simply keep the poster.
  * - `parallax` shifts the layer down as the page scrolls for a little depth.
@@ -47,14 +47,7 @@ export default function HeroVideo({ src, poster, alt = "", parallax = false, cla
                     }`}
                     data-testid="hero-video"
                 >
-                    {mobile ? (
-                        <source src={`${src}-mobile.mp4`} type="video/mp4" />
-                    ) : (
-                        <>
-                            <source src={`${src}.webm`} type="video/webm" />
-                            <source src={`${src}.mp4`} type="video/mp4" />
-                        </>
-                    )}
+                    <source src={mobile ? `${src}-mobile.mp4` : `${src}.mp4`} type="video/mp4" />
                 </video>
             )}
         </motion.div>
