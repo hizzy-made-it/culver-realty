@@ -1,1 +1,2926 @@
-{"properties":[{"title":"Remodeled beachside home between the river and the ocean","address":"46 Seaside Dr","city":"Ormond Beach","state":"FL","zip":"32176","price":344900,"status":"live","listing_type":"sale","beds":3,"baths":2,"sqft":1568,"lot":"0.18 acres","year_built":1972,"property_type":"Single Family","description":"Sought-after 3 bed / 2 bath with a large primary suite and en-suite bath, set between the Intracoastal Waterway (Halifax River) and the ocean. Remodeled kitchen and upgraded baths make this a rare gem. Fully enclosed back porch gives much-needed open space for flexible use. Out back there is a paver patio and a fully fenced yard.","features":["Remodeled kitchen","Upgraded baths","Enclosed back porch","Paver patio","Fenced yard","Primary suite"],"photos":[{"url":"/api/uploads/seed/sale-46-seaside.jpg","cover":true,"hidden":false},{"url":"/api/uploads/seed/extra-interior-1.jpg","cover":false,"hidden":false},{"url":"/api/uploads/seed/extra-interior-2.jpg","cover":false,"hidden":false}],"lat":29.3199,"lng":-81.0506,"featured":true,"id":"92480704-0a40-457d-bd0a-cb0255878095","slug":"46-seaside-dr-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Top-floor ocean view condo, fully renovated","address":"2220 Ocean Shore Blvd APT 505A","city":"Ormond Beach","state":"FL","zip":"32176","price":369900,"status":"live","listing_type":"sale","beds":2,"baths":2,"sqft":1050,"lot":null,"year_built":1981,"property_type":"Condo","description":"Your dream coastal retreat! This fully renovated 2 bedroom, 2 bathroom condo offers breathtaking ocean views and effortless beachside living from the TOP FLOOR of the building. Thoughtfully designed with a modern, open-concept layout, the kitchen is the heart of the home — sleek finishes, updated cabinetry and new appliances. New AC. Both bathrooms renovated with a fresh, spa-like feel. Offered fully furnished with all NEW stylish furnishings — truly move-in ready.","features":["Top floor","Ocean views","Fully furnished","New AC","Renovated baths","Open concept"],"photos":[{"url":"/api/uploads/seed/sale-2220-ocean-shore.webp","cover":true,"hidden":false},{"url":"/api/uploads/seed/extra-interior-2.jpg","cover":false,"hidden":false}],"lat":29.3345,"lng":-81.0442,"featured":true,"id":"5749f684-5a1f-4857-97f1-07af15c87669","slug":"2220-ocean-shore-blvd-apt-505a-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Lakefront living in gated Plantation Bay","address":"908 Woodstream Ln","city":"Ormond Beach","state":"FL","zip":"32174","price":375000,"status":"live","listing_type":"sale","beds":3,"baths":2,"sqft":1890,"lot":"0.21 acres","year_built":2002,"property_type":"Single Family","description":"Welcome to luxury living in the prestigious gated community of Plantation Bay! This beautifully updated 3 bedroom, 2 bath home offers cathedral-style ceilings, lakefront views from your own backyard, and an updated kitchen with stunning quartz countertops. The primary suite is a true retreat complete with a spa-inspired bathroom featuring a luxurious rain shower. New ceiling fans throughout and the garage is equipped with an EV charger.","features":["Gated community","Lakefront views","Quartz countertops","Spa-inspired bath","EV charger","Cathedral ceilings"],"photos":[{"url":"/api/uploads/seed/sale-908-woodstream.webp","cover":true,"hidden":false},{"url":"/api/uploads/seed/extra-interior-1.jpg","cover":false,"hidden":false}],"lat":29.3648,"lng":-81.1156,"featured":true,"id":"87663617-81a2-41cb-95ff-7112851465e9","slug":"908-woodstream-ln-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Five-bedroom coastal comfort in Sea Colony","address":"68 Bristol Ln","city":"Palm Coast","state":"FL","zip":"32137","price":789000,"status":"live","listing_type":"sale","beds":5,"baths":3.5,"sqft":2980,"lot":"0.27 acres","year_built":2004,"property_type":"Single Family","description":"An exceptional five-bedroom, three-and-a-half-bath home in the sought-after oceanfront gated community of Sea Colony. First-floor primary suite, true interior laundry, and a private heated and screened pool. Cement board siding and hurricane-rated windows (2023), new kitchen cabinets and appliances (2023), updated AC (2023), whole-house water filtration (2024), and a new roof (2022). Residents enjoy a 24/7 guarded entrance, oceanfront clubhouse, heated pool and spa, and private beach access.","features":["Heated screened pool","Oceanfront gated community","Private beach access","New roof 2022","Hurricane windows","First-floor primary suite"],"photos":[{"url":"/api/uploads/seed/sale-68-bristol.webp","cover":true,"hidden":false},{"url":"/api/uploads/seed/extra-interior-2.jpg","cover":false,"hidden":false}],"lat":29.5904,"lng":-81.2065,"featured":true,"id":"a7f4db65-66d1-4a38-be88-74d2a0ea1ebd","slug":"68-bristol-ln-palm-coast","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Ocean Shore Blvd beachfront condo","address":"1133 Ocean Shore Blvd APT 404","city":"Ormond Beach","state":"FL","zip":"32176","price":2400,"status":"live","listing_type":"rent","beds":2,"baths":2,"sqft":1100,"lot":null,"year_built":1983,"property_type":"Condo","description":"Wake up to the Atlantic. Bright beachfront condo on Ocean Shore Boulevard with sweeping views, an updated kitchen, and a private balcony. Professionally managed by Culver Realty & Property Management — responsive maintenance, careful tenant screening, and easy online payments.","features":["Beachfront","Private balcony","Updated kitchen","Community pool","Online payments"],"photos":[{"url":"/api/uploads/seed/rental-1133-ocean-shore.webp","cover":true,"hidden":false}],"lat":29.3276,"lng":-81.0471,"featured":true,"id":"d840bd01-7e4f-41f1-88ff-96aed99b7803","slug":"1133-ocean-shore-blvd-apt-404-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Beachside pool home on Alamanda","address":"43 Alamanda Dr","city":"Ormond Beach","state":"FL","zip":"32176","price":2850,"status":"live","listing_type":"rent","beds":3,"baths":2,"sqft":1760,"lot":"0.2 acres","year_built":1975,"property_type":"Single Family","description":"Charming beachside home on a quiet street east of A1A. Private pool, fenced yard, and a short stroll to the sand. Hands-on management and transparent owner reporting make this a tenant favorite.","features":["Private pool","Fenced yard","East of A1A","Walk to beach","Pet considered"],"photos":[{"url":"/api/uploads/seed/rental-43-alamanda.webp","cover":true,"hidden":false}],"lat":29.3188,"lng":-81.0522,"featured":true,"id":"5bf57716-c70b-4434-9733-e54bf6fe4073","slug":"43-alamanda-dr-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Move-in ready with granite kitchen and Florida room","address":"711 Lindenwood Cir E","city":"Ormond Beach","state":"FL","zip":"32174","price":359900,"status":"live","listing_type":"sale","beds":3,"baths":2,"sqft":1720,"lot":"0.23 acres","year_built":1989,"property_type":"Single Family","description":"Welcome home to this beautifully maintained 3 bedroom, 2 bathroom property featuring a spacious layout and an upgraded kitchen with granite countertops, ample cabinet space and a functional design perfect for everyday living. A 2-car garage plus a large concrete pad behind the fence — ideal for storing a boat, trailer or toys! The bright Florida room provides additional living space to relax.","features":["Granite countertops","Florida room","Boat/trailer pad","2-car garage","Fenced yard"],"photos":[{"url":"/api/uploads/seed/sale-711-lindenwood.webp","cover":true,"hidden":false}],"lat":29.2971,"lng":-81.0921,"featured":false,"id":"81458773-252f-4d77-9806-5f325f2523e3","slug":"711-lindenwood-cir-e-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Entertainer's townhome with loft and community pool","address":"21 Oakwood Park","city":"Ormond Beach","state":"FL","zip":"32174","price":219900,"status":"live","listing_type":"sale","beds":2,"baths":2,"sqft":1240,"lot":null,"year_built":1985,"property_type":"Townhome","description":"An amazing townhome built for entertaining and streamlined for a home office, gym or second bedroom. The flow is so nice with living space, kitchen and bedroom on the first floor, a screened-in patio, and a huge bedroom and loft upstairs. Community gathering room and pool just steps from the door. Priced to move and ready for its next owner.","features":["Screened patio","Loft space","Community pool","Gathering room","Two-story layout"],"photos":[{"url":"/api/uploads/seed/sale-21-oakwood.webp","cover":true,"hidden":false}],"lat":29.3102,"lng":-81.0988,"featured":false,"id":"0032455a-dd42-4631-9c3c-f060c37e05ff","slug":"21-oakwood-park-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Pool home with whole-house generator in Palm Coast","address":"18 Phoenix Ln","city":"Palm Coast","state":"FL","zip":"32164","price":319000,"status":"live","listing_type":"sale","beds":3,"baths":2,"sqft":1815,"lot":"0.25 acres","year_built":1998,"property_type":"Single Family","description":"Centrally located to everything in Palm Coast. Three nicely sized bedrooms, two baths, fully updated kitchen with high-end stainless appliances, an oversized 2-car garage, and an inground pool that heats and COOLS. A hot tub under a covered gazebo and plenty of privacy in the fenced backyard make this an entertainer's dream. Built-in whole-house Generac generator and custom plantation shutters throughout.","features":["Heated & cooled pool","Hot tub gazebo","Generac generator","Plantation shutters","Fenced backyard"],"photos":[{"url":"/api/uploads/seed/sale-18-phoenix.jpg","cover":true,"hidden":false}],"lat":29.4976,"lng":-81.2454,"featured":false,"id":"3136c94e-a828-4eae-a82e-18a774c62f3c","slug":"18-phoenix-ln-palm-coast","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Beautifully remodeled near Tanger Outlets","address":"1003 Cherokee Ranch Rd","city":"Holly Hill","state":"FL","zip":"32117","price":299000,"status":"live","listing_type":"sale","beds":3,"baths":2,"sqft":1450,"lot":"0.2 acres","year_built":1978,"property_type":"Single Family","description":"A beautifully remodeled home so close to everything! Just down the street are the Tanger Outlets, restaurants, and I-95 — everything Daytona and Ormond Beach have to offer in less than 5 minutes each way.","features":["Fully remodeled","Near I-95","Minutes to beach","Open layout"],"photos":[{"url":"/api/uploads/seed/sale-1003-cherokee.webp","cover":true,"hidden":false}],"lat":29.2411,"lng":-81.0478,"featured":false,"id":"1c4f0a54-5f38-41a5-97dd-ed286dff9829","slug":"1003-cherokee-ranch-rd-holly-hill","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"End-unit townhome with stone fireplace and hot tub","address":"1031 Grand Hickory Cir","city":"Holly Hill","state":"FL","zip":"32117","price":265000,"status":"live","listing_type":"sale","beds":2,"baths":2,"sqft":1380,"lot":null,"year_built":2005,"property_type":"Townhome","description":"Beautiful end-unit townhome featuring 2 bedrooms, 2 bathrooms and a spacious open-concept design. Added privacy and a larger yard than most. Outdoors, a stunning stone fireplace creates the perfect setting for cozy evenings, plus an included hot tub and a covered lanai off the primary bedroom. Can come furnished or unfurnished.","features":["End unit","Stone fireplace","Hot tub","Covered lanai","Furnished option"],"photos":[{"url":"/api/uploads/seed/sale-1031-grand-hickory.webp","cover":true,"hidden":false}],"lat":29.252,"lng":-81.059,"featured":false,"id":"2be862c7-5c0c-431d-8a2a-c9f37fb64551","slug":"1031-grand-hickory-cir-holly-hill","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Oceanview apartment steps to the sand","address":"2250 Ocean Shore Blvd APT 201","city":"Ormond Beach","state":"FL","zip":"32176","price":2200,"status":"live","listing_type":"rent","beds":2,"baths":2,"sqft":1020,"lot":null,"year_built":1980,"property_type":"Condo","description":"Comfortable oceanview apartment just steps from the beach. Split bedrooms, inside laundry, and a breezy second-floor balcony. Professionally managed with 24/7 maintenance response.","features":["Ocean view","Inside laundry","Balcony","Beach access","24/7 maintenance"],"photos":[{"url":"/api/uploads/seed/rental-2250-ocean-shore.webp","cover":true,"hidden":false}],"lat":29.3352,"lng":-81.044,"featured":false,"id":"c66c8606-55b3-4dba-82b3-96fec623ac11","slug":"2250-ocean-shore-blvd-apt-201-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"River Drive retreat near the Halifax","address":"60 River Dr","city":"Ormond Beach","state":"FL","zip":"32176","price":2600,"status":"live","listing_type":"rent","beds":3,"baths":2,"sqft":1640,"lot":"0.22 acres","year_built":1970,"property_type":"Single Family","description":"Peaceful retreat moments from the Halifax River with an open living area, updated baths, and a shaded backyard. Lawn care included. Professionally managed by Culver Realty & Property Management.","features":["Near Halifax River","Updated baths","Lawn care included","Shaded backyard"],"photos":[{"url":"/api/uploads/seed/rental-60-river.webp","cover":true,"hidden":false}],"lat":29.321,"lng":-81.056,"featured":false,"id":"33009cd6-dae6-46dd-907a-b983f591c793","slug":"60-river-dr-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Egret Dunes coastal home","address":"3727 Egret Dunes Dr","city":"Ormond Beach","state":"FL","zip":"32176","price":2950,"status":"live","listing_type":"rent","beds":4,"baths":2,"sqft":1980,"lot":"0.24 acres","year_built":1992,"property_type":"Single Family","description":"Spacious four-bedroom home in a quiet beachside enclave. Bright kitchen, generous primary suite, and a screened patio for evening breezes. Carefully screened tenants and proactive maintenance keep this home in excellent condition.","features":["4 bedrooms","Screened patio","Primary suite","Quiet street","Proactive maintenance"],"photos":[{"url":"/api/uploads/seed/rental-3727-egret.webp","cover":true,"hidden":false}],"lat":29.3425,"lng":-81.041,"featured":false,"id":"3fbe56f6-8ada-4053-8688-9356f1e6d289","slug":"3727-egret-dunes-dr-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — Timberline Trail home","address":"330 Timberline Trl","city":"Ormond Beach","state":"FL","zip":"32174","price":null,"status":"sold","listing_type":"sale","beds":null,"baths":null,"sqft":null,"lot":null,"year_built":null,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management. Another history of happy homeowners in Ormond Beach.","features":["Sold by Culver Realty"],"photos":[{"url":"/api/uploads/seed/extra-home-4.jpg","cover":true,"hidden":false}],"lat":29.312,"lng":-81.101,"featured":false,"id":"a4a55d4f-6a87-4821-bdc7-667d9ffabc95","slug":"330-timberline-trl-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — Sundance Trail home","address":"3100 Sundance Trl","city":"New Smyrna Beach","state":"FL","zip":"32168","price":null,"status":"sold","listing_type":"sale","beds":null,"baths":null,"sqft":null,"lot":null,"year_built":null,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management in New Smyrna Beach.","features":["Sold by Culver Realty"],"photos":[{"url":"/api/uploads/seed/extra-home-2.jpg","cover":true,"hidden":false}],"lat":29.024,"lng":-80.927,"featured":false,"id":"7dd89a5b-b5d9-4580-a33f-e192186d2ee5","slug":"3100-sundance-trl-new-smyrna-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — Silk Oaks beachside home","address":"30 Silk Oaks Dr","city":"Ormond Beach","state":"FL","zip":"32176","price":null,"status":"sold","listing_type":"sale","beds":null,"baths":null,"sqft":null,"lot":null,"year_built":null,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management. Beachside living in Ormond Beach.","features":["Sold by Culver Realty"],"photos":[{"url":"/api/uploads/seed/extra-home-1.jpg","cover":true,"hidden":false}],"lat":29.309,"lng":-81.054,"featured":false,"id":"ced27913-91d2-4a77-b946-bb28891ba27f","slug":"30-silk-oaks-dr-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — Carnegie Place estate","address":"11971 Carnegie Pl","city":"West Palm Beach","state":"FL","zip":"33412","price":1490000,"status":"sold","listing_type":"sale","beds":4,"baths":3,"sqft":null,"lot":null,"year_built":null,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management. Exceptional estate living in West Palm Beach.","features":["Sold by Culver Realty","4 bed / 3 bath"],"photos":[{"url":"/api/uploads/seed/sold-11971-carnegie.jpg","cover":true,"hidden":false}],"lat":26.801,"lng":-80.212,"featured":false,"id":"340328d8-37f8-4e95-9526-490b053e9878","slug":"11971-carnegie-pl-west-palm-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — Cordova Avenue home","address":"833 Cordova Ave","city":"Ormond Beach","state":"FL","zip":"32174","price":null,"status":"sold","listing_type":"sale","beds":null,"baths":null,"sqft":null,"lot":null,"year_built":null,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management in the heart of Ormond Beach.","features":["Sold by Culver Realty"],"photos":[{"url":"/api/uploads/seed/extra-home-3.jpg","cover":true,"hidden":false}],"lat":29.289,"lng":-81.062,"featured":false,"id":"4c1c71db-25ac-40dc-9edf-7cf2e895a725","slug":"833-cordova-ave-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — Cypress Circle pool home","address":"2 Cypress Cir","city":"Ormond Beach","state":"FL","zip":"32176","price":475000,"status":"sold","listing_type":"sale","beds":4,"baths":2,"sqft":null,"lot":null,"year_built":null,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management. A history of happy homeowners on the beachside.","features":["Sold by Culver Realty","4 bed / 2 bath"],"photos":[{"url":"/api/uploads/seed/sold-2-cypress.webp","cover":true,"hidden":false}],"lat":29.317,"lng":-81.053,"featured":false,"id":"ffa59f5e-45e8-4dbe-8ac8-199d8cb144b8","slug":"2-cypress-cir-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — Stirling Bridge new construction","address":"440 Stirling Bridge Dr","city":"Ormond Beach","state":"FL","zip":"32174","price":1215914,"status":"sold","listing_type":"sale","beds":3,"baths":3,"sqft":2890,"lot":"0.28 acres","year_built":2022,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management. Stunning newer construction in a premier Ormond Beach community.","features":["Sold by Culver Realty","New construction","3 bed / 3 bath"],"photos":[{"url":"/api/uploads/seed/sold-440-stirling.webp","cover":true,"hidden":false}],"lat":29.358,"lng":-81.108,"featured":false,"id":"389b728f-d1f2-4fcd-86ae-060b4ecf61a1","slug":"440-stirling-bridge-dr-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — Ginger Circle beachside home","address":"950 Ginger Cir","city":"Ormond Beach","state":"FL","zip":"32176","price":null,"status":"sold","listing_type":"sale","beds":null,"baths":null,"sqft":null,"lot":null,"year_built":null,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management in Ormond Beach's beachside.","features":["Sold by Culver Realty"],"photos":[{"url":"/api/uploads/seed/extra-interior-1.jpg","cover":true,"hidden":false}],"lat":29.315,"lng":-81.052,"featured":false,"id":"04efbbcb-8ac9-4f1d-9997-3c282c1f3fb2","slug":"950-ginger-cir-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — Barrier Isle Drive home","address":"131 Barrier Isle Dr","city":"Ormond Beach","state":"FL","zip":"32176","price":null,"status":"sold","listing_type":"sale","beds":null,"baths":null,"sqft":null,"lot":null,"year_built":null,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management. Barrier island living at its best.","features":["Sold by Culver Realty"],"photos":[{"url":"/api/uploads/seed/extra-interior-2.jpg","cover":true,"hidden":false}],"lat":29.329,"lng":-81.048,"featured":false,"id":"bad89483-b34e-4530-88af-8f46200a8a2a","slug":"131-barrier-isle-dr-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — Avalon Dr pool estate","address":"155 Avalon Dr","city":"Ormond Beach","state":"FL","zip":"32176","price":750000,"status":"sold","listing_type":"sale","beds":3,"baths":4,"sqft":2640,"lot":"0.3 acres","year_built":1999,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management. A history of happy homeowners — elegant pool estate in one of Ormond Beach's most loved neighborhoods.","features":["Sold by Culver Realty","Pool","3 bed / 4 bath"],"photos":[{"url":"/api/uploads/seed/sold-155-avalon.webp","cover":true,"hidden":false}],"lat":29.305,"lng":-81.07,"featured":false,"id":"088a0fcf-1350-4363-97d7-866bfea8d53d","slug":"155-avalon-dr-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — John Anderson riverfront showpiece","address":"3124 John Anderson Dr","city":"Ormond Beach","state":"FL","zip":"32176","price":1100000,"status":"sold","listing_type":"sale","beds":3,"baths":2,"sqft":null,"lot":null,"year_built":null,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management. Riverfront living on scenic John Anderson Drive.","features":["Sold by Culver Realty","Riverfront","3 bed / 2 bath"],"photos":[{"url":"/api/uploads/seed/sold-3124-john-anderson.webp","cover":true,"hidden":false}],"lat":29.349,"lng":-81.061,"featured":false,"id":"a3ff62fe-b5f3-4397-b494-cd5bbdcb95c5","slug":"3124-john-anderson-dr-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — Sugar Belt Drive home","address":"1131 Sugar Belt Dr","city":"Saint Cloud","state":"FL","zip":"34771","price":null,"status":"sold","listing_type":"sale","beds":null,"baths":null,"sqft":null,"lot":null,"year_built":null,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management in Saint Cloud.","features":["Sold by Culver Realty"],"photos":[{"url":"/api/uploads/seed/extra-home-4.jpg","cover":true,"hidden":false}],"lat":28.248,"lng":-81.281,"featured":false,"id":"68822c0e-8dc3-4113-9ad9-f42cd391424c","slug":"1131-sugar-belt-dr-saint-cloud","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — John Anderson Drive riverfront home","address":"2667 John Anderson Dr","city":"Ormond Beach","state":"FL","zip":"32176","price":null,"status":"sold","listing_type":"sale","beds":null,"baths":null,"sqft":null,"lot":null,"year_built":null,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management on iconic John Anderson Drive.","features":["Sold by Culver Realty"],"photos":[{"url":"/api/uploads/seed/extra-home-2.jpg","cover":true,"hidden":false}],"lat":29.338,"lng":-81.058,"featured":false,"id":"dfe53b9d-e0bd-4354-86a9-42239752adfa","slug":"2667-john-anderson-dr-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"},{"title":"Sold — Royal Dunes beachside home","address":"209 Royal Dunes Blvd","city":"Ormond Beach","state":"FL","zip":"32176","price":663700,"status":"sold","listing_type":"sale","beds":4,"baths":3,"sqft":null,"lot":null,"year_built":null,"property_type":"Single Family","description":"Sold by Culver Realty & Property Management in the sought-after Royal Dunes community.","features":["Sold by Culver Realty","4 bed / 3 bath"],"photos":[{"url":"/api/uploads/seed/sold-209-royal-dunes.webp","cover":true,"hidden":false}],"lat":29.341,"lng":-81.043,"featured":false,"id":"911dfb7f-fea9-4d93-ace1-4da881b2885a","slug":"209-royal-dunes-blvd-ormond-beach","zpid":null,"source_url":null,"source_provider":"culverrealtygroup.com","created_at":"2026-09-07T09:45:47.643306+00:00","updated_at":"2026-09-07T09:45:47.643306+00:00","imported_at":"2026-09-07T09:45:47.643306+00:00"}],"count":28}
+{
+ "properties": [
+  {
+   "title": "Remodeled beachside home between the river and the ocean",
+   "address": "46 Seaside Dr",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": 344900,
+   "status": "live",
+   "listing_type": "sale",
+   "beds": 3,
+   "baths": 2,
+   "sqft": 1568,
+   "lot": "0.18 acres",
+   "year_built": 1972,
+   "property_type": "Single Family",
+   "description": "Sought-after 3 bed / 2 bath with a large primary suite and en-suite bath, set between the Intracoastal Waterway (Halifax River) and the ocean. Remodeled kitchen and upgraded baths make this a rare gem. Fully enclosed back porch gives much-needed open space for flexible use. Out back there is a paver patio and a fully fenced yard.",
+   "features": [
+    "Remodeled kitchen",
+    "Upgraded baths",
+    "Enclosed back porch",
+    "Paver patio",
+    "Fenced yard",
+    "Primary suite"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/46-seaside-dr-ormond-beach/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.3199,
+   "lng": -81.0506,
+   "featured": true,
+   "id": "92480704-0a40-457d-bd0a-cb0255878095",
+   "slug": "46-seaside-dr-ormond-beach",
+   "zpid": "47995449",
+   "source_url": "https://www.zillow.com/homedetails/46-Seaside-Dr-Ormond-Beach-FL-32176/47995449_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1227784",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Tracie Culver"
+  },
+  {
+   "title": "Top-floor ocean view condo, fully renovated",
+   "address": "2220 Ocean Shore Blvd APT 505A",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": 369900,
+   "status": "live",
+   "listing_type": "sale",
+   "beds": 2,
+   "baths": 2,
+   "sqft": 1050,
+   "lot": null,
+   "year_built": 1981,
+   "property_type": "Condo",
+   "description": "Your dream coastal retreat! This fully renovated 2 bedroom, 2 bathroom condo offers breathtaking ocean views and effortless beachside living from the TOP FLOOR of the building. Thoughtfully designed with a modern, open-concept layout, the kitchen is the heart of the home — sleek finishes, updated cabinetry and new appliances. New AC. Both bathrooms renovated with a fresh, spa-like feel. Offered fully furnished with all NEW stylish furnishings — truly move-in ready.",
+   "features": [
+    "Top floor",
+    "Ocean views",
+    "Fully furnished",
+    "New AC",
+    "Renovated baths",
+    "Open concept"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2220-ocean-shore-blvd-apt-505a-ormond-beach/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.3345,
+   "lng": -81.0442,
+   "featured": true,
+   "id": "5749f684-5a1f-4857-97f1-07af15c87669",
+   "slug": "2220-ocean-shore-blvd-apt-505a-ormond-beach",
+   "zpid": "47994020",
+   "source_url": "https://www.zillow.com/homedetails/2220-Ocean-Shore-Blvd-APT-505A-Ormond-Beach-FL-32176/47994020_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1224618",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Alexis Strong"
+  },
+  {
+   "title": "Lakefront living in gated Plantation Bay",
+   "address": "908 Woodstream Ln",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32174",
+   "price": 375000,
+   "status": "live",
+   "listing_type": "sale",
+   "beds": 3,
+   "baths": 2,
+   "sqft": 1890,
+   "lot": "0.21 acres",
+   "year_built": 2002,
+   "property_type": "Single Family",
+   "description": "Welcome to luxury living in the prestigious gated community of Plantation Bay! This beautifully updated 3 bedroom, 2 bath home offers cathedral-style ceilings, lakefront views from your own backyard, and an updated kitchen with stunning quartz countertops. The primary suite is a true retreat complete with a spa-inspired bathroom featuring a luxurious rain shower. New ceiling fans throughout and the garage is equipped with an EV charger.",
+   "features": [
+    "Gated community",
+    "Lakefront views",
+    "Quartz countertops",
+    "Spa-inspired bath",
+    "EV charger",
+    "Cathedral ceilings"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/908-woodstream-ln-ormond-beach/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.3648,
+   "lng": -81.1156,
+   "featured": true,
+   "id": "87663617-81a2-41cb-95ff-7112851465e9",
+   "slug": "908-woodstream-ln-ormond-beach",
+   "zpid": "47958821",
+   "source_url": "https://www.zillow.com/homedetails/908-Woodstream-Ln-Ormond-Beach-FL-32174/47958821_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1228398",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Alexis Strong"
+  },
+  {
+   "title": "Five-bedroom coastal comfort in Sea Colony",
+   "address": "68 Bristol Ln",
+   "city": "Palm Coast",
+   "state": "FL",
+   "zip": "32137",
+   "price": 789000,
+   "status": "live",
+   "listing_type": "sale",
+   "beds": 5,
+   "baths": 3.5,
+   "sqft": 2980,
+   "lot": "0.27 acres",
+   "year_built": 2004,
+   "property_type": "Single Family",
+   "description": "An exceptional five-bedroom, three-and-a-half-bath home in the sought-after oceanfront gated community of Sea Colony. First-floor primary suite, true interior laundry, and a private heated and screened pool. Cement board siding and hurricane-rated windows (2023), new kitchen cabinets and appliances (2023), updated AC (2023), whole-house water filtration (2024), and a new roof (2022). Residents enjoy a 24/7 guarded entrance, oceanfront clubhouse, heated pool and spa, and private beach access.",
+   "features": [
+    "Heated screened pool",
+    "Oceanfront gated community",
+    "Private beach access",
+    "New roof 2022",
+    "Hurricane windows",
+    "First-floor primary suite"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/68-bristol-ln-palm-coast/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.5904,
+   "lng": -81.2065,
+   "featured": true,
+   "id": "a7f4db65-66d1-4a38-be88-74d2a0ea1ebd",
+   "slug": "68-bristol-ln-palm-coast",
+   "zpid": "44748774",
+   "source_url": "https://www.zillow.com/homedetails/68-Bristol-Ln-Palm-Coast-FL-32137/44748774_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "Stellar MLS",
+   "mls_id": "FC317844",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed. Some IDX listings have been excluded from this website.\n\nListing Information presented by local MLS brokerage:  Zillow, Inc - (407) 904-3511",
+   "listing_broker": "CULVER REALTY & PROPERTY MGMT",
+   "listing_agent": "Joseph Poole"
+  },
+  {
+   "title": "Ocean Shore Blvd beachfront condo",
+   "address": "1133 Ocean Shore Blvd APT 404",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": 2400,
+   "status": "live",
+   "listing_type": "rent",
+   "beds": 2,
+   "baths": 2,
+   "sqft": 1100,
+   "lot": null,
+   "year_built": 1983,
+   "property_type": "Condo",
+   "description": "Wake up to the Atlantic. Bright beachfront condo on Ocean Shore Boulevard with sweeping views, an updated kitchen, and a private balcony. Professionally managed by Culver Realty & Property Management — responsive maintenance, careful tenant screening, and easy online payments.",
+   "features": [
+    "Beachfront",
+    "Private balcony",
+    "Updated kitchen",
+    "Community pool",
+    "Online payments"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1133-ocean-shore-blvd-apt-404-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.3276,
+   "lng": -81.0471,
+   "featured": true,
+   "id": "d840bd01-7e4f-41f1-88ff-96aed99b7803",
+   "slug": "1133-ocean-shore-blvd-apt-404-ormond-beach",
+   "zpid": "47998984",
+   "source_url": "https://www.zillow.com/homedetails/1133-Ocean-Shore-Blvd-APT-404-Ormond-Beach-FL-32176/47998984_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "Zillow Rentals",
+   "mls_id": null,
+   "mls_disclaimer": null,
+   "listing_broker": "Culver Realty & Property Management, LLC",
+   "listing_agent": null
+  },
+  {
+   "title": "Beachside pool home on Alamanda",
+   "address": "43 Alamanda Dr",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": 2850,
+   "status": "live",
+   "listing_type": "rent",
+   "beds": 3,
+   "baths": 2,
+   "sqft": 1760,
+   "lot": "0.2 acres",
+   "year_built": 1975,
+   "property_type": "Single Family",
+   "description": "Charming beachside home on a quiet street east of A1A. Private pool, fenced yard, and a short stroll to the sand. Hands-on management and transparent owner reporting make this a tenant favorite.",
+   "features": [
+    "Private pool",
+    "Fenced yard",
+    "East of A1A",
+    "Walk to beach",
+    "Pet considered"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/seed/rental-43-alamanda.webp",
+     "cover": true,
+     "hidden": false
+    }
+   ],
+   "lat": 29.3188,
+   "lng": -81.0522,
+   "featured": true,
+   "id": "5bf57716-c70b-4434-9733-e54bf6fe4073",
+   "slug": "43-alamanda-dr-ormond-beach",
+   "zpid": null,
+   "source_url": null,
+   "source_provider": "culverrealtygroup.com",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00"
+  },
+  {
+   "title": "Move-in ready with granite kitchen and Florida room",
+   "address": "711 Lindenwood Cir E",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32174",
+   "price": 359900,
+   "status": "live",
+   "listing_type": "sale",
+   "beds": 3,
+   "baths": 2,
+   "sqft": 1720,
+   "lot": "0.23 acres",
+   "year_built": 1989,
+   "property_type": "Single Family",
+   "description": "Welcome home to this beautifully maintained 3 bedroom, 2 bathroom property featuring a spacious layout and an upgraded kitchen with granite countertops, ample cabinet space and a functional design perfect for everyday living. A 2-car garage plus a large concrete pad behind the fence — ideal for storing a boat, trailer or toys! The bright Florida room provides additional living space to relax.",
+   "features": [
+    "Granite countertops",
+    "Florida room",
+    "Boat/trailer pad",
+    "2-car garage",
+    "Fenced yard"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/711-lindenwood-cir-e-ormond-beach/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.2971,
+   "lng": -81.0921,
+   "featured": false,
+   "id": "81458773-252f-4d77-9806-5f325f2523e3",
+   "slug": "711-lindenwood-cir-e-ormond-beach",
+   "zpid": "47997570",
+   "source_url": "https://www.zillow.com/homedetails/711-Lindenwood-Cir-E-Ormond-Beach-FL-32174/47997570_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1226134",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Alexis Strong"
+  },
+  {
+   "title": "Entertainer's townhome with loft and community pool",
+   "address": "21 Oakwood Park",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32174",
+   "price": 219900,
+   "status": "live",
+   "listing_type": "sale",
+   "beds": 2,
+   "baths": 2,
+   "sqft": 1240,
+   "lot": null,
+   "year_built": 1985,
+   "property_type": "Townhome",
+   "description": "An amazing townhome built for entertaining and streamlined for a home office, gym or second bedroom. The flow is so nice with living space, kitchen and bedroom on the first floor, a screened-in patio, and a huge bedroom and loft upstairs. Community gathering room and pool just steps from the door. Priced to move and ready for its next owner.",
+   "features": [
+    "Screened patio",
+    "Loft space",
+    "Community pool",
+    "Gathering room",
+    "Two-story layout"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/21-oakwood-park-ormond-beach/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.3102,
+   "lng": -81.0988,
+   "featured": false,
+   "id": "0032455a-dd42-4631-9c3c-f060c37e05ff",
+   "slug": "21-oakwood-park-ormond-beach",
+   "zpid": "170863734",
+   "source_url": "https://www.zillow.com/homedetails/21-Oakwood-Park-Ormond-Beach-FL-32174/170863734_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1229242",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Tracie Culver"
+  },
+  {
+   "title": "Pool home with whole-house generator in Palm Coast",
+   "address": "18 Phoenix Ln",
+   "city": "Palm Coast",
+   "state": "FL",
+   "zip": "32164",
+   "price": 319000,
+   "status": "live",
+   "listing_type": "sale",
+   "beds": 3,
+   "baths": 2,
+   "sqft": 1815,
+   "lot": "0.25 acres",
+   "year_built": 1998,
+   "property_type": "Single Family",
+   "description": "Centrally located to everything in Palm Coast. Three nicely sized bedrooms, two baths, fully updated kitchen with high-end stainless appliances, an oversized 2-car garage, and an inground pool that heats and COOLS. A hot tub under a covered gazebo and plenty of privacy in the fenced backyard make this an entertainer's dream. Built-in whole-house Generac generator and custom plantation shutters throughout.",
+   "features": [
+    "Heated & cooled pool",
+    "Hot tub gazebo",
+    "Generac generator",
+    "Plantation shutters",
+    "Fenced backyard"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/18-phoenix-ln-palm-coast/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.4976,
+   "lng": -81.2454,
+   "featured": false,
+   "id": "3136c94e-a828-4eae-a82e-18a774c62f3c",
+   "slug": "18-phoenix-ln-palm-coast",
+   "zpid": "66140463",
+   "source_url": "https://www.zillow.com/homedetails/18-Phoenix-Ln-Palm-Coast-FL-32164/66140463_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1229664",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Tracie Culver"
+  },
+  {
+   "title": "Beautifully remodeled near Tanger Outlets",
+   "address": "1003 Cherokee Ranch Rd",
+   "city": "Holly Hill",
+   "state": "FL",
+   "zip": "32117",
+   "price": 299000,
+   "status": "live",
+   "listing_type": "sale",
+   "beds": 3,
+   "baths": 2,
+   "sqft": 1450,
+   "lot": "0.2 acres",
+   "year_built": 1978,
+   "property_type": "Single Family",
+   "description": "A beautifully remodeled home so close to everything! Just down the street are the Tanger Outlets, restaurants, and I-95 — everything Daytona and Ormond Beach have to offer in less than 5 minutes each way.",
+   "features": [
+    "Fully remodeled",
+    "Near I-95",
+    "Minutes to beach",
+    "Open layout"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/1003-cherokee-ranch-rd-holly-hill/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.2411,
+   "lng": -81.0478,
+   "featured": false,
+   "id": "1c4f0a54-5f38-41a5-97dd-ed286dff9829",
+   "slug": "1003-cherokee-ranch-rd-holly-hill",
+   "zpid": "48017300",
+   "source_url": "https://www.zillow.com/homedetails/1003-Cherokee-Ranch-Rd-Holly-Hill-FL-32117/48017300_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1229243",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Tracie Culver"
+  },
+  {
+   "title": "End-unit townhome with stone fireplace and hot tub",
+   "address": "1031 Grand Hickory Cir",
+   "city": "Holly Hill",
+   "state": "FL",
+   "zip": "32117",
+   "price": 265000,
+   "status": "live",
+   "listing_type": "sale",
+   "beds": 2,
+   "baths": 2,
+   "sqft": 1380,
+   "lot": null,
+   "year_built": 2005,
+   "property_type": "Townhome",
+   "description": "Beautiful end-unit townhome featuring 2 bedrooms, 2 bathrooms and a spacious open-concept design. Added privacy and a larger yard than most. Outdoors, a stunning stone fireplace creates the perfect setting for cozy evenings, plus an included hot tub and a covered lanai off the primary bedroom. Can come furnished or unfurnished.",
+   "features": [
+    "End unit",
+    "Stone fireplace",
+    "Hot tub",
+    "Covered lanai",
+    "Furnished option"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/seed/sale-1031-grand-hickory.webp",
+     "cover": true,
+     "hidden": false
+    }
+   ],
+   "lat": 29.252,
+   "lng": -81.059,
+   "featured": false,
+   "id": "2be862c7-5c0c-431d-8a2a-c9f37fb64551",
+   "slug": "1031-grand-hickory-cir-holly-hill",
+   "zpid": null,
+   "source_url": null,
+   "source_provider": "culverrealtygroup.com",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00"
+  },
+  {
+   "title": "Oceanview apartment steps to the sand",
+   "address": "2250 Ocean Shore Blvd APT 201",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": 2200,
+   "status": "live",
+   "listing_type": "rent",
+   "beds": 2,
+   "baths": 2,
+   "sqft": 1020,
+   "lot": null,
+   "year_built": 1980,
+   "property_type": "Condo",
+   "description": "Comfortable oceanview apartment just steps from the beach. Split bedrooms, inside laundry, and a breezy second-floor balcony. Professionally managed with 24/7 maintenance response.",
+   "features": [
+    "Ocean view",
+    "Inside laundry",
+    "Balcony",
+    "Beach access",
+    "24/7 maintenance"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2250-ocean-shore-blvd-apt-201-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.3352,
+   "lng": -81.044,
+   "featured": false,
+   "id": "c66c8606-55b3-4dba-82b3-96fec623ac11",
+   "slug": "2250-ocean-shore-blvd-apt-201-ormond-beach",
+   "zpid": "2059479815",
+   "source_url": "https://www.zillow.com/homedetails/2250-Ocean-Shore-Blvd-APT-201-Ormond-Beach-FL-32176/2059479815_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "Zillow Rentals",
+   "mls_id": null,
+   "mls_disclaimer": null,
+   "listing_broker": "Culver Realty & Property Management, LLC",
+   "listing_agent": null
+  },
+  {
+   "title": "River Drive retreat near the Halifax",
+   "address": "60 River Dr",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": 2600,
+   "status": "live",
+   "listing_type": "rent",
+   "beds": 3,
+   "baths": 2,
+   "sqft": 1640,
+   "lot": "0.22 acres",
+   "year_built": 1970,
+   "property_type": "Single Family",
+   "description": "Peaceful retreat moments from the Halifax River with an open living area, updated baths, and a shaded backyard. Lawn care included. Professionally managed by Culver Realty & Property Management.",
+   "features": [
+    "Near Halifax River",
+    "Updated baths",
+    "Lawn care included",
+    "Shaded backyard"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/60-river-dr-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/60-river-dr-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/60-river-dr-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/60-river-dr-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/60-river-dr-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/60-river-dr-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/60-river-dr-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/60-river-dr-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/60-river-dr-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/60-river-dr-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.321,
+   "lng": -81.056,
+   "featured": false,
+   "id": "33009cd6-dae6-46dd-907a-b983f591c793",
+   "slug": "60-river-dr-ormond-beach",
+   "zpid": "47999567",
+   "source_url": "https://www.zillow.com/homedetails/60-River-Dr-Ormond-Beach-FL-32176/47999567_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "Zillow Rentals",
+   "mls_id": null,
+   "mls_disclaimer": null,
+   "listing_broker": "Culver Realty & Property Management, LLC",
+   "listing_agent": null
+  },
+  {
+   "title": "Egret Dunes coastal home",
+   "address": "3727 Egret Dunes Dr",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": 2950,
+   "status": "live",
+   "listing_type": "rent",
+   "beds": 4,
+   "baths": 2,
+   "sqft": 1980,
+   "lot": "0.24 acres",
+   "year_built": 1992,
+   "property_type": "Single Family",
+   "description": "Spacious four-bedroom home in a quiet beachside enclave. Bright kitchen, generous primary suite, and a screened patio for evening breezes. Carefully screened tenants and proactive maintenance keep this home in excellent condition.",
+   "features": [
+    "4 bedrooms",
+    "Screened patio",
+    "Primary suite",
+    "Quiet street",
+    "Proactive maintenance"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3727-egret-dunes-dr-ormond-beach/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.3425,
+   "lng": -81.041,
+   "featured": false,
+   "id": "3fbe56f6-8ada-4053-8688-9356f1e6d289",
+   "slug": "3727-egret-dunes-dr-ormond-beach",
+   "zpid": "104288501",
+   "source_url": "https://www.zillow.com/homedetails/3727-Egret-Dunes-Dr-Ormond-Beach-FL-32176/104288501_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "Zillow Rentals",
+   "mls_id": null,
+   "mls_disclaimer": null,
+   "listing_broker": "Culver Realty & Property Management, LLC",
+   "listing_agent": null
+  },
+  {
+   "title": "Sold — Timberline Trail home",
+   "address": "330 Timberline Trl",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32174",
+   "price": null,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": null,
+   "baths": null,
+   "sqft": null,
+   "lot": null,
+   "year_built": null,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management. Another history of happy homeowners in Ormond Beach.",
+   "features": [
+    "Sold by Culver Realty"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/330-timberline-trl-ormond-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.312,
+   "lng": -81.101,
+   "featured": false,
+   "id": "a4a55d4f-6a87-4821-bdc7-667d9ffabc95",
+   "slug": "330-timberline-trl-ormond-beach",
+   "zpid": "170864456",
+   "source_url": "https://www.zillow.com/homedetails/330-Timberline-Trl-Ormond-Beach-FL-32174/170864456_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1218435",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Alexis Strong"
+  },
+  {
+   "title": "Sold — Sundance Trail home",
+   "address": "3100 Sundance Trl",
+   "city": "New Smyrna Beach",
+   "state": "FL",
+   "zip": "32168",
+   "price": null,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": null,
+   "baths": null,
+   "sqft": null,
+   "lot": null,
+   "year_built": null,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management in New Smyrna Beach.",
+   "features": [
+    "Sold by Culver Realty"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3100-sundance-trl-new-smyrna-beach/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.024,
+   "lng": -80.927,
+   "featured": false,
+   "id": "7dd89a5b-b5d9-4580-a33f-e192186d2ee5",
+   "slug": "3100-sundance-trl-new-smyrna-beach",
+   "zpid": "48065549",
+   "source_url": "https://www.zillow.com/homedetails/3100-Sundance-Trl-New-Smyrna-Beach-FL-32168/48065549_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1110507",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Tracie Culver"
+  },
+  {
+   "title": "Sold — Silk Oaks beachside home",
+   "address": "30 Silk Oaks Dr",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": null,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": null,
+   "baths": null,
+   "sqft": null,
+   "lot": null,
+   "year_built": null,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management. Beachside living in Ormond Beach.",
+   "features": [
+    "Sold by Culver Realty"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/30-silk-oaks-dr-ormond-beach/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.309,
+   "lng": -81.054,
+   "featured": false,
+   "id": "ced27913-91d2-4a77-b946-bb28891ba27f",
+   "slug": "30-silk-oaks-dr-ormond-beach",
+   "zpid": "47993743",
+   "source_url": "https://www.zillow.com/homedetails/30-Silk-Oaks-Dr-Ormond-Beach-FL-32176/47993743_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1226024",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Alexis Strong"
+  },
+  {
+   "title": "Sold — Carnegie Place estate",
+   "address": "11971 Carnegie Pl",
+   "city": "West Palm Beach",
+   "state": "FL",
+   "zip": "33412",
+   "price": 1490000,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": 4,
+   "baths": 3,
+   "sqft": null,
+   "lot": null,
+   "year_built": null,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management. Exceptional estate living in West Palm Beach.",
+   "features": [
+    "Sold by Culver Realty",
+    "4 bed / 3 bath"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/11971-carnegie-pl-west-palm-beach/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 26.801,
+   "lng": -80.212,
+   "featured": false,
+   "id": "340328d8-37f8-4e95-9526-490b053e9878",
+   "slug": "11971-carnegie-pl-west-palm-beach",
+   "zpid": "67164941",
+   "source_url": "https://www.zillow.com/homedetails/11971-Carnegie-Pl-West-Palm-Beach-FL-33412/67164941_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1115921",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Tracie Culver"
+  },
+  {
+   "title": "Sold — Cordova Avenue home",
+   "address": "833 Cordova Ave",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32174",
+   "price": null,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": null,
+   "baths": null,
+   "sqft": null,
+   "lot": null,
+   "year_built": null,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management in the heart of Ormond Beach.",
+   "features": [
+    "Sold by Culver Realty"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/833-cordova-ave-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    }
+   ],
+   "lat": 29.289,
+   "lng": -81.062,
+   "featured": false,
+   "id": "4c1c71db-25ac-40dc-9edf-7cf2e895a725",
+   "slug": "833-cordova-ave-ormond-beach",
+   "zpid": "48015814",
+   "source_url": "https://www.zillow.com/homedetails/833-Cordova-Ave-Ormond-Beach-FL-32174/48015814_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1222307",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Alexis Strong"
+  },
+  {
+   "title": "Sold — Cypress Circle pool home",
+   "address": "2 Cypress Cir",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": 475000,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": 4,
+   "baths": 2,
+   "sqft": null,
+   "lot": null,
+   "year_built": null,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management. A history of happy homeowners on the beachside.",
+   "features": [
+    "Sold by Culver Realty",
+    "4 bed / 2 bath"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2-cypress-cir-ormond-beach/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.317,
+   "lng": -81.053,
+   "featured": false,
+   "id": "ffa59f5e-45e8-4dbe-8ac8-199d8cb144b8",
+   "slug": "2-cypress-cir-ormond-beach",
+   "zpid": "252430490",
+   "source_url": "https://www.zillow.com/homedetails/2-Cypress-Cir-Ormond-Beach-FL-32176/252430490_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1220733",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Tracie Culver"
+  },
+  {
+   "title": "Sold — Stirling Bridge new construction",
+   "address": "440 Stirling Bridge Dr",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32174",
+   "price": 1215914,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": 3,
+   "baths": 3,
+   "sqft": 2890,
+   "lot": "0.28 acres",
+   "year_built": 2022,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management. Stunning newer construction in a premier Ormond Beach community.",
+   "features": [
+    "Sold by Culver Realty",
+    "New construction",
+    "3 bed / 3 bath"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/seed/sold-440-stirling.webp",
+     "cover": true,
+     "hidden": false
+    }
+   ],
+   "lat": 29.358,
+   "lng": -81.108,
+   "featured": false,
+   "id": "389b728f-d1f2-4fcd-86ae-060b4ecf61a1",
+   "slug": "440-stirling-bridge-dr-ormond-beach",
+   "zpid": null,
+   "source_url": null,
+   "source_provider": "culverrealtygroup.com",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00"
+  },
+  {
+   "title": "Sold — Ginger Circle beachside home",
+   "address": "950 Ginger Cir",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": null,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": null,
+   "baths": null,
+   "sqft": null,
+   "lot": null,
+   "year_built": null,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management in Ormond Beach's beachside.",
+   "features": [
+    "Sold by Culver Realty"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/seed/extra-interior-1.jpg",
+     "cover": true,
+     "hidden": false
+    }
+   ],
+   "lat": 29.315,
+   "lng": -81.052,
+   "featured": false,
+   "id": "04efbbcb-8ac9-4f1d-9997-3c282c1f3fb2",
+   "slug": "950-ginger-cir-ormond-beach",
+   "zpid": null,
+   "source_url": null,
+   "source_provider": "culverrealtygroup.com",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00"
+  },
+  {
+   "title": "Sold — Barrier Isle Drive home",
+   "address": "131 Barrier Isle Dr",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": null,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": null,
+   "baths": null,
+   "sqft": null,
+   "lot": null,
+   "year_built": null,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management. Barrier island living at its best.",
+   "features": [
+    "Sold by Culver Realty"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/seed/extra-interior-2.jpg",
+     "cover": true,
+     "hidden": false
+    }
+   ],
+   "lat": 29.329,
+   "lng": -81.048,
+   "featured": false,
+   "id": "bad89483-b34e-4530-88af-8f46200a8a2a",
+   "slug": "131-barrier-isle-dr-ormond-beach",
+   "zpid": null,
+   "source_url": null,
+   "source_provider": "culverrealtygroup.com",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00"
+  },
+  {
+   "title": "Sold — Avalon Dr pool estate",
+   "address": "155 Avalon Dr",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": 750000,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": 3,
+   "baths": 4,
+   "sqft": 2640,
+   "lot": "0.3 acres",
+   "year_built": 1999,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management. A history of happy homeowners — elegant pool estate in one of Ormond Beach's most loved neighborhoods.",
+   "features": [
+    "Sold by Culver Realty",
+    "Pool",
+    "3 bed / 4 bath"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/seed/sold-155-avalon.webp",
+     "cover": true,
+     "hidden": false
+    }
+   ],
+   "lat": 29.305,
+   "lng": -81.07,
+   "featured": false,
+   "id": "088a0fcf-1350-4363-97d7-866bfea8d53d",
+   "slug": "155-avalon-dr-ormond-beach",
+   "zpid": null,
+   "source_url": null,
+   "source_provider": "culverrealtygroup.com",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00"
+  },
+  {
+   "title": "Sold — John Anderson riverfront showpiece",
+   "address": "3124 John Anderson Dr",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": 1100000,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": 3,
+   "baths": 2,
+   "sqft": null,
+   "lot": null,
+   "year_built": null,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management. Riverfront living on scenic John Anderson Drive.",
+   "features": [
+    "Sold by Culver Realty",
+    "Riverfront",
+    "3 bed / 2 bath"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/3124-john-anderson-dr-ormond-beach/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.349,
+   "lng": -81.061,
+   "featured": false,
+   "id": "a3ff62fe-b5f3-4397-b494-cd5bbdcb95c5",
+   "slug": "3124-john-anderson-dr-ormond-beach",
+   "zpid": "47992512",
+   "source_url": "https://www.zillow.com/homedetails/3124-John-Anderson-Dr-Ormond-Beach-FL-32176/47992512_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1210533",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Alexis Strong"
+  },
+  {
+   "title": "Sold — Sugar Belt Drive home",
+   "address": "1131 Sugar Belt Dr",
+   "city": "Saint Cloud",
+   "state": "FL",
+   "zip": "34771",
+   "price": null,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": null,
+   "baths": null,
+   "sqft": null,
+   "lot": null,
+   "year_built": null,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management in Saint Cloud.",
+   "features": [
+    "Sold by Culver Realty"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/seed/extra-home-4.jpg",
+     "cover": true,
+     "hidden": false
+    }
+   ],
+   "lat": 28.248,
+   "lng": -81.281,
+   "featured": false,
+   "id": "68822c0e-8dc3-4113-9ad9-f42cd391424c",
+   "slug": "1131-sugar-belt-dr-saint-cloud",
+   "zpid": null,
+   "source_url": null,
+   "source_provider": "culverrealtygroup.com",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00"
+  },
+  {
+   "title": "Sold — John Anderson Drive riverfront home",
+   "address": "2667 John Anderson Dr",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": null,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": null,
+   "baths": null,
+   "sqft": null,
+   "lot": null,
+   "year_built": null,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management on iconic John Anderson Drive.",
+   "features": [
+    "Sold by Culver Realty"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/01.jpg",
+     "cover": true,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/02.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/03.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/04.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/05.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/06.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/07.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/08.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/09.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/10.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/11.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/12.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/13.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/14.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/15.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/16.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/17.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/18.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/19.jpg",
+     "cover": false,
+     "hidden": false
+    },
+    {
+     "url": "/api/uploads/listings/2667-john-anderson-dr-ormond-beach/20.jpg",
+     "cover": false,
+     "hidden": false
+    }
+   ],
+   "lat": 29.338,
+   "lng": -81.058,
+   "featured": false,
+   "id": "dfe53b9d-e0bd-4354-86a9-42239752adfa",
+   "slug": "2667-john-anderson-dr-ormond-beach",
+   "zpid": "47992807",
+   "source_url": "https://www.zillow.com/homedetails/2667-John-Anderson-Dr-Ormond-Beach-FL-32176/47992807_zpid/",
+   "source_provider": "zillow",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00",
+   "mls_name": "DBAMLS",
+   "mls_id": "1214695",
+   "mls_disclaimer": "IDX information is provided exclusively for personal, non-commercial use, and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but not guaranteed.\n\n",
+   "listing_broker": "Culver Realty & Property Management",
+   "listing_agent": "Tracie Culver"
+  },
+  {
+   "title": "Sold — Royal Dunes beachside home",
+   "address": "209 Royal Dunes Blvd",
+   "city": "Ormond Beach",
+   "state": "FL",
+   "zip": "32176",
+   "price": 663700,
+   "status": "sold",
+   "listing_type": "sale",
+   "beds": 4,
+   "baths": 3,
+   "sqft": null,
+   "lot": null,
+   "year_built": null,
+   "property_type": "Single Family",
+   "description": "Sold by Culver Realty & Property Management in the sought-after Royal Dunes community.",
+   "features": [
+    "Sold by Culver Realty",
+    "4 bed / 3 bath"
+   ],
+   "photos": [
+    {
+     "url": "/api/uploads/seed/sold-209-royal-dunes.webp",
+     "cover": true,
+     "hidden": false
+    }
+   ],
+   "lat": 29.341,
+   "lng": -81.043,
+   "featured": false,
+   "id": "911dfb7f-fea9-4d93-ace1-4da881b2885a",
+   "slug": "209-royal-dunes-blvd-ormond-beach",
+   "zpid": null,
+   "source_url": null,
+   "source_provider": "culverrealtygroup.com",
+   "created_at": "2026-09-07T09:45:47.643306+00:00",
+   "updated_at": "2026-09-07T09:45:47.643306+00:00",
+   "imported_at": "2026-09-07T09:45:47.643306+00:00"
+  }
+ ],
+ "count": 28
+}

@@ -12,3 +12,6 @@ __pycache__/
 
 # runtime state (JSON store lives on the Railway volume)
 backend/data/
+
+# one-off backfill payload (regenerable, large)
+backend/backfill_data.json

@@ -16,11 +16,15 @@ from typing import List, Optional
 
 import jwt
 from dotenv import load_dotenv
-from fastapi import Depends, FastAPI, HTTPException, Request, Response
+from fastapi import Depends, FastAPI, File, HTTPException, Request, Response, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, EmailStr, Field
 
+import media
+import providers
+from media import MediaError
+from providers import ProviderError
 from seed import seed_if_empty
 from store import make_store
 
@@ -89,6 +93,13 @@ class PropertyIn(BaseModel):
     zpid: Optional[str] = None
     source_url: Optional[str] = None
     source_provider: Optional[str] = None
+    # Attribution for listing data sourced from an MLS via a provider. Displaying
+    # third-party listing content means carrying its source and IDX disclaimer.
+    mls_name: Optional[str] = None
+    mls_id: Optional[str] = None
+    mls_disclaimer: Optional[str] = None
+    listing_broker: Optional[str] = None
+    listing_agent: Optional[str] = None
 
 
 class LeadIn(BaseModel):
@@ -298,6 +309,19 @@ async def admin_patch_lead(id: str, body: LeadPatch, user=Depends(current_user))
     return lead
 
 
+# ---------------------------------------------------------------- uploads
+@app.post("/api/admin/uploads", status_code=201)
+async def upload_image(file: UploadFile = File(...), user=Depends(current_user)):
+    """Store an admin-uploaded image and hand back the URL to put in Photo.url."""
+    try:
+        url = await media.save_upload(file.filename, file.content_type, lambda: file.read(64 * 1024))
+    except MediaError as exc:
+        raise HTTPException(422, str(exc))
+    finally:
+        await file.close()
+    return {"url": url}
+
+
 # ---------------------------------------------------------------- ingest (Zillow import)
 ZPID_RE = re.compile(r"(\d{6,})_zpid")
 
@@ -333,8 +357,11 @@ def mock_extract(url: str, zpid: str) -> dict:
 
 
 async def provider_extract(url: str, zpid: str) -> dict:
-    """Hook for a real provider (RapidAPI Zillow / Apify). Wire in when keys are present."""
-    raise HTTPException(502, "Ingest provider request failed")
+    """Real listing lookup. Runs when RAPIDAPI_KEY or APIFY_TOKEN is present."""
+    try:
+        return await providers.zillow_extract(url, zpid)
+    except ProviderError as exc:
+        raise HTTPException(exc.status_code, exc.message)
 
 
 @app.post("/api/admin/ingest/preview")
@@ -365,14 +392,26 @@ async def ingest_preview(body: IngestPreviewIn, user=Depends(current_user)):
 @app.post("/api/admin/ingest/publish", status_code=201)
 async def ingest_publish(body: PropertyIn, user=Depends(current_user)):
     ts = now_iso()
+    slug = await unique_slug(slugify(f"{body.address} {body.city}"))
     doc = {
         **body.model_dump(),
         "id": str(uuid.uuid4()),
-        "slug": await unique_slug(slugify(f"{body.address} {body.city}")),
+        "slug": slug,
         "created_at": ts,
         "updated_at": ts,
         "imported_at": ts,
     }
+    # Copy provider photos onto our own storage so the listing does not depend on a
+    # third-party CDN URL that can rotate. This is what the import screen promises.
+    photos = doc.get("photos") or []
+    if photos:
+        result = await media.fetch_remote_images([p["url"] for p in photos], slug)
+        if result["paths"]:
+            doc["photos"] = [
+                {"url": u, "cover": i == 0, "hidden": False}
+                for i, u in enumerate(result["paths"])
+            ]
+        doc["photo_import_errors"] = result["errors"] or None
     await db.insert("properties", doc)
     if body.zpid:
         for imp in await db.list("imports", {"zpid": body.zpid}):

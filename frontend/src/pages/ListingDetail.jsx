@@ -156,14 +156,27 @@ export default function ListingDetail() {
                         </Reveal>
                     )}
 
-                    {p.source_url && (
-                        <p className="text-xs text-slate-500 mt-10 border-t border-navy/10 pt-5" data-testid="detail-attribution">
-                            Imported from a public listing URL.{" "}
-                            <a href={p.source_url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-seaglass hover:text-gold transition-colors font-medium">
-                                View original on Zillow <ExternalLink size={11} />
-                            </a>{" "}
-                            — details deemed reliable but not guaranteed. This site is not an MLS IDX feed and Culver Realty is not affiliated with Zillow.
-                        </p>
+                    {(p.source_url || p.mls_name) && (
+                        <div className="text-xs text-slate-500 mt-10 border-t border-navy/10 pt-5 space-y-2" data-testid="detail-attribution">
+                            <p>
+                                {p.listing_broker && (
+                                    <>Listed by {p.listing_broker}{p.listing_agent ? ` — ${p.listing_agent}` : ""}. </>
+                                )}
+                                {p.mls_name && (
+                                    <>Listing data courtesy of {p.mls_name}{p.mls_id ? ` (MLS# ${p.mls_id})` : ""}. </>
+                                )}
+                                Details deemed reliable but not guaranteed.
+                                {p.source_url && (
+                                    <>
+                                        {" "}
+                                        <a href={p.source_url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-seaglass hover:text-gold transition-colors font-medium">
+                                            View original listing <ExternalLink size={11} />
+                                        </a>
+                                    </>
+                                )}
+                            </p>
+                            {p.mls_disclaimer && <p className="text-[0.7rem] leading-relaxed text-slate-400">{p.mls_disclaimer}</p>}
+                        </div>
                     )}
                 </div>
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { ArrowLeft, ArrowUp, ArrowDown, X, Star, EyeOff, Eye, Plus, Loader2 } from "lucide-react";
+import { ArrowLeft, ArrowUp, ArrowDown, X, Star, EyeOff, Eye, Plus, Loader2, Upload } from "lucide-react";
 import { toast } from "sonner";
 import api, { formatApiErrorDetail } from "../../lib/api";
 
@@ -12,6 +12,7 @@ export default function AdminPropertyEdit() {
     const navigate = useNavigate();
     const [form, setForm] = useState(null);
     const [newPhoto, setNewPhoto] = useState("");
+    const [uploading, setUploading] = useState(false);
     const [saving, setSaving] = useState(false);
 
     useEffect(() => {
@@ -108,7 +109,50 @@ export default function AdminPropertyEdit() {
                         </div>
                     ))}
                 </div>
-                <div className="flex gap-3 mt-4">
+                <div className="flex flex-wrap gap-3 mt-4">
+                    <label
+                        className={`inline-flex items-center gap-2 px-5 py-3 border border-navy text-navy text-xs font-semibold tracking-wider uppercase transition-all min-h-[44px] shrink-0 ${uploading ? "opacity-50" : "cursor-pointer hover:bg-navy hover:text-bone"}`}
+                        data-testid="photo-upload-label"
+                    >
+                        {uploading ? <Loader2 size={14} className="animate-spin" /> : <Upload size={14} />}
+                        {uploading ? "Uploading…" : "Upload"}
+                        <input
+                            type="file"
+                            accept="image/jpeg,image/png,image/webp,image/gif"
+                            multiple
+                            className="hidden"
+                            disabled={uploading}
+                            data-testid="photo-upload-input"
+                            onChange={async (e) => {
+                                const files = Array.from(e.target.files || []);
+                                e.target.value = "";
+                                if (!files.length) return;
+                                setUploading(true);
+                                const added = [];
+                                for (const file of files) {
+                                    const fd = new FormData();
+                                    fd.append("file", file);
+                                    try {
+                                        const r = await api.post("/admin/uploads", fd);
+                                        added.push(r.data.url);
+                                    } catch (err) {
+                                        toast.error(formatApiErrorDetail(err?.response?.data?.detail) || `Could not upload ${file.name}`);
+                                    }
+                                }
+                                if (added.length) {
+                                    setForm((f) => ({
+                                        ...f,
+                                        photos: [
+                                            ...(f.photos || []),
+                                            ...added.map((url, i) => ({ url, cover: (f.photos || []).length === 0 && i === 0, hidden: false })),
+                                        ],
+                                    }));
+                                    toast.success(`${added.length} photo${added.length > 1 ? "s" : ""} uploaded`);
+                                }
+                                setUploading(false);
+                            }}
+                        />
+                    </label>
                     <input value={newPhoto} onChange={(e) => setNewPhoto(e.target.value)} placeholder="Add photo by URL…" className={inputCls} data-testid="photo-add-input" />
                     <button
                         onClick={() => {
