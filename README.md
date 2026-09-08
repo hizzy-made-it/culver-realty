@@ -1,7 +1,7 @@
 # Culver Realty & Property Management — site + admin
 
 Repo: https://github.com/hizzy-made-it/culver-realty ·
-Live: https://culver-realty-production.up.railway.app
+Live: https://culver.up.railway.app
 
 Deploys are manual: `railway up` from this directory. Pushing to GitHub does not deploy.
 

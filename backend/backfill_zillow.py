@@ -196,7 +196,7 @@ async def stage_apply():
 
 async def stage_push():
     import httpx
-    base = os.environ.get("SITE_URL", "https://culver-realty-production.up.railway.app").rstrip("/")
+    base = os.environ.get("SITE_URL", "https://culver.up.railway.app").rstrip("/")
     rows, _ = load_seed()
     async with httpx.AsyncClient(timeout=60) as c:
         r = await c.post(f"{base}/api/auth/login", json={
