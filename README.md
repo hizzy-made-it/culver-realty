@@ -1,5 +1,10 @@
 # Culver Realty & Property Management — site + admin
 
+Repo: https://github.com/hizzy-made-it/culver-realty ·
+Live: https://culver-realty-production.up.railway.app
+
+Deploys are manual: `railway up` from this directory. Pushing to GitHub does not deploy.
+
 Local project for **culverrealtygroup.com** (Ormond Beach, FL). Recovered 1:1 from the
 Emergent preview (`halifax-listings.preview.emergentagent.com`) — every page, the admin
 dashboard, the theme, and all seed images/listings.
