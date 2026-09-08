@@ -10,7 +10,7 @@ export default function Contact() {
         <Page>
             <Seo
                 title="Contact Culver Realty & Property Management | Ormond Beach, FL"
-                description="Call 386.414.3445 or email Tracie.Culver@tculverrealty.com. Office: 2412 John Anderson Drive, Ormond Beach, FL 32176."
+                description="Call 386.414.3445 or email heathdt1027@gmail.com. Office: 2412 John Anderson Drive, Ormond Beach, FL 32176."
             />
             <PageHero
                 eyebrow="Contact"

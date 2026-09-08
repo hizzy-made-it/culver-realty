@@ -147,11 +147,22 @@ export default function ListingDetail() {
                                     width="100%"
                                     height="360"
                                     loading="lazy"
-                                    src={`https://www.openstreetmap.org/export/embed.html?bbox=${p.lng - 0.015}%2C${p.lat - 0.01}%2C${p.lng + 0.015}%2C${p.lat + 0.01}&layer=mapnik&marker=${p.lat}%2C${p.lng}`}
+                                    src={`https://www.openstreetmap.org/export/embed.html?bbox=${p.lng - 0.0024}%2C${p.lat - 0.0016}%2C${p.lng + 0.0024}%2C${p.lat + 0.0016}&layer=mapnik&marker=${p.lat}%2C${p.lng}`}
                                 />
                             </div>
-                            <p className="text-xs text-slate-500 mt-2 flex items-center gap-1.5">
-                                <MapPin size={12} /> {fullAddress(p)}
+                            <p className="text-xs text-slate-500 mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                                <span className="inline-flex items-center gap-1.5">
+                                    <MapPin size={12} /> {fullAddress(p)}
+                                </span>
+                                <a
+                                    href={`https://www.openstreetmap.org/?mlat=${p.lat}&mlon=${p.lng}#map=17/${p.lat}/${p.lng}`}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    data-testid="detail-map-larger"
+                                    className="inline-flex items-center gap-1 text-seaglass hover:text-gold transition-colors font-medium"
+                                >
+                                    View larger map <ExternalLink size={11} />
+                                </a>
                             </p>
                         </Reveal>
                     )}
@@ -188,7 +199,7 @@ export default function ListingDetail() {
                                 listingId={p.id}
                                 listingAddress={fullAddress(p)}
                                 title="Ask about this property"
-                                subtitle="Tracie will get back to you personally."
+                                subtitle="The Culver Realty team will get back to you personally."
                             />
                         </div>
                         <div className="grid grid-cols-2 gap-3">

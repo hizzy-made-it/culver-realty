@@ -178,6 +178,9 @@ async def stage_apply():
         p["mls_disclaimer"] = mls.get("disclaimer")
         p["listing_broker"] = (it.get("broker") or {}).get("name")
         p["listing_agent"] = (it.get("agent") or {}).get("name")
+        coords = it.get("coordinates") or {}
+        if coords.get("latitude") and coords.get("longitude"):
+            p["lat"], p["lng"] = coords["latitude"], coords["longitude"]
         if addr.get("zipCode") and not p.get("zip"):
             p["zip"] = addr["zipCode"]
         total_after += len(p["photos"])
@@ -192,6 +195,36 @@ async def stage_apply():
         for addr, broker in skipped:
             print(f"    {addr:<38} {broker}")
         print("    Re-run with --all only if you hold the rights to those photos.")
+
+
+async def stage_coords():
+    rows, raw = load_seed()
+    matched = json.load(io.open(DATA, encoding="utf-8"))
+    fixed = missing = 0
+    for p in rows:
+        it = matched.get(p["slug"])
+        c = (it or {}).get("coordinates") or {}
+        if not (c.get("latitude") and c.get("longitude")):
+            missing += 1
+            print(f"  no coordinates for {p['slug']}")
+            continue
+        before = (p.get("lat"), p.get("lng"))
+        p["lat"], p["lng"] = c["latitude"], c["longitude"]
+        moved = _metres(before, (p["lat"], p["lng"])) if all(before) else None
+        fixed += 1
+        print(f"  {p['slug'][:40]:<40} {before[0]},{before[1]} -> {p['lat']},{p['lng']}"
+              + (f"  (moved {moved:.0f} m)" if moved else ""))
+    json.dump(raw, io.open(SEED, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    print(f"\n[coords] updated {fixed}, missing {missing}")
+
+
+def _metres(a, b):
+    import math
+    R = 6371000
+    p1, p2 = math.radians(a[0]), math.radians(b[0])
+    dp = math.radians(b[0] - a[0]); dl = math.radians(b[1] - a[1])
+    x = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+    return 2 * R * math.asin(math.sqrt(x))
 
 
 async def stage_push():
@@ -228,4 +261,4 @@ async def stage_push():
 
 if __name__ == "__main__":
     stage = sys.argv[1] if len(sys.argv) > 1 else "fetch"
-    asyncio.run({"fetch": stage_fetch, "apply": stage_apply, "push": stage_push}[stage]())
+    asyncio.run({"fetch": stage_fetch, "apply": stage_apply, "coords": stage_coords, "push": stage_push}[stage]())

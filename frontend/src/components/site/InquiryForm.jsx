@@ -56,7 +56,7 @@ export default function InquiryForm({ type = "contact", listingId, listingAddres
                 </span>
                 <p className={`font-serif text-2xl font-semibold ${dark ? "text-white" : "text-navy"}`}>Message received.</p>
                 <p className={`text-sm mt-2 ${dark ? "text-white/70" : "text-slate-600"}`}>
-                    Thank you — Tracie or a member of the team will reach out shortly. For anything urgent, call 386.414.3445.
+                    Thank you — the Culver Realty team will reach out shortly. For anything urgent, call 386.414.3445.
                 </p>
             </motion.div>
         );

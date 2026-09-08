@@ -26,7 +26,7 @@ const LOCAL_BUSINESS_LD = {
     "@type": "RealEstateAgent",
     name: "Culver Realty & Property Management",
     telephone: "+1-386-414-3445",
-    email: "Tracie.Culver@tculverrealty.com",
+    email: "heathdt1027@gmail.com",
     address: {
         "@type": "PostalAddress",
         streetAddress: "2412 John Anderson Drive",
@@ -66,7 +66,7 @@ const PILLARS = [
 ];
 
 const TESTIMONIALS = [
-    { quote: "Tracie knew every street we asked about — and steered us away from two homes before finding the right one.", name: "J.M.", detail: "Buyer, Ormond Beach" },
+    { quote: "They knew every street we asked about — and steered us away from two homes before finding the right one.", name: "J.M.", detail: "Buyer, Ormond Beach" },
     { quote: "Our rental has been occupied and cared for since day one. The communication is exactly what we hoped for.", name: "R. & S. Dalton", detail: "Owners, Flagler County" },
     { quote: "Pricing, photography, negotiation — everything was handled. We closed above asking in under three weeks.", name: "A. Whitfield", detail: "Seller, Daytona Beach" },
 ];
@@ -300,7 +300,7 @@ export default function Home() {
                     </Reveal>
                     <Reveal className="lg:col-span-5" delay={0.1}>
                         <div className="bg-navy text-bone p-8 md:p-10">
-                            <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-5">Talk with Tracie</p>
+                            <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-5">Talk with our team</p>
                             <p className="font-serif text-3xl font-semibold">{BRAND.broker}</p>
                             <p className="text-sm text-bone/70 mt-1">Broker · {BRAND.name}</p>
                             <div className="border-t border-bone/15 mt-6 pt-6 space-y-3">

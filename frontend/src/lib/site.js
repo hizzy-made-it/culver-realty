@@ -1,11 +1,11 @@
 export const BRAND = {
     name: "Culver Realty & Property Management",
     short: "Culver Realty",
-    broker: "Tracie Culver",
+    broker: "The Culver Realty team",
     phone: "386.414.3445",
     phoneHref: "tel:+13864143445",
-    email: "Tracie.Culver@tculverrealty.com",
-    emailHref: "mailto:Tracie.Culver@tculverrealty.com",
+    email: "heathdt1027@gmail.com",
+    emailHref: "mailto:heathdt1027@gmail.com",
     address: "2412 John Anderson Drive, Ormond Beach, FL 32176",
     markets: ["Ormond Beach", "Daytona Beach", "Volusia County", "Flagler County"],
     disclaimer:
