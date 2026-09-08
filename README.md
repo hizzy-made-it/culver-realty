@@ -57,13 +57,15 @@ cd frontend && npm install && npm start
 
 ## Admin
 
-`/admin/login` → credentials from `backend/.env` (`ADMIN_EMAIL` / `ADMIN_PASSWORD`, defaults
-`admin@tculverrealty.com` / `culver2026`). The live site's real credentials were not
-recoverable — set your own.
+`/admin/login` → credentials from `backend/.env` (`ADMIN_EMAIL` / `ADMIN_PASSWORD`). Copy
+`backend/.env.example` and set your own before exposing this anywhere — the checked-in
+example values are placeholders, not credentials, and the deployed site does not use them.
+Set a long random `JWT_SECRET` too.
 
-Zillow import runs the **demo extractor** unless `RAPIDAPI_KEY` or `APIFY_TOKEN` is set,
-exactly like the live dashboard's "provider not configured" banner. `provider_extract()` in
-`server.py` is the hook for wiring a real provider.
+Zillow import runs the **demo extractor** unless `APIFY_TOKEN` is set. With a token,
+`provider_extract()` calls Apify's Zillow detail actor (see `backend/providers.py`) and
+`backend/media.py` copies the returned photos onto local storage under
+`backend/uploads/listings/<slug>/`. `RAPIDAPI_KEY` is recognised but not implemented.
 
 ## API contract (as consumed by the frontend)
 
