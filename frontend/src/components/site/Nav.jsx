@@ -95,47 +95,52 @@ function Dropdown({ group, reduce }) {
                 {active && <Underline reduce={reduce} />}
             </button>
 
-            <AnimatePresence>
-                {open && (
-                    <motion.div
-                        initial={reduce ? { opacity: 0 } : { opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={reduce ? { opacity: 0 } : { opacity: 0, y: 6 }}
-                        transition={{ duration: 0.18, ease: "easeOut" }}
-                        className="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-72 z-50"
-                        data-testid={`nav-${group.label.toLowerCase()}-menu`}
-                    >
-                        <div className="bg-bone border border-navy/10 shadow-xl shadow-navy-deep/10 py-2">
-                            {group.children.map((c) => (
-                                <NavLink
-                                    key={c.to}
-                                    to={c.to}
-                                    onClick={() => setOpen(false)}
-                                    data-testid={`nav-${c.to.slice(1)}-link`}
-                                    className={({ isActive }) =>
-                                        `block px-5 py-3 transition-colors group/item ${
-                                            isActive ? "bg-sand-100" : "hover:bg-sand-100"
-                                        }`
-                                    }
-                                >
-                                    {({ isActive }) => (
-                                        <>
-                                            <span
-                                                className={`block text-sm font-semibold ${
-                                                    isActive ? "text-gold" : "text-navy group-hover/item:text-gold"
-                                                } transition-colors`}
-                                            >
-                                                {c.label}
-                                            </span>
-                                            <span className="block text-xs text-slate-500 mt-0.5">{c.blurb}</span>
-                                        </>
-                                    )}
-                                </NavLink>
-                            ))}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {/*
+              Visibility is CSS, not an animation. An AnimatePresence version mounted the
+              panel correctly but never ran its enter transition, leaving it permanently at
+              opacity 0 — a nav must not be able to fail that way.
+            */}
+            <div
+                aria-hidden={!open}
+                className={`absolute left-1/2 top-full pt-4 w-72 z-50 transition-[opacity,transform] ease-out ${
+                    reduce ? "duration-0" : "duration-200"
+                } ${
+                    open
+                        ? "opacity-100 -translate-x-1/2 translate-y-0 visible"
+                        : "opacity-0 -translate-x-1/2 -translate-y-1 invisible pointer-events-none"
+                }`}
+                data-testid={`nav-${group.label.toLowerCase()}-menu`}
+            >
+                <div className="bg-bone border border-navy/10 shadow-xl shadow-navy-deep/10 py-2">
+                    {group.children.map((c) => (
+                        <NavLink
+                            key={c.to}
+                            to={c.to}
+                            onClick={() => setOpen(false)}
+                            tabIndex={open ? 0 : -1}
+                            data-testid={`nav-${c.to.slice(1)}-link`}
+                            className={({ isActive }) =>
+                                `block px-5 py-3 transition-colors group/item ${
+                                    isActive ? "bg-sand-100" : "hover:bg-sand-100"
+                                }`
+                            }
+                        >
+                            {({ isActive }) => (
+                                <>
+                                    <span
+                                        className={`block text-sm font-semibold transition-colors ${
+                                            isActive ? "text-gold" : "text-navy group-hover/item:text-gold"
+                                        }`}
+                                    >
+                                        {c.label}
+                                    </span>
+                                    <span className="block text-xs text-slate-500 mt-0.5">{c.blurb}</span>
+                                </>
+                            )}
+                        </NavLink>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }

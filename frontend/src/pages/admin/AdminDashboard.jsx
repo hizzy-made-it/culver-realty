@@ -23,7 +23,7 @@ export default function AdminDashboard() {
             <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
                 <div>
                     <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-2">Overview</p>
-                    <h1 className="font-serif text-3xl md:text-4xl font-medium text-navy">Good day, Tracie</h1>
+                    <h1 className="font-serif text-3xl md:text-4xl font-medium text-navy">Dashboard</h1>
                 </div>
                 <Link
                     to="/admin/import"

@@ -34,7 +34,7 @@ load_dotenv(ROOT / ".env")
 JWT_SECRET = os.environ.get("JWT_SECRET", "change-me-in-production")
 ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "admin@tculverrealty.com")
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "culver2026")
-ADMIN_NAME = os.environ.get("ADMIN_NAME", "Tracie Culver")
+ADMIN_NAME = os.environ.get("ADMIN_NAME", "Site Admin")
 CORS_ORIGINS = [o.strip() for o in os.environ.get("CORS_ORIGINS", "http://localhost:3000").split(",") if o.strip()]
 PROVIDER_CONFIGURED = bool(os.environ.get("RAPIDAPI_KEY") or os.environ.get("APIFY_TOKEN"))
 
