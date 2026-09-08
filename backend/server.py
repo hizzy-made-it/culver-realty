@@ -75,7 +75,7 @@ class PropertyIn(BaseModel):
     city: str
     state: str = "FL"
     zip: str = ""
-    price: float = 0
+    price: Optional[float] = None  # sold listings often have no public price
     status: str = "draft"  # draft | live | pending | sold | off-market
     listing_type: str = "sale"  # sale | rent
     beds: Optional[float] = None
