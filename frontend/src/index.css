@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 40 33% 96%;
+        --foreground: 216 65% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 216 65% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 216 65% 11%;
+        --primary: 216 65% 11%;
+        --primary-foreground: 40 33% 96%;
+        --secondary: 37 31% 92%;
+        --secondary-foreground: 216 65% 11%;
+        --muted: 37 31% 92%;
+        --muted-foreground: 215 16% 40%;
+        --accent: 39 49% 56%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 72% 45%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 216 25% 88%;
+        --input: 216 25% 80%;
+        --ring: 39 49% 56%;
+        --radius: 0.25rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-bone text-navy font-sans;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection {
+        background: #c5a059;
+        color: #fff;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}

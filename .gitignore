@@ -1,0 +1,14 @@
+node_modules/
+build/
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# secrets — never commit
+.env
+*.env
+!.env.example
+
+# runtime state (JSON store lives on the Railway volume)
+backend/data/
