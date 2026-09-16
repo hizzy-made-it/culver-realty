@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { Page, Reveal } from "../components/motion";
+import { Page, Reveal, StaggerGroup, StaggerItem } from "../components/motion";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 import InquiryForm from "../components/site/InquiryForm";
@@ -28,17 +28,17 @@ export default function Sellers() {
                 testid="sellers-hero"
             />
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {STEPS.map((s, i) => (
-                        <Reveal key={s.title} delay={i * 0.06}>
-                            <div className="bg-white border border-navy/10 p-8 h-full" data-testid={`seller-step-${i}`}>
+                        <StaggerItem key={s.title} className="h-full">
+                            <div className="card-hover bg-white border border-navy/10 p-8 h-full" data-testid={`seller-step-${i}`}>
                                 <p className="font-serif text-5xl text-gold/60 font-semibold">{String(i + 1).padStart(2, "0")}</p>
                                 <h3 className="font-serif text-2xl font-semibold text-navy mt-4">{s.title}</h3>
                                 <p className="text-sm text-slate-600 leading-relaxed mt-3">{s.copy}</p>
                             </div>
-                        </Reveal>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerGroup>
             </section>
             <section className="bg-sand-200 py-16 md:py-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

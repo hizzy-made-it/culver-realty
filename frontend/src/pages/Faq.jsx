@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Phone } from "lucide-react";
-import { Page, Reveal } from "../components/motion";
+import { Page, Reveal, StaggerGroup, StaggerItem } from "../components/motion";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 import { BRAND } from "../lib/site";
@@ -52,9 +52,9 @@ export default function Faq() {
                 testid="faq-hero"
             />
             <section className="max-w-4xl mx-auto px-4 sm:px-8 py-14 md:py-20" data-testid="faq-list">
-                <div className="border-t border-navy/10">
+                <StaggerGroup className="border-t border-navy/10" stagger={0.05}>
                     {FAQS.map((faq, i) => (
-                        <Reveal key={faq.q} delay={i * 0.05}>
+                        <StaggerItem key={faq.q}>
                             <div className="border-b border-navy/10">
                                 <button
                                     onClick={() => setOpen(open === i ? -1 : i)}
@@ -89,9 +89,9 @@ export default function Faq() {
                                     )}
                                 </AnimatePresence>
                             </div>
-                        </Reveal>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerGroup>
                 <Reveal className="mt-14 bg-navy text-bone p-8 md:p-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                     <div>
                         <h2 className="font-serif text-2xl font-medium">Still have a question?</h2>

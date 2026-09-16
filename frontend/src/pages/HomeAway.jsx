@@ -1,5 +1,5 @@
 import { CalendarCheck, ShieldCheck, SlidersHorizontal, MapPin, Phone } from "lucide-react";
-import { Page, Reveal } from "../components/motion";
+import { Page, Reveal, StaggerGroup, StaggerItem } from "../components/motion";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 import InquiryForm from "../components/site/InquiryForm";
@@ -57,10 +57,10 @@ export default function HomeAway() {
                         away without worrying about what's happening at home.
                     </p>
                 </Reveal>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                     {FEATURES.map((f, i) => (
-                        <Reveal key={f.title} delay={i * 0.06}>
-                            <div className="border border-navy/10 bg-white p-8 h-full flex gap-5" data-testid={`home-away-feature-${i}`}>
+                        <StaggerItem key={f.title} className="h-full">
+                            <div className="card-hover border border-navy/10 bg-white p-8 h-full flex gap-5" data-testid={`home-away-feature-${i}`}>
                                 <span className="inline-flex items-center justify-center w-11 h-11 bg-seaglass-muted text-seaglass shrink-0">
                                     <f.icon size={20} />
                                 </span>
@@ -69,9 +69,9 @@ export default function HomeAway() {
                                     <p className="text-sm text-slate-600 leading-relaxed mt-2">{f.copy}</p>
                                 </div>
                             </div>
-                        </Reveal>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerGroup>
             </section>
 
             <section className="bg-sand-200 py-16 md:py-24">

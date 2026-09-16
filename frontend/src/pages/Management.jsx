@@ -1,5 +1,5 @@
 import { ShieldCheck, Wrench, FileText, Users } from "lucide-react";
-import { Page, Reveal } from "../components/motion";
+import { Page, Reveal, StaggerGroup, StaggerItem } from "../components/motion";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 import InquiryForm from "../components/site/InquiryForm";
@@ -28,10 +28,10 @@ export default function Management() {
                 testid="management-hero"
             />
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {SERVICES.map((s, i) => (
-                        <Reveal key={s.title} delay={i * 0.06}>
-                            <div className="border border-navy/10 bg-white p-8 h-full flex gap-5" data-testid={`management-service-${i}`}>
+                        <StaggerItem key={s.title} className="h-full">
+                            <div className="card-hover border border-navy/10 bg-white p-8 h-full flex gap-5" data-testid={`management-service-${i}`}>
                                 <span className="inline-flex items-center justify-center w-11 h-11 bg-seaglass-muted text-seaglass shrink-0">
                                     <s.icon size={20} />
                                 </span>
@@ -40,9 +40,9 @@ export default function Management() {
                                     <p className="text-sm text-slate-600 leading-relaxed mt-2">{s.copy}</p>
                                 </div>
                             </div>
-                        </Reveal>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerGroup>
             </section>
             <section className="bg-sand-200 py-16 md:py-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
