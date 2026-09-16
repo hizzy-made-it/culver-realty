@@ -73,7 +73,7 @@ This pass unifies the language and extends it to every public surface.
 - Home marquee: `IntersectionObserver` toggles `animation-play-state` so it pauses off-screen; drop permanent
   `will-change`.
 - `Listings` tab underline uses `SPRING`.
-- `animate-spin` added to the `prefers-reduced-motion` block? No: spinner conveys state; leave it running.
+- Submit spinner (`animate-spin`) stays running under reduced motion: it conveys state, not decoration.
 
 ## 7. Reduced motion
 
