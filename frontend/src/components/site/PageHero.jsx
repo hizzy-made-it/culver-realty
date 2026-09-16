@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { EASE_OUT } from "../motion";
+import { EASE, DUR } from "../motion";
 import HeroVideo from "./HeroVideo";
 import HeroAtmosphere from "./HeroAtmosphere";
 import KineticHeading from "./KineticHeading";
@@ -36,7 +36,7 @@ export default function PageHero({
     const fade = (d) => ({
         initial: reduce ? { opacity: 0 } : { opacity: 0, y: 18 },
         animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.7, ease: EASE_OUT, delay: d },
+        transition: { duration: DUR.slow, ease: EASE, delay: d },
     });
 
     return (
@@ -46,7 +46,7 @@ export default function PageHero({
         >
             {hasMedia && (
                 <>
-                    <HeroVideo src={video} poster={poster || image} alt={alt} />
+                    <HeroVideo src={video} poster={poster || image} alt={alt} parallax />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy/45 to-navy/15" />
                 </>
             )}
@@ -59,7 +59,7 @@ export default function PageHero({
                             className="h-px w-8 bg-gold origin-left"
                             initial={reduce ? { opacity: 0 } : { scaleX: 0 }}
                             animate={reduce ? { opacity: 1 } : { scaleX: 1 }}
-                            transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.15 }}
+                            transition={{ duration: DUR.slow, ease: EASE, delay: 0.15 }}
                         />
                         <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold">{eyebrow}</p>
                     </motion.div>

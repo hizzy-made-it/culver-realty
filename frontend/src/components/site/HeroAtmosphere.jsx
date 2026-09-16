@@ -26,8 +26,8 @@ export default function HeroAtmosphere({ subtle = false }) {
         <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true" data-testid="hero-atmosphere">
             {/* light fields */}
             <div className={`absolute inset-0 ${blobOpacity}`}>
-                <div className="absolute -top-1/3 -left-1/4 w-[70vw] h-[70vw] max-w-[900px] max-h-[900px] rounded-full bg-gold/[0.13] blur-[110px] animate-drift-a" />
-                <div className="absolute -bottom-1/2 right-[-10%] w-[60vw] h-[60vw] max-w-[820px] max-h-[820px] rounded-full bg-seaglass/[0.28] blur-[120px] animate-drift-b" />
+                <div className="absolute -top-1/3 -left-1/4 w-[70vw] h-[70vw] max-w-[900px] max-h-[900px] rounded-full bg-gold/[0.13] blur-[80px] will-change-transform animate-drift-a" />
+                <div className="absolute -bottom-1/2 right-[-10%] w-[60vw] h-[60vw] max-w-[820px] max-h-[820px] rounded-full bg-seaglass/[0.28] blur-[90px] will-change-transform animate-drift-b" />
             </div>
 
             {/* contour lines */}
