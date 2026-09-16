@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Menu, X, Phone, ChevronDown, ExternalLink } from "lucide-react";
 import { BRAND } from "../../lib/site";
+import { EASE, DUR } from "../motion";
 
 /**
  * Ten flat links crowded the bar, so the pages people rarely jump between are grouped.
@@ -253,10 +254,10 @@ export default function Nav() {
             <AnimatePresence>
                 {open && (
                     <motion.nav
-                        initial={{ opacity: 0, height: 0 }}
+                        initial={reduce ? false : { opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.25, ease: "easeOut" }}
+                        exit={reduce ? { opacity: 0 } : { opacity: 0, height: 0 }}
+                        transition={{ duration: reduce ? DUR.fast : 0.25, ease: EASE }}
                         className="lg:hidden overflow-hidden border-t border-navy/10 bg-bone"
                         data-testid="nav-mobile-menu"
                     >

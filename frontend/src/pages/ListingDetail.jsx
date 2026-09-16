@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, Phone, Mail, MapPin, BedDouble, Bath, Ruler, Calendar, Home as HomeIcon, ExternalLink } from "lucide-react";
 import api from "../lib/api";
 import { BRAND, fmtPrice, fmtSqft, statusLabel, fullAddress } from "../lib/site";
-import { Page, Reveal } from "../components/motion";
+import { Page, Reveal, StaggerGroup, StaggerItem } from "../components/motion";
 import Gallery from "../components/site/Gallery";
 import InquiryForm from "../components/site/InquiryForm";
 import ListingCard from "../components/site/ListingCard";
@@ -110,15 +110,15 @@ export default function ListingDetail() {
                     </p>
                     <h1 className="font-sans text-lg md:text-xl font-medium text-slate-700 mt-2" data-testid="detail-address">{fullAddress(p)}</h1>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-navy/10 border border-navy/10 mt-8" data-testid="detail-facts">
+                    <StaggerGroup className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-navy/10 border border-navy/10 mt-8" data-testid="detail-facts" stagger={0.05}>
                         {facts.map((f) => (
-                            <div key={f.label} className="bg-white p-5">
+                            <StaggerItem key={f.label} className="bg-white p-5">
                                 <f.icon size={18} className="text-gold mb-2" />
                                 <p className="text-[0.65rem] uppercase tracking-[0.2em] text-slate-500 font-semibold">{f.label}</p>
                                 <p className="font-serif text-xl font-semibold text-navy mt-1">{f.value}</p>
-                            </div>
+                            </StaggerItem>
                         ))}
-                    </div>
+                    </StaggerGroup>
 
                     <Reveal className="mt-12">
                         <h2 className="font-serif text-2xl sm:text-3xl font-medium text-navy">About this home</h2>
@@ -128,13 +128,13 @@ export default function ListingDetail() {
                     {p.features?.length > 0 && (
                         <Reveal className="mt-12">
                             <h2 className="font-serif text-2xl sm:text-3xl font-medium text-navy">Facts &amp; features</h2>
-                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mt-6" data-testid="detail-features">
+                            <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mt-6" data-testid="detail-features" stagger={0.04} role="list">
                                 {p.features.map((f) => (
-                                    <li key={f} className="flex items-center gap-3 text-sm text-slate-700 border-b border-navy/5 pb-3">
+                                    <StaggerItem key={f} className="flex items-center gap-3 text-sm text-slate-700 border-b border-navy/5 pb-3" role="listitem">
                                         <span className="w-1.5 h-1.5 bg-gold shrink-0" /> {f}
-                                    </li>
+                                    </StaggerItem>
                                 ))}
-                            </ul>
+                            </StaggerGroup>
                         </Reveal>
                     )}
 

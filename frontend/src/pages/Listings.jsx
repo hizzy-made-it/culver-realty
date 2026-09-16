@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { SlidersHorizontal, X, Phone } from "lucide-react";
 import api from "../lib/api";
 import { BRAND } from "../lib/site";
-import { Page } from "../components/motion";
+import { Page, SPRING, EASE, DUR } from "../components/motion";
 import ListingCard from "../components/site/ListingCard";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
@@ -31,6 +31,7 @@ export default function Listings() {
     const [cities, setCities] = useState([]);
     const [loading, setLoading] = useState(true);
     const [filtersOpen, setFiltersOpen] = useState(false);
+    const reduce = useReducedMotion();
 
     const tab = searchParams.get("tab") || "sale";
     const price = searchParams.get("price") || "";
@@ -112,7 +113,7 @@ export default function Listings() {
                             >
                                 {t.label}
                                 {tab === t.key && (
-                                    <motion.span layoutId="tab-underline" className="absolute left-0 right-0 -bottom-[1px] h-[2px] bg-gold" />
+                                    <motion.span layoutId="tab-underline" transition={SPRING} className="absolute left-0 right-0 -bottom-[1px] h-[2px] bg-gold" />
                                 )}
                             </button>
                         ))}
@@ -132,10 +133,10 @@ export default function Listings() {
                 <AnimatePresence>
                     {filtersOpen && (
                         <motion.div
-                            initial={{ height: 0, opacity: 0 }}
+                            initial={reduce ? false : { height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.25 }}
+                            exit={reduce ? { opacity: 0 } : { height: 0, opacity: 0 }}
+                            transition={{ duration: reduce ? DUR.fast : 0.25, ease: EASE }}
                             className="overflow-hidden border-t border-navy/10"
                             data-testid="listing-filters-panel"
                         >

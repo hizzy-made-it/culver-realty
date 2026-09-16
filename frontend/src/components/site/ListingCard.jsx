@@ -1,23 +1,25 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { BedDouble, Bath, Ruler } from "lucide-react";
 import { fmtPrice, fmtSqft, coverPhoto, statusLabel } from "../../lib/site";
+import { EASE, DUR } from "../motion";
 
 export default function ListingCard({ property, index = 0 }) {
     const cover = coverPhoto(property);
     const isSold = property.status === "sold";
+    const reduce = useReducedMotion();
     return (
         <motion.div
-            layout
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.97, transition: { duration: 0.2 } }}
-            transition={{ duration: 0.45, ease: "easeOut", delay: Math.min(index * 0.06, 0.4) }}
-            whileHover={{ y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
+            initial={reduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            exit={{ opacity: 0, scale: 0.98, transition: { duration: DUR.fast, ease: EASE } }}
+            transition={{ duration: DUR.base, ease: EASE, delay: Math.min(index % 3, 2) * 0.07 }}
+            className="h-full"
         >
             <Link
                 to={`/listings/${property.slug}`}
-                className="group relative border border-navy/10 bg-white shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col h-full"
+                className="card-hover group relative border border-navy/10 bg-white shadow-sm overflow-hidden flex flex-col h-full"
                 data-testid={`listing-card-${property.slug}`}
             >
                 <div className="relative aspect-[16/10] overflow-hidden bg-sand-200">
@@ -26,7 +28,7 @@ export default function ListingCard({ property, index = 0 }) {
                             src={cover}
                             alt={property.address}
                             loading="lazy"
-                            className={`w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${isSold ? "grayscale-[35%]" : ""}`}
+                            className={`w-full h-full object-cover transition-transform duration-500 ease-luxe group-hover:scale-[1.04] ${isSold ? "grayscale-[35%]" : ""}`}
                         />
                     )}
                     <span

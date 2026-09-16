@@ -1,11 +1,13 @@
 import { useEffect, useState, useCallback } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { EASE, DUR } from "../motion";
 import { ChevronLeft, ChevronRight, X, Expand } from "lucide-react";
 
 export default function Gallery({ photos = [], address = "" }) {
     const visible = photos.filter((p) => !p.hidden);
     const [index, setIndex] = useState(0);
     const [lightbox, setLightbox] = useState(false);
+    const reduce = useReducedMotion();
 
     const prev = useCallback(() => setIndex((i) => (i - 1 + visible.length) % visible.length), [visible.length]);
     const next = useCallback(() => setIndex((i) => (i + 1) % visible.length), [visible.length]);
@@ -27,17 +29,17 @@ export default function Gallery({ photos = [], address = "" }) {
     return (
         <div data-testid="listing-gallery">
             <div className="relative aspect-[16/10] md:aspect-[16/8] overflow-hidden bg-sand-200 group">
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="popLayout" initial={false}>
                     <motion.img
                         key={current.url + index}
                         src={current.url}
                         alt={address}
-                        initial={{ opacity: 0.4, scale: 1.02 }}
+                        initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.02 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 0.35 }}
+                        transition={{ duration: DUR.fast, ease: EASE }}
                         className="w-full h-full object-cover cursor-zoom-in"
-                        drag={visible.length > 1 ? "x" : false}
+                        drag={!reduce && visible.length > 1 ? "x" : false}
                         dragConstraints={{ left: 0, right: 0 }}
                         dragElastic={0.2}
                         onDragEnd={(e, info) => {
@@ -91,6 +93,7 @@ export default function Gallery({ photos = [], address = "" }) {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: DUR.fast }}
                         className="fixed inset-0 z-[60] bg-navy-deep/95 backdrop-blur-sm flex items-center justify-center p-4"
                         onClick={() => setLightbox(false)}
                         data-testid="gallery-lightbox"
@@ -109,8 +112,10 @@ export default function Gallery({ photos = [], address = "" }) {
                             key={current.url + index}
                             src={current.url}
                             alt={address}
-                            initial={{ opacity: 0, scale: 0.96 }}
+                            initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.96 }}
                             animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: DUR.fast, ease: EASE }}
                             className="max-h-[85vh] max-w-full object-contain"
                             onClick={(e) => e.stopPropagation()}
                         />

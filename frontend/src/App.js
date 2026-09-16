@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { Toaster } from "sonner";
+import { MotionConfig } from "framer-motion";
 import { AuthProvider, useAuth } from "@/context/AuthContext";
 import SiteLayout from "@/components/site/SiteLayout";
 import Home from "@/pages/Home";
@@ -29,7 +30,8 @@ import AdminLeads from "@/pages/admin/AdminLeads";
 function ScrollToTop() {
     const { pathname } = useLocation();
     useEffect(() => {
-        window.scrollTo(0, 0);
+        // Public routes reset in SiteLayout after the exit fade; admin has no transition.
+        if (pathname.startsWith("/admin")) window.scrollTo({ top: 0, behavior: "instant" });
     }, [pathname]);
     return null;
 }
@@ -52,6 +54,7 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
+                <MotionConfig reducedMotion="user">
                 <AuthProvider>
                     <ScrollToTop />
                     <Routes>
@@ -89,6 +92,7 @@ function App() {
                     </Routes>
                     <Toaster richColors position="top-right" />
                 </AuthProvider>
+                </MotionConfig>
             </BrowserRouter>
         </div>
     );

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
+const MOBILE_MQ = "(max-width: 767px)";
+
 /**
  * Ambient background video for hero sections.
  * - `src` is a path WITHOUT extension; `${src}.mp4` and `${src}-mobile.mp4` are expected.
@@ -13,27 +15,42 @@ export default function HeroVideo({ src, poster, alt = "", parallax = false, cla
     const reduce = useReducedMotion();
     const videoRef = useRef(null);
     const [ready, setReady] = useState(false);
-    const [mobile] = useState(() =>
-        typeof window !== "undefined" ? window.matchMedia("(max-width: 767px)").matches : false
+    const [mobile, setMobile] = useState(() =>
+        typeof window !== "undefined" ? window.matchMedia(MOBILE_MQ).matches : false
     );
 
+    useEffect(() => {
+        const mq = window.matchMedia(MOBILE_MQ);
+        const onChange = (e) => setMobile(e.matches);
+        mq.addEventListener("change", onChange);
+        return () => mq.removeEventListener("change", onChange);
+    }, []);
+
+    const active = parallax && !reduce;
+    // Hooks run unconditionally; when inactive they map to identity and `style` is omitted.
     const { scrollY } = useScroll();
-    const y = useTransform(scrollY, [0, 900], [0, parallax && !reduce ? 140 : 0]);
-    const scale = useTransform(scrollY, [0, 900], [1, parallax && !reduce ? 1.06 : 1]);
+    const y = useTransform(scrollY, [0, 900], [0, active ? 80 : 0]);
+    const scale = useTransform(scrollY, [0, 900], [1, active ? 1.04 : 1]);
 
     useEffect(() => {
         const v = videoRef.current;
         if (!v || reduce) return;
+        setReady(false);
         if (v.readyState >= 3) setReady(true);
         const p = v.play();
         if (p && typeof p.catch === "function") p.catch(() => {});
-    }, [reduce]);
+    }, [reduce, mobile]);
 
     return (
-        <motion.div style={{ y, scale }} className={`absolute inset-0 will-change-transform ${className}`} aria-hidden={alt ? undefined : true}>
+        <motion.div
+            style={active ? { y, scale } : undefined}
+            className={`absolute inset-0 ${active ? "will-change-transform" : ""} ${className}`}
+            aria-hidden={alt ? undefined : true}
+        >
             <img src={poster} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
             {!reduce && src && (
                 <video
+                    key={mobile ? "m" : "d"}
                     ref={videoRef}
                     autoPlay
                     muted

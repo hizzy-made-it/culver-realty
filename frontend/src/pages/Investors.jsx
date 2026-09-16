@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Building2, TrendingUp, ShieldCheck } from "lucide-react";
-import { Page, Reveal } from "../components/motion";
+import { Page, Reveal, StaggerGroup, StaggerItem } from "../components/motion";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 import { BRAND } from "../lib/site";
@@ -37,19 +37,19 @@ export default function Investors() {
                 </div>
             </PageHero>
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {ITEMS.map((item, i) => (
-                        <Reveal key={item.title} delay={i * 0.08}>
-                            <div className="border border-navy/10 bg-white p-8 h-full" data-testid={`investor-item-${i}`}>
+                        <StaggerItem key={item.title} className="h-full">
+                            <div className="card-hover border border-navy/10 bg-white p-8 h-full" data-testid={`investor-item-${i}`}>
                                 <span className="inline-flex items-center justify-center w-11 h-11 bg-seaglass-muted text-seaglass">
                                     <item.icon size={20} />
                                 </span>
                                 <h3 className="font-serif text-2xl font-semibold text-navy mt-5">{item.title}</h3>
                                 <p className="text-sm text-slate-600 leading-relaxed mt-3">{item.copy}</p>
                             </div>
-                        </Reveal>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerGroup>
                 <Reveal className="mt-16 bg-navy text-bone p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div>
                         <h2 className="font-serif text-2xl sm:text-3xl font-medium">Let's talk numbers.</h2>

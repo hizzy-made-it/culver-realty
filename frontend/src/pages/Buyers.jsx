@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
-import { Page, Reveal } from "../components/motion";
+import { Page, Reveal, StaggerGroup, StaggerItem } from "../components/motion";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 import { BRAND } from "../lib/site";
@@ -41,16 +41,16 @@ export default function Buyers() {
                         neighbors moving across town. Our involvement in this community means we often see new
                         opportunities before they're even announced.
                     </p>
-                    <ul className="mt-7 space-y-4">
+                    <StaggerGroup className="mt-7 space-y-4" stagger={0.06} role="list">
                         {POINTS.map((point) => (
-                            <li key={point} className="flex items-start gap-3 text-sm text-slate-700">
+                            <StaggerItem key={point} className="flex items-start gap-3 text-sm text-slate-700" role="listitem">
                                 <span className="inline-flex items-center justify-center w-6 h-6 bg-seaglass-muted text-seaglass shrink-0 mt-0.5">
                                     <Check size={13} />
                                 </span>
                                 {point}
-                            </li>
+                            </StaggerItem>
                         ))}
-                    </ul>
+                    </StaggerGroup>
                     <div className="flex flex-wrap gap-4 mt-9">
                         <Link to="/listings" data-testid="buyers-browse-button" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-navy text-bone text-sm font-semibold tracking-wider uppercase hover:bg-navy-surface active:scale-[0.98] transition-all min-h-[44px]">
                             Browse listings <ArrowRight size={15} />
