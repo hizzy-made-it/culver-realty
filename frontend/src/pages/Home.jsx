@@ -4,7 +4,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { ArrowRight, Phone, Mail, KeyRound, TrendingUp, ShieldCheck, Quote, ChevronDown } from "lucide-react";
 import api from "../lib/api";
 import { BRAND } from "../lib/site";
-import { Page, Reveal, StaggerGroup, StaggerItem, EASE_OUT } from "../components/motion";
+import { Page, Reveal, StaggerGroup, StaggerItem, EASE } from "../components/motion";
 import ListingCard from "../components/site/ListingCard";
 import Seo from "../components/site/Seo";
 import HeroVideo from "../components/site/HeroVideo";
@@ -83,6 +83,18 @@ export default function Home() {
 
     // Closing image: gentle parallax as it enters the viewport.
     const ctaRef = useRef(null);
+
+    // Pause the market strip while it is off-screen.
+    const marqueeRef = useRef(null);
+    useEffect(() => {
+        const el = marqueeRef.current;
+        if (!el) return;
+        const io = new IntersectionObserver(([e]) => {
+            el.style.animationPlayState = e.isIntersecting ? "running" : "paused";
+        });
+        io.observe(el);
+        return () => io.disconnect();
+    }, []);
     const { scrollYProgress: ctaProgress } = useScroll({ target: ctaRef, offset: ["start end", "end start"] });
     const ctaImageY = useTransform(ctaProgress, [0, 1], [reduce ? "0%" : "-12%", reduce ? "0%" : "12%"]);
 
@@ -112,14 +124,14 @@ export default function Home() {
                     <motion.div
                         initial={reduce ? { opacity: 0 } : { opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, ease: EASE_OUT }}
+                        transition={{ duration: 0.6, ease: EASE }}
                         className="flex items-center gap-3 mb-5"
                     >
                         <motion.span
                             className="h-px w-8 bg-gold origin-left"
                             initial={reduce ? { opacity: 0 } : { scaleX: 0 }}
                             animate={reduce ? { opacity: 1 } : { scaleX: 1 }}
-                            transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.15 }}
+                            transition={{ duration: 0.8, ease: EASE, delay: 0.15 }}
                         />
                         <p className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">Ormond Beach · Halifax Coast · Florida</p>
                     </motion.div>
@@ -136,7 +148,7 @@ export default function Home() {
                     <motion.p
                         initial={reduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.75 }}
+                        transition={{ duration: 0.7, ease: EASE, delay: 0.75 }}
                         className="text-base md:text-lg text-bone/80 mt-6 max-w-xl leading-relaxed"
                     >
                         Sales, investments, rentals, and hands-on management across Volusia and Flagler Counties.
@@ -144,7 +156,7 @@ export default function Home() {
                     <motion.div
                         initial={reduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.9 }}
+                        transition={{ duration: 0.7, ease: EASE, delay: 0.9 }}
                         className="mt-9 flex flex-wrap items-center gap-4"
                     >
                         <Link
@@ -193,7 +205,7 @@ export default function Home() {
                 <div className="relative py-5">
                     <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-sand-100 to-transparent z-10" />
                     <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-sand-100 to-transparent z-10" />
-                    <div className="flex w-max animate-marquee will-change-transform" aria-hidden="false">
+                    <div ref={marqueeRef} className="flex w-max animate-marquee" aria-hidden="false">
                         {[0, 1].map((dup) => (
                             <div key={dup} className="flex items-center shrink-0" aria-hidden={dup === 1}>
                                 {BRAND.markets.map((m) => (
@@ -344,8 +356,16 @@ export default function Home() {
             </section>
 
             <section ref={ctaRef} className="relative overflow-hidden bg-navy-deep" data-testid="final-cta">
-                <motion.div style={{ y: ctaImageY }} className="absolute -inset-y-[14%] inset-x-0 will-change-transform">
-                    <img src="/api/uploads/seed/beach-hero.jpg" alt="Ormond Beach shoreline" loading="lazy" className="w-full h-full object-cover animate-kenburns" />
+                <motion.div style={{ y: ctaImageY, willChange: reduce ? "auto" : "transform" }} className="absolute -inset-y-[14%] inset-x-0">
+                    <motion.div
+                        className="w-full h-full"
+                        initial={reduce ? false : { scale: 1 }}
+                        whileInView={reduce ? {} : { scale: 1.1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 24, ease: "linear" }}
+                    >
+                        <img src="/api/uploads/seed/beach-hero.jpg" alt="Ormond Beach shoreline" loading="lazy" className="w-full h-full object-cover" />
+                    </motion.div>
                 </motion.div>
                 <div className="absolute inset-0 bg-navy-deep/70" />
                 <HeroAtmosphere subtle />

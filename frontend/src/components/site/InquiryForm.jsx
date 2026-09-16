@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import api, { formatApiErrorDetail } from "../../lib/api";
+import { EASE, DUR } from "../motion";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -70,12 +71,12 @@ export default function InquiryForm({ type = "contact", listingId, listingAddres
             </div>
             <div>
                 <input className={inputCls} placeholder="Full name *" value={form.name} onChange={set("name")} data-testid={`${type}-name-input`} aria-label="Full name" />
-                <AnimatePresence>{errors.name && <motion.p initial={{opacity:0}} animate={{opacity:1}} className="text-xs text-red-600 mt-1" data-testid={`${type}-name-error`}>{errors.name}</motion.p>}</AnimatePresence>
+                <AnimatePresence>{errors.name && <motion.p initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: DUR.fast, ease: EASE }} className="text-xs text-red-600 mt-1" data-testid={`${type}-name-error`}>{errors.name}</motion.p>}</AnimatePresence>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <input className={inputCls} type="email" placeholder="Email *" value={form.email} onChange={set("email")} data-testid={`${type}-email-input`} aria-label="Email" />
-                    <AnimatePresence>{errors.email && <motion.p initial={{opacity:0}} animate={{opacity:1}} className="text-xs text-red-600 mt-1" data-testid={`${type}-email-error`}>{errors.email}</motion.p>}</AnimatePresence>
+                    <AnimatePresence>{errors.email && <motion.p initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: DUR.fast, ease: EASE }} className="text-xs text-red-600 mt-1" data-testid={`${type}-email-error`}>{errors.email}</motion.p>}</AnimatePresence>
                 </div>
                 <input className={inputCls} type="tel" placeholder="Phone" value={form.phone} onChange={set("phone")} data-testid={`${type}-phone-input`} aria-label="Phone" />
             </div>
@@ -88,7 +89,7 @@ export default function InquiryForm({ type = "contact", listingId, listingAddres
                     data-testid={`${type}-message-input`}
                     aria-label="Message"
                 />
-                <AnimatePresence>{errors.message && <motion.p initial={{opacity:0}} animate={{opacity:1}} className="text-xs text-red-600 mt-1" data-testid={`${type}-message-error`}>{errors.message}</motion.p>}</AnimatePresence>
+                <AnimatePresence>{errors.message && <motion.p initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: DUR.fast, ease: EASE }} className="text-xs text-red-600 mt-1" data-testid={`${type}-message-error`}>{errors.message}</motion.p>}</AnimatePresence>
             </div>
             {listingAddress && (
                 <p className={`text-xs ${dark ? "text-white/60" : "text-slate-500"}`}>

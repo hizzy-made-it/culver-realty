@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { EASE_OUT } from "../motion";
+import { EASE, DUR } from "../motion";
 
 /**
  * Headline that rises into view one word at a time.
@@ -43,7 +43,7 @@ export default function KineticHeading({ as: Tag = "h1", title, className = "", 
                             className={`inline-block ${w.className}`}
                             initial={{ y: "110%", opacity: 0 }}
                             animate={{ y: "0%", opacity: 1 }}
-                            transition={{ duration: 0.8, ease: EASE_OUT, delay: delay + i * stagger }}
+                            transition={{ duration: DUR.slow, ease: EASE, delay: delay + i * stagger }}
                         >
                             {w.text}
                         </motion.span>

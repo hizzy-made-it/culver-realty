@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronDown, Phone } from "lucide-react";
-import { Page, Reveal, StaggerGroup, StaggerItem } from "../components/motion";
+import { Page, Reveal, StaggerGroup, StaggerItem, EASE, DUR } from "../components/motion";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 import { BRAND } from "../lib/site";
@@ -32,6 +32,7 @@ const FAQ_LD = {
 };
 
 export default function Faq() {
+    const reduce = useReducedMotion();
     const [open, setOpen] = useState(0);
 
     return (
@@ -67,7 +68,7 @@ export default function Faq() {
                                     </span>
                                     <motion.span
                                         animate={{ rotate: open === i ? 180 : 0 }}
-                                        transition={{ duration: 0.25 }}
+                                        transition={{ duration: DUR.fast, ease: EASE }}
                                         className="shrink-0 inline-flex items-center justify-center w-9 h-9 border border-navy/20 text-navy group-hover:border-gold group-hover:text-gold transition-colors"
                                     >
                                         <ChevronDown size={16} />
@@ -76,10 +77,10 @@ export default function Faq() {
                                 <AnimatePresence initial={false}>
                                     {open === i && (
                                         <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
+                                            initial={reduce ? false : { height: 0, opacity: 0 }}
                                             animate={{ height: "auto", opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.3, ease: "easeOut" }}
+                                            exit={reduce ? { opacity: 0 } : { height: 0, opacity: 0 }}
+                                            transition={{ duration: reduce ? DUR.fast : 0.3, ease: EASE }}
                                             className="overflow-hidden"
                                         >
                                             <p className="text-base text-slate-600 leading-relaxed pb-7 pr-4 sm:pr-16" data-testid={`faq-answer-${i}`}>
