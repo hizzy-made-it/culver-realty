@@ -22,6 +22,9 @@ export default function Sellers() {
                 eyebrow="For sellers"
                 title="Selling well is a craft. We treat it that way."
                 sub="Selling a property can be long and complicated — regardless of how good the market is. Whether you're a first-time seller or an experienced pro, our team will help you through every step, from pricing to marketing to finding your next home."
+                video="/api/uploads/seed/video/sellers-canopy"
+                poster="/api/uploads/seed/video/sellers-canopy-poster.jpg"
+                alt="Driving beneath a canopy of live oaks toward the Intracoastal"
                 testid="sellers-hero"
             />
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24">

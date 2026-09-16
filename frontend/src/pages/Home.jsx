@@ -11,14 +11,15 @@ import HeroVideo from "../components/site/HeroVideo";
 import HeroAtmosphere from "../components/site/HeroAtmosphere";
 import KineticHeading from "../components/site/KineticHeading";
 
-// Footage in the hero is generated from this listing's cover photo.
+// The "now showing" chip links to this listing; the footage itself is a general
+// Intracoastal aerial (see reference/hero-footage-sources.md).
 const HERO_LISTING = {
     slug: "68-bristol-ln-palm-coast",
     address: "68 Bristol Ln",
     city: "Palm Coast",
     price: "$789,000",
-    video: "/api/uploads/seed/video/68-bristol-drone",
-    poster: "/api/uploads/seed/video/68-bristol-drone-poster.jpg",
+    video: "/api/uploads/seed/video/home-intracoastal",
+    poster: "/api/uploads/seed/video/home-intracoastal-poster.jpg",
 };
 
 const LOCAL_BUSINESS_LD = {
@@ -100,7 +101,7 @@ export default function Home() {
             />
 
             <section className="relative min-h-[88vh] flex items-end overflow-hidden bg-navy" data-testid="home-hero">
-                <HeroVideo src={HERO_LISTING.video} poster={HERO_LISTING.poster} alt={`Aerial view of ${HERO_LISTING.address}, ${HERO_LISTING.city}`} parallax />
+                <HeroVideo src={HERO_LISTING.video} poster={HERO_LISTING.poster} alt="Aerial view of the Intracoastal Waterway and waterfront homes" parallax />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy/40 to-navy/20" />
                 <HeroAtmosphere subtle />
 

@@ -9,7 +9,7 @@ Higgsfield generation history if these URLs ever expire.
 
 | Page | Base name | Source still | Master |
 | --- | --- | --- | --- |
-| Home | `68-bristol-drone` | sale-68-bristol.webp | https://d8j0ntlcm91z4.cloudfront.net/user_3GgBL9pjsplUTV4U1azMqdhxRo7/hf_20260907_163904_0f35ebea-8353-477a-9e2e-960f38f95689.mp4 |
+| Home (retired 2026-09-16, files kept) | `68-bristol-drone` | sale-68-bristol.webp | https://d8j0ntlcm91z4.cloudfront.net/user_3GgBL9pjsplUTV4U1azMqdhxRo7/hf_20260907_163904_0f35ebea-8353-477a-9e2e-960f38f95689.mp4 |
 | Listings | `listings-oceanfront` | hero-aerial.jpg | https://d8j0ntlcm91z4.cloudfront.net/user_3GgBL9pjsplUTV4U1azMqdhxRo7/hf_20260907_163918_5e5d7a4e-0069-4177-8f5b-e9fcbbb1383a.mp4 |
 | Rentals | `rentals-shoreline` | sale-2220-ocean-shore.webp | https://d8j0ntlcm91z4.cloudfront.net/user_3GgBL9pjsplUTV4U1azMqdhxRo7/hf_20260907_163904_4b33b788-9bcf-4a71-ac09-d5b1067a01cf.mp4 |
 | Management | `management-towers` | home-away.jpg | https://d8j0ntlcm91z4.cloudfront.net/user_3GgBL9pjsplUTV4U1azMqdhxRo7/hf_20260907_163918_358f5e97-61ec-4293-a3b9-fe34f678b37a.mp4 |
@@ -20,6 +20,8 @@ track that the encode strips). Masters live outside the repo at `C:\Users\hizzys
 
 | Page | Base name | Master |
 | --- | --- | --- |
+| Home | `home-intracoastal` | sellers.mp4 (1264x720, no audio) — replaced `68-bristol-drone` on 2026-09-16 |
+| Sellers | `sellers-canopy` | sellers22.mp4 (1264x720, AAC audio stripped by the encode) — added 2026-09-16 |
 | FAQ | `faq-office` | faq2.mp4 |
 | Buyers | `buyers-coast` | buyers.mp4 |
 | Investors | `investors-portfolio` | generated_video.mp4 (1600x560) — NOT in use: eyebrow/headline/CTAs are baked into the footage. `backend/uploads/seed/investors-hero.jpg` is a cleaned still (text removed, county outline + script kept; master `Videos/investors-clean-still.png`, 1344x576) used as an image hero until a clip is re-rendered from it (image-to-video, ~17.5 Higgsfield credits) |
