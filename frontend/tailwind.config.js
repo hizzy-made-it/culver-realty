@@ -4,6 +4,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        luxe: "cubic-bezier(0.22, 1, 0.36, 1)",
+      },
       fontFamily: {
         serif: ['"Cormorant Garamond"', '"Playfair Display"', "Georgia", "serif"],
         sans: ["Outfit", '"Plus Jakarta Sans"', "system-ui", "sans-serif"],
@@ -47,8 +50,6 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
-        "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
         "drift-a": {
           "0%, 100%": { transform: "translate3d(0, 0, 0) scale(1)" },
           "50%": { transform: "translate3d(9vw, 6vh, 0) scale(1.12)" },
@@ -79,8 +80,6 @@ module.exports = {
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
         "drift-a": "drift-a 22s ease-in-out infinite",
         "drift-b": "drift-b 27s ease-in-out infinite",
         contour: "contour 60s linear infinite",
@@ -91,5 +90,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 };

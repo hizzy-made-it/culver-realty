@@ -1,7 +1,12 @@
 import { motion, useReducedMotion } from "framer-motion";
 
-export const EASE_OUT = [0.22, 1, 0.36, 1];
+/** Shared motion tokens. CSS twin: Tailwind `ease-luxe`. */
+export const EASE = [0.22, 1, 0.36, 1];
+export const EASE_OUT = EASE; // legacy alias
+export const DUR = { fast: 0.2, base: 0.4, slow: 0.7 };
+export const SPRING = { type: "spring", stiffness: 380, damping: 32 };
 
+/** Page wrapper: fade + rise on mount, fade on exit (route transitions in SiteLayout). */
 export function Page({ children, className = "" }) {
     const reduce = useReducedMotion();
     return (
@@ -9,7 +14,8 @@ export function Page({ children, className = "" }) {
             className={className}
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: EASE_OUT }}
+            exit={{ opacity: 0, transition: { duration: DUR.fast, ease: EASE } }}
+            transition={{ duration: DUR.base, ease: EASE }}
         >
             {children}
         </motion.main>
@@ -24,31 +30,22 @@ export function Reveal({ children, className = "", delay = 0 }) {
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, ease: "easeOut", delay }}
+            transition={{ duration: DUR.base, ease: EASE, delay }}
         >
             {children}
         </motion.div>
     );
 }
 
-export const staggerContainer = {
-    initial: {},
-    animate: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
-};
-
-export const staggerItem = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
-};
-
 /**
  * Scroll-triggered stagger for grids and lists. Children should be <StaggerItem>.
  * Replaces the hand-tuned `delay={i * 0.08}` pattern with a real orchestrated cascade.
  */
-export function StaggerGroup({ children, className = "", stagger = 0.08, margin = "-60px" }) {
+export function StaggerGroup({ children, className = "", stagger = 0.07, margin = "-60px", ...rest }) {
     const reduce = useReducedMotion();
     return (
         <motion.div
+            {...rest}
             className={className}
             initial="initial"
             whileInView="animate"
@@ -69,8 +66,8 @@ export function StaggerItem({ children, className = "" }) {
         <motion.div
             className={className}
             variants={{
-                initial: reduce ? { opacity: 0 } : { opacity: 0, y: 22 },
-                animate: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE_OUT } },
+                initial: reduce ? { opacity: 0 } : { opacity: 0, y: 20 },
+                animate: { opacity: 1, y: 0, transition: { duration: DUR.base, ease: EASE } },
             }}
         >
             {children}
