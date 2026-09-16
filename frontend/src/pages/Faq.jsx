@@ -45,6 +45,9 @@ export default function Faq() {
                 eyebrow="FAQ"
                 title="Frequently asked questions"
                 sub="Straight answers for tenants, owners, buyers, and sellers. Anything else — we're one call away."
+                video="/api/uploads/seed/video/faq-office"
+                poster="/api/uploads/seed/video/faq-office-poster.jpg"
+                alt="Culver Realty & Property Management office"
                 size="md"
                 testid="faq-hero"
             />

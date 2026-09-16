@@ -15,6 +15,20 @@ Higgsfield generation history if these URLs ever expire.
 | Management | `management-towers` | home-away.jpg | https://d8j0ntlcm91z4.cloudfront.net/user_3GgBL9pjsplUTV4U1azMqdhxRo7/hf_20260907_163918_358f5e97-61ec-4293-a3b9-fe34f678b37a.mp4 |
 | HomeAway | `home-away-sunset` | home-away-hero.jpg | https://d8j0ntlcm91z4.cloudfront.net/user_3GgBL9pjsplUTV4U1azMqdhxRo7/hf_20260907_163904_c964691d-bce0-4025-b564-ef1ab6732f3e.mp4 |
 
+Two more clips were supplied as local masters on 2026-09-16 (1616x560, 24fps, 10s, with an audio
+track that the encode strips). Masters live outside the repo at `C:\Users\hizzysdreambox\Videos\`.
+
+| Page | Base name | Master |
+| --- | --- | --- |
+| FAQ | `faq-office` | faq2.mp4 |
+| Buyers | `buyers-coast` | buyers.mp4 |
+| Investors | `investors-portfolio` | generated_video.mp4 (1600x560) — NOT in use: eyebrow/headline/CTAs are baked into the footage. `backend/uploads/seed/investors-hero.jpg` is a cleaned still (text removed, county outline + script kept; master `Videos/investors-clean-still.png`, 1344x576) used as an image hero until a clip is re-rendered from it (image-to-video, ~17.5 Higgsfield credits) |
+| Contact | `contact-office` | contact).mp4 (1584x576) |
+| About | `about-roots` | culver.mp4 (1456x624) |
+
+The Team page hero is a still, not footage: `backend/uploads/seed/team-hero.jpg` (GPT Image 2.5 edit
+of `team.png` adding Tyce; master `Videos/team-with-tyce.png`, 1728x576, headline baked into the artwork). Shown at natural aspect on md+; mobile keeps the text hero.
+
 ## Encode
 
 Web versions live in `backend/uploads/seed/video/`. `HeroVideo.jsx` appends the extensions itself,

@@ -12,7 +12,7 @@ const SIZES = {
 
 /**
  * Shared page hero. Navy band by default; pass `video` (extension-less path) + `poster`
- * for an ambient footage hero. Motion: eyebrow rule draws in, headline rises word by word,
+ * for an ambient footage hero, or `image` alone for a still-photo hero. Motion: eyebrow rule draws in, headline rises word by word,
  * copy and CTAs settle after it, atmosphere layer drifts underneath.
  */
 export default function PageHero({
@@ -22,6 +22,7 @@ export default function PageHero({
     children,
     video,
     poster,
+    image,
     alt = "",
     size = "lg",
     minHeight = "min-h-[62vh]",
@@ -30,7 +31,7 @@ export default function PageHero({
 }) {
     const reduce = useReducedMotion();
     const s = SIZES[size] || SIZES.lg;
-    const hasMedia = Boolean(video);
+    const hasMedia = Boolean(video || image);
 
     const fade = (d) => ({
         initial: reduce ? { opacity: 0 } : { opacity: 0, y: 18 },
@@ -45,7 +46,7 @@ export default function PageHero({
         >
             {hasMedia && (
                 <>
-                    <HeroVideo src={video} poster={poster} alt={alt} />
+                    <HeroVideo src={video} poster={poster || image} alt={alt} />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy/45 to-navy/15" />
                 </>
             )}

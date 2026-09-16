@@ -21,6 +21,9 @@ export default function About() {
             <PageHero
                 eyebrow="About us"
                 title="Deep roots on the Halifax coast"
+                video="/api/uploads/seed/video/about-roots"
+                poster="/api/uploads/seed/video/about-roots-poster.jpg"
+                alt="Aerial view of the Halifax River and Ormond Beach"
                 testid="about-hero"
             />
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12">

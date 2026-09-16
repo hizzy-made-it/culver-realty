@@ -16,6 +16,9 @@ export default function Contact() {
                 eyebrow="Contact"
                 title="Let's start the conversation"
                 sub="Buying, selling, investing, or looking for a rental or a manager you can trust — we're a phone call away."
+                video="/api/uploads/seed/video/contact-office"
+                poster="/api/uploads/seed/video/contact-office-poster.jpg"
+                alt="Culver Realty & Property Management office in Ormond Beach"
                 size="md"
                 testid="contact-hero"
             />

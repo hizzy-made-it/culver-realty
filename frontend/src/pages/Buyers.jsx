@@ -23,6 +23,9 @@ export default function Buyers() {
                 eyebrow="For buyers"
                 title="Find your place on the coast — with someone who lives here"
                 sub="We like to consider ourselves experts in the areas we serve — because we live here, shop here, and have fun here. Whether it's your first home or your forever home, we understand the unique needs that come with what could be the largest purchase of your life."
+                video="/api/uploads/seed/video/buyers-coast"
+                poster="/api/uploads/seed/video/buyers-coast-poster.jpg"
+                alt="Aerial view of the Ormond Beach coastline"
                 testid="buyers-hero"
             />
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

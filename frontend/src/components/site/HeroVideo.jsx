@@ -4,6 +4,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 /**
  * Ambient background video for hero sections.
  * - `src` is a path WITHOUT extension; `${src}.mp4` and `${src}-mobile.mp4` are expected.
+ *   Omit it for a still-image hero: only the poster renders.
  * - Poster paints instantly; the video cross-fades in once it can play.
  * - Reduced-motion users (and browsers that refuse autoplay) simply keep the poster.
  * - `parallax` shifts the layer down as the page scrolls for a little depth.
@@ -31,7 +32,7 @@ export default function HeroVideo({ src, poster, alt = "", parallax = false, cla
     return (
         <motion.div style={{ y, scale }} className={`absolute inset-0 will-change-transform ${className}`} aria-hidden={alt ? undefined : true}>
             <img src={poster} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
-            {!reduce && (
+            {!reduce && src && (
                 <video
                     ref={videoRef}
                     autoPlay
