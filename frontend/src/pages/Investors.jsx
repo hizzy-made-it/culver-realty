@@ -22,8 +22,9 @@ export default function Investors() {
                 eyebrow="For investors"
                 title="Investment properties and management, under one roof"
                 sub="Building a real estate portfolio takes more than listings — it takes local knowledge of what rents, what sells, and what to avoid. We help you acquire with confidence, then manage with care."
-                image="/api/uploads/seed/investors-hero.jpg"
-                alt="Sunset over the Halifax River from a waterfront pool deck, with a Florida county outline"
+                video="/api/uploads/seed/video/investors-golden"
+                poster="/api/uploads/seed/video/investors-golden-poster.jpg"
+                alt="Golden-hour aerial of waterfront homes and docks along the Intracoastal"
                 testid="investors-hero"
             >
                 <div className="flex flex-wrap gap-4">
