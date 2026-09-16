@@ -1,4 +1,5 @@
-html {
+/* Smooth only for in-page anchor jumps; programmatic resets stay instant. */
+html:focus-within {
     scroll-behavior: smooth;
 }
 
@@ -68,7 +69,7 @@ html {
 
 /* Reduced motion: freeze ambient loops, keep opacity-only feedback. */
 @media (prefers-reduced-motion: reduce) {
-    html {
+    html:focus-within {
         scroll-behavior: auto;
     }
     .shimmer::after,
