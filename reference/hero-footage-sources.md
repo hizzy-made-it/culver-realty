@@ -22,14 +22,12 @@ track that the encode strips). Masters live outside the repo at `C:\Users\hizzys
 | --- | --- | --- |
 | Home | `home-intracoastal` | sellers.mp4 (1264x720, no audio) — replaced `68-bristol-drone` on 2026-09-16 |
 | Sellers | `sellers-canopy` | sellers22.mp4 (1264x720, AAC audio stripped by the encode) — added 2026-09-16 |
+| Team | `team-sunset` | teammm.mp4 (1264x720, AAC audio stripped by the encode) — added 2026-09-16, replacing the `team-hero.jpg` banner (GPT Image 2.5 edit of team.png with Tyce; master `Videos/team-with-tyce.png` kept locally) |
 | FAQ | `faq-office` | faq2.mp4 |
 | Buyers | `buyers-coast` | buyers.mp4 |
 | Investors | `investors-golden` | investors.mp4 (1264x720, no audio) — added 2026-09-16. Replaced the `investors-hero.jpg` still and the never-used `investors-portfolio` clip (text baked in); both deleted |
 | Contact | `contact-office` | contact).mp4 (1584x576) |
 | About | `about-roots` | culver.mp4 (1456x624) |
-
-The Team page hero is a still, not footage: `backend/uploads/seed/team-hero.jpg` (GPT Image 2.5 edit
-of `team.png` adding Tyce; master `Videos/team-with-tyce.png`, 1728x576, headline baked into the artwork). Shown at natural aspect on md+; mobile keeps the text hero.
 
 ## Encode
 

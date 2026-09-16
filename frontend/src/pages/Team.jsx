@@ -63,26 +63,15 @@ export default function Team() {
                 title="Meet the Team | Culver Realty & Property Management, Ormond Beach"
                 description="Meet the experienced real estate and property management team at Culver Realty & Property Management in Ormond Beach, FL — serving Volusia and Flagler Counties."
             />
-            {/* Desktop: the designed team banner (headline is part of the artwork). */}
-            <section className="hidden md:block relative bg-navy" data-testid="team-hero">
-                <img
-                    src="/api/uploads/seed/team-hero.jpg"
-                    alt="The Culver Realty team — Tracie, Alexis, Tom, Jana, and Tyce — in front of the Ormond Beach waterfront"
-                    className="block w-full h-auto"
-                    width={1728}
-                    height={576}
-                    fetchPriority="high"
-                />
-            </section>
-            {/* Mobile: the wide banner would render as an unreadable strip, so keep the text hero (it also carries the page h1). */}
-            <div className="md:hidden">
-                <PageHero
-                    eyebrow="Meet the team"
-                    title="Introducing the experienced team at Culver Realty"
-                    sub="Our dedicated team of professionals is committed to helping you navigate the complexities of buying, selling, or managing properties with ease. Choose Culver Realty for a personalized approach that ensures your satisfaction and success."
-                    testid="team-hero-mobile"
-                />
-            </div>
+            <PageHero
+                eyebrow="Meet the team"
+                title="Introducing the experienced team at Culver Realty"
+                sub="Our dedicated team of professionals is committed to helping you navigate the complexities of buying, selling, or managing properties with ease. Choose Culver Realty for a personalized approach that ensures your satisfaction and success."
+                video="/api/uploads/seed/video/team-sunset"
+                poster="/api/uploads/seed/video/team-sunset-poster.jpg"
+                alt="Sunset over the Intracoastal from a waterfront home's terrace, with the Daytona skyline beyond"
+                testid="team-hero"
+            />
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24">
                 <div className="space-y-16 md:space-y-24">
                     {TEAM.map((member, i) => (
