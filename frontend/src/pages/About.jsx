@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone, Mail } from "lucide-react";
-import { Page, Reveal } from "../components/motion";
+import { Page, Reveal, StaggerGroup, StaggerItem } from "../components/motion";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 import { BRAND } from "../lib/site";
@@ -43,14 +43,14 @@ export default function About() {
                         homeowner, investor, buyer, or tenant, you can count on us for knowledgeable service, local
                         expertise, and a team that truly cares about your real estate goals.
                     </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+                    <StaggerGroup className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
                         {VALUES.map((v) => (
-                            <div key={v.title} className="border-t-2 border-gold pt-5" data-testid={`value-${v.title.toLowerCase().replace(/\s+/g, "-")}`}>
+                            <StaggerItem key={v.title}><div className="border-t-2 border-gold pt-5" data-testid={`value-${v.title.toLowerCase().replace(/\s+/g, "-")}`}>
                                 <h3 className="font-serif text-xl font-semibold text-navy">{v.title}</h3>
                                 <p className="text-sm text-slate-600 mt-2 leading-relaxed">{v.copy}</p>
-                            </div>
+                            </div></StaggerItem>
                         ))}
-                    </div>
+                    </StaggerGroup>
                 </Reveal>
                 <Reveal className="lg:col-span-5" delay={0.1}>
                     <div className="bg-navy text-bone p-8 md:p-10">

@@ -249,7 +249,7 @@ export default function Home() {
                     <StaggerGroup className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
                         {PILLARS.map((pillar) => (
                             <StaggerItem key={pillar.title}>
-                                <Link to={pillar.to} className="group block h-full" data-testid={pillar.testid}>
+                                <Link to={pillar.to} className="card-hover group block h-full" data-testid={pillar.testid}>
                                     <div className="relative aspect-[16/10] overflow-hidden mb-6">
                                         <img
                                             src={pillar.img}
@@ -328,7 +328,7 @@ export default function Home() {
                     <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                         {TESTIMONIALS.map((t, i) => (
                             <StaggerItem key={t.name}>
-                                <figure className="bg-bone p-8 h-full border border-navy/5" data-testid={`testimonial-${i}`}>
+                                <figure className="card-hover bg-bone p-8 h-full border border-navy/5" data-testid={`testimonial-${i}`}>
                                     <Quote size={22} className="text-gold mb-4" />
                                     <blockquote className="font-serif text-lg leading-relaxed text-navy italic">
                                         “{t.quote}”
