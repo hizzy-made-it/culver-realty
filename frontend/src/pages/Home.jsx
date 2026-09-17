@@ -11,13 +11,8 @@ import HeroVideo from "../components/site/HeroVideo";
 import HeroAtmosphere from "../components/site/HeroAtmosphere";
 import KineticHeading from "../components/site/KineticHeading";
 
-// The "now showing" chip links to this listing; the footage itself is a general
-// Intracoastal aerial (see reference/hero-footage-sources.md).
-const HERO_LISTING = {
-    slug: "68-bristol-ln-palm-coast",
-    address: "68 Bristol Ln",
-    city: "Palm Coast",
-    price: "$789,000",
+// Hero footage: a general Intracoastal aerial (see reference/hero-footage-sources.md).
+const HERO_MEDIA = {
     video: "/api/uploads/seed/video/home-intracoastal",
     poster: "/api/uploads/seed/video/home-intracoastal-poster.jpg",
 };
@@ -113,7 +108,7 @@ export default function Home() {
             />
 
             <section className="relative min-h-[88vh] flex items-end overflow-hidden bg-navy" data-testid="home-hero">
-                <HeroVideo src={HERO_LISTING.video} poster={HERO_LISTING.poster} alt="Aerial view of the Intracoastal Waterway and waterfront homes" parallax />
+                <HeroVideo src={HERO_MEDIA.video} poster={HERO_MEDIA.poster} alt="Aerial view of the Intracoastal Waterway and waterfront homes" parallax />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy/40 to-navy/20" />
                 <HeroAtmosphere subtle />
 
@@ -165,23 +160,6 @@ export default function Home() {
                             className="btn-sheen inline-flex items-center justify-center gap-3 px-10 py-4.5 bg-gold text-white text-sm font-semibold tracking-[0.2em] uppercase hover:bg-gold-hover active:scale-[0.98] transition-all duration-200 shadow-lg shadow-navy-deep/30 min-h-[52px]"
                         >
                             View listings <ArrowRight size={16} />
-                        </Link>
-                        <Link
-                            to={`/listings/${HERO_LISTING.slug}`}
-                            data-testid="hero-now-showing"
-                            className="group inline-flex items-center gap-3 pl-3 pr-4 py-2.5 bg-navy-deep/40 backdrop-blur-md border border-bone/15 text-bone/90 text-xs tracking-wide hover:border-gold/60 hover:bg-navy-deep/60 transition-colors min-h-[44px]"
-                        >
-                            <span className="relative flex h-2 w-2">
-                                <span className="absolute inline-flex h-full w-full rounded-full bg-gold animate-pulse-dot" />
-                                <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
-                            </span>
-                            <span>
-                                <span className="text-bone/60">Now showing</span>{" "}
-                                <span className="font-semibold text-bone">{HERO_LISTING.address}</span>
-                                <span className="text-bone/60"> · {HERO_LISTING.city}</span>{" "}
-                                <span className="text-gold font-semibold">{HERO_LISTING.price}</span>
-                            </span>
-                            <ArrowRight size={13} className="text-gold transition-transform group-hover:translate-x-1" />
                         </Link>
                     </motion.div>
                 </motion.div>
