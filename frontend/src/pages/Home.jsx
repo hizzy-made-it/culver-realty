@@ -27,7 +27,7 @@ const LOCAL_BUSINESS_LD = {
     "@type": "RealEstateAgent",
     name: "Culver Realty & Property Management",
     telephone: "+1-386-414-3445",
-    email: "heathdt1027@gmail.com",
+    email: "tracie.culver@tculverrealty.com",
     address: {
         "@type": "PostalAddress",
         streetAddress: "2412 John Anderson Drive",
