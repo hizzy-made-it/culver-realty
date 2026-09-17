@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { BedDouble, Bath, Ruler } from "lucide-react";
 import { fmtPrice, fmtSqft, coverPhoto, statusLabel } from "../../lib/site";
-import { EASE, DUR } from "../motion";
+import { EASE, DUR, useReducedMotion } from "../motion";
 
 export default function ListingCard({ property, index = 0 }) {
     const cover = coverPhoto(property);

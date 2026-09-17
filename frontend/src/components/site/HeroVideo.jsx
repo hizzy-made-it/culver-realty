@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useReducedMotion } from "../motion";
 
 const MOBILE_MQ = "(max-width: 767px)";
 

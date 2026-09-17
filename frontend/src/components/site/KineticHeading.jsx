@@ -1,5 +1,5 @@
-import { motion, useReducedMotion } from "framer-motion";
-import { EASE, DUR } from "../motion";
+import { motion } from "framer-motion";
+import { EASE, DUR, useReducedMotion } from "../motion";
 
 /**
  * Headline that rises into view one word at a time.

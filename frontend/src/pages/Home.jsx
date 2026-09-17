@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Phone, Mail, KeyRound, TrendingUp, ShieldCheck, Quote, ChevronDown } from "lucide-react";
 import api from "../lib/api";
 import { BRAND } from "../lib/site";
-import { Page, Reveal, StaggerGroup, StaggerItem, EASE } from "../components/motion";
+import { Page, Reveal, StaggerGroup, StaggerItem, EASE, useReducedMotion } from "../components/motion";
 import ListingCard from "../components/site/ListingCard";
 import Seo from "../components/site/Seo";
 import HeroVideo from "../components/site/HeroVideo";

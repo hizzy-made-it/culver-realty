@@ -1,4 +1,12 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+
+/**
+ * Motion is always on. The site deliberately ignores the OS "reduce motion" preference
+ * (owner decision, 2026-09-17) so phones with that setting still get video heroes,
+ * parallax, and reveals. Every component reads this instead of framer's hook so the
+ * choice lives in one place.
+ */
+export const useReducedMotion = () => false;
 
 /** Shared motion tokens. CSS twin: Tailwind `ease-luxe`. */
 export const EASE = [0.22, 1, 0.36, 1];

@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { EASE, DUR } from "../motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { EASE, DUR, useReducedMotion } from "../motion";
 import { ChevronLeft, ChevronRight, X, Expand } from "lucide-react";
 
 export default function Gallery({ photos = [], address = "" }) {

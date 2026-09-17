@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { SlidersHorizontal, X, Phone } from "lucide-react";
 import api from "../lib/api";
 import { BRAND } from "../lib/site";
-import { Page, SPRING, EASE, DUR } from "../components/motion";
+import { Page, SPRING, EASE, DUR, useReducedMotion } from "../components/motion";
 import ListingCard from "../components/site/ListingCard";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";

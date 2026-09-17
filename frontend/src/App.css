@@ -78,26 +78,3 @@ html:focus-within {
     }
 }
 
-/* Reduced motion: freeze ambient loops, keep opacity-only feedback. */
-@media (prefers-reduced-motion: reduce) {
-    html:focus-within {
-        scroll-behavior: auto;
-    }
-    .shimmer::after,
-    .pulse-ring,
-    .animate-drift-a,
-    .animate-drift-b,
-    .animate-contour,
-    .animate-float,
-    .animate-kenburns,
-    .animate-marquee,
-    .animate-pulse-dot {
-        animation: none !important;
-    }
-    .btn-sheen::after {
-        display: none;
-    }
-    .card-hover:hover {
-        transform: none;
-    }
-}

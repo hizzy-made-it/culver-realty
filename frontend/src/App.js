@@ -54,7 +54,7 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <MotionConfig reducedMotion="user">
+                <MotionConfig reducedMotion="never">
                 <AuthProvider>
                     <ScrollToTop />
                     <Routes>

@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Phone, ChevronDown, ExternalLink } from "lucide-react";
 import { BRAND } from "../../lib/site";
-import { EASE, DUR } from "../motion";
+import { EASE, DUR, useReducedMotion } from "../motion";
 
 /**
  * Ten flat links crowded the bar, so the pages people rarely jump between are grouped.

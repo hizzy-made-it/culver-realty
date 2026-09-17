@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Phone } from "lucide-react";
-import { Page, Reveal, StaggerGroup, StaggerItem, EASE, DUR } from "../components/motion";
+import { Page, Reveal, StaggerGroup, StaggerItem, EASE, DUR, useReducedMotion } from "../components/motion";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 import { BRAND } from "../lib/site";
