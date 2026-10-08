@@ -5,21 +5,8 @@ import { Page, Reveal, StaggerGroup, StaggerItem, EASE, DUR, useReducedMotion } 
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 import { BRAND } from "../lib/site";
+import FAQS from "../content/faqs.json";
 
-const FAQS = [
-    {
-        q: "How do I request maintenance?",
-        a: "For any maintenance requests, simply contact our office directly, and we will promptly coordinate the necessary repairs on your behalf. There's no need to submit requests online — just give us a call, and our team will immediately reach out to the maintenance professional best suited to handle the issue. We strive to ensure that all concerns are addressed quickly and efficiently, keeping your living experience comfortable and worry-free.",
-    },
-    {
-        q: "What is the process for leasing a property?",
-        a: "Leasing a property with us is a straightforward process. Begin by exploring our available listings to find a property that meets your requirements. Once you've chosen a property, reach out to our team to schedule a viewing and initiate the leasing process. We'll assist you with the necessary steps and paperwork to secure your new rental.",
-    },
-    {
-        q: "How can I pay my rent?",
-        a: "Paying rent with Culver Realty and Property Management is simple and straightforward. For your convenience, rent payments can be dropped off directly at our office during regular business hours. We kindly ask that all payments be placed in a sealed envelope with your name and property address clearly noted to ensure proper credit. Our team is always available to assist or answer any questions when you stop by, making the payment process as smooth and personal as possible.",
-    },
-];
 
 const FAQ_LD = {
     "@context": "https://schema.org",
@@ -39,7 +26,7 @@ export default function Faq() {
         <Page>
             <Seo
                 title="Frequently Asked Questions | Culver Realty & Property Management"
-                description="Answers about maintenance requests, leasing a property, and paying rent with Culver Realty & Property Management in Ormond Beach, FL."
+                description="Answers about service areas, property management, leasing, rent payments, maintenance, home valuations, and Home Away home watch from Culver Realty in Ormond Beach, FL."
                 jsonLd={FAQ_LD}
             />
             <PageHero

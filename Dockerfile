@@ -16,6 +16,8 @@ COPY backend/requirements.txt backend/requirements.txt
 RUN pip install --no-cache-dir -r backend/requirements.txt
 COPY backend/ backend/
 COPY --from=frontend /app/frontend/build frontend/build
+# Shared FAQ copy: the FAQ page renders it, seo.py pre-renders it + FAQPage JSON-LD
+COPY frontend/src/content frontend/src/content
 WORKDIR /app/backend
 ENV PORT=8001
 EXPOSE 8001

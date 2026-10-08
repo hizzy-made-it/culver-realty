@@ -467,18 +467,54 @@ async def _startup():
         app.state.sync_task = asyncio.create_task(sync.scheduler())
 
 
+BUILD_DIR = ROOT.parent / "frontend" / "build"
+
+
+# ---------------------------------------------------------------- crawler files (SEO / GEO / AEO)
+from fastapi.responses import HTMLResponse, PlainTextResponse  # noqa: E402
+
+import seo  # noqa: E402
+
+CRAWL_CACHE = {"Cache-Control": "public, max-age=3600"}
+
+
+@app.api_route("/robots.txt", methods=["GET", "HEAD"], include_in_schema=False)
+async def robots_txt():
+    return PlainTextResponse(seo.robots_txt(), headers=CRAWL_CACHE)
+
+
+@app.api_route("/sitemap.xml", methods=["GET", "HEAD"], include_in_schema=False)
+async def sitemap_xml():
+    return Response(await seo.sitemap_xml(db), media_type="application/xml", headers=CRAWL_CACHE)
+
+
+@app.api_route("/llms.txt", methods=["GET", "HEAD"], include_in_schema=False)
+async def llms_txt():
+    return PlainTextResponse(seo.llms_txt(), headers=CRAWL_CACHE)
+
+
+@app.api_route("/llms-full.txt", methods=["GET", "HEAD"], include_in_schema=False)
+async def llms_full_txt():
+    return PlainTextResponse(await seo.llms_full_txt(db), headers=CRAWL_CACHE)
+
+
 # ---------------------------------------------------------------- production: serve the React build
 # If frontend/build exists (npm run build), serve it from this process so the site and
 # /api share one origin — same topology as the live host. Dev mode uses CRA's proxy instead.
-BUILD_DIR = ROOT.parent / "frontend" / "build"
+# Front-end routes get per-route meta, JSON-LD and a pre-rendered snapshot from seo.render().
 if BUILD_DIR.exists():
     from fastapi.responses import FileResponse
 
     app.mount("/static", StaticFiles(directory=str(BUILD_DIR / "static")), name="static")
+    INDEX_HTML = (BUILD_DIR / "index.html").read_text(encoding="utf-8")
 
-    @app.get("/{full_path:path}", include_in_schema=False)
+    @app.api_route("/{full_path:path}", methods=["GET", "HEAD"], include_in_schema=False)
     async def spa(full_path: str):
-        candidate = BUILD_DIR / full_path
-        if full_path and candidate.is_file():
+        if full_path == "api" or full_path.startswith("api/"):
+            raise HTTPException(404, "Not found")
+        candidate = (BUILD_DIR / full_path).resolve()
+        if full_path and candidate.is_relative_to(BUILD_DIR.resolve()) and candidate.is_file():
             return FileResponse(candidate)
-        return FileResponse(BUILD_DIR / "index.html")
+        body, status, headers = await seo.render(full_path, INDEX_HTML, db)
+        headers.setdefault("Cache-Control", "no-cache")
+        return HTMLResponse(body, status_code=status, headers=headers)
