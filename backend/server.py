@@ -21,8 +21,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, EmailStr, Field
 
+import asyncio
+
 import media
 import providers
+from listing_sync import ListingSync, sync_enabled
 from media import MediaError
 from providers import ProviderError
 from seed import seed_if_empty
@@ -48,9 +51,25 @@ app.add_middleware(
 )
 
 db = make_store()
+sync = ListingSync(db)
 UPLOADS = ROOT / "uploads"
-UPLOADS.mkdir(exist_ok=True)
-app.mount("/api/uploads", StaticFiles(directory=str(UPLOADS)), name="uploads")
+
+
+@app.api_route("/api/uploads/{path:path}", methods=["GET", "HEAD"], include_in_schema=False)
+async def uploaded_file(path: str):
+    """
+    Serve stored images. Runtime writes (imports, the daily sync, admin uploads) live
+    under media.media_root() on the persistent volume; images committed to the repo live
+    in backend/uploads inside the image. Check the volume first, then the image.
+    """
+    from fastapi.responses import FileResponse
+
+    for base in (media.media_root(), UPLOADS):
+        base = base.resolve()
+        f = (base / path).resolve()
+        if f.is_relative_to(base) and f.is_file():
+            return FileResponse(f)
+    raise HTTPException(404, "Not found")
 
 
 def now_iso() -> str:
@@ -419,10 +438,33 @@ async def ingest_publish(body: PropertyIn, user=Depends(current_user)):
     return {"property": doc}
 
 
+# ---------------------------------------------------------------- daily listing sync
+@app.get("/api/admin/sync")
+async def sync_status(user=Depends(current_user)):
+    return {
+        "enabled": sync_enabled(),
+        "running": sync.running,
+        "next_run": sync.next_run.isoformat() if sync.next_run else None,
+        "runs": await db.list("sync_runs", sort=("started_at", -1), limit=10),
+    }
+
+
+@app.post("/api/admin/sync", status_code=202)
+async def sync_now(dry_run: bool = False, user=Depends(current_user)):
+    if not providers.apify_token():
+        raise HTTPException(503, "APIFY_TOKEN is not set on the server")
+    if sync.running:
+        raise HTTPException(409, "A sync is already running")
+    asyncio.create_task(sync.run("manual", dry_run=dry_run))
+    return {"started": True, "dry_run": dry_run}
+
+
 # ---------------------------------------------------------------- startup
 @app.on_event("startup")
 async def _startup():
     await seed_if_empty(db, ROOT / "seed" / "properties.json")
+    if sync_enabled():
+        app.state.sync_task = asyncio.create_task(sync.scheduler())
 
 
 # ---------------------------------------------------------------- production: serve the React build

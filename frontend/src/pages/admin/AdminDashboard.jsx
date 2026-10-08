@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Building2, FileEdit, Inbox, AlertTriangle, Sparkles, ArrowRight } from "lucide-react";
+import { Building2, FileEdit, Inbox, AlertTriangle, Sparkles, ArrowRight, RefreshCw } from "lucide-react";
 import api from "../../lib/api";
 
 const CARDS = [
@@ -14,9 +14,31 @@ const CARDS = [
 export default function AdminDashboard() {
     const [stats, setStats] = useState(null);
 
+    const [sync, setSync] = useState(null);
+    const [syncError, setSyncError] = useState("");
+
     useEffect(() => {
         api.get("/admin/stats").then((r) => setStats(r.data)).catch(() => {});
+        api.get("/admin/sync").then((r) => setSync(r.data)).catch(() => {});
     }, []);
+
+    // Poll while a run is in progress so the panel updates when it finishes.
+    useEffect(() => {
+        if (!sync?.running) return undefined;
+        const t = setInterval(() => {
+            api.get("/admin/sync").then((r) => setSync(r.data)).catch(() => {});
+        }, 5000);
+        return () => clearInterval(t);
+    }, [sync?.running]);
+
+    const runSync = () => {
+        setSyncError("");
+        api.post("/admin/sync")
+            .then(() => setSync((s) => ({ ...(s || {}), running: true })))
+            .catch((e) => setSyncError(e?.response?.data?.detail || "Could not start the sync"));
+    };
+
+    const lastRun = sync?.runs?.[0];
 
     return (
         <div data-testid="admin-dashboard">
@@ -61,6 +83,52 @@ export default function AdminDashboard() {
                         </div>
                     </motion.div>
                 ))}
+            </div>
+
+            <div className="bg-white border border-slate-200/80 p-6 mt-10" data-testid="listing-sync">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                    <div>
+                        <h2 className="font-serif text-xl font-semibold text-navy">Daily listing sync</h2>
+                        <p className="text-xs text-slate-500 mt-1">
+                            Prices, new listings, sold and rentals from Zillow for Tracie Culver and Alexis Strong.{" "}
+                            {sync?.enabled ? "Runs every morning at 6am." : "Scheduler is off on this server."}
+                        </p>
+                    </div>
+                    <button
+                        type="button"
+                        onClick={runSync}
+                        disabled={sync?.running}
+                        data-testid="sync-run-button"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 border border-navy text-navy text-xs font-semibold tracking-wider uppercase hover:bg-navy hover:text-bone disabled:opacity-50 transition-colors min-h-[44px]"
+                    >
+                        <RefreshCw size={14} className={sync?.running ? "animate-spin" : ""} />
+                        {sync?.running ? "Syncing…" : "Run now"}
+                    </button>
+                </div>
+                {syncError && <p className="text-sm text-red-600 mb-3">{syncError}</p>}
+                {lastRun ? (
+                    <div className="text-sm">
+                        <p className="text-navy">
+                            Last run {new Date(lastRun.started_at).toLocaleString()} ·{" "}
+                            <span className={lastRun.status === "failed" ? "text-red-600 font-semibold" : "text-seaglass font-semibold"}>
+                                {lastRun.status}
+                            </span>{" "}
+                            · {lastRun.changes.length} change{lastRun.changes.length === 1 ? "" : "s"}
+                        </p>
+                        {lastRun.changes.length > 0 && (
+                            <ul className="mt-3 space-y-1 text-xs text-slate-600 max-h-56 overflow-y-auto">
+                                {lastRun.changes.map((c) => <li key={c}>{c}</li>)}
+                            </ul>
+                        )}
+                        {lastRun.errors.length > 0 && (
+                            <ul className="mt-3 space-y-1 text-xs text-red-600">
+                                {lastRun.errors.map((e) => <li key={e}>{e}</li>)}
+                            </ul>
+                        )}
+                    </div>
+                ) : (
+                    <p className="text-sm text-slate-500">No sync has run yet.</p>
+                )}
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10">

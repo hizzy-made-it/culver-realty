@@ -16,6 +16,12 @@ import httpx
 APIFY_ACTOR = "maxcopell~zillow-detail-scraper"
 APIFY_ENDPOINT = f"https://api.apify.com/v2/acts/{APIFY_ACTOR}/run-sync-get-dataset-items"
 
+# Agent-profile actor: one row per Zillow agent profile, carrying that agent's active
+# for-sale listings, active rentals and most recent past sales (with which side they
+# represented). This is how the daily sync discovers listings it has never seen.
+APIFY_AGENTS_ACTOR = "memo23~apify-zillow-agents-cheerio"
+APIFY_AGENTS_ENDPOINT = f"https://api.apify.com/v2/acts/{APIFY_AGENTS_ACTOR}/run-sync-get-dataset-items"
+
 
 # Read at call time, not import time: server.py imports this module before it calls
 # load_dotenv(), so anything captured at import would miss the .env file entirely.
@@ -206,3 +212,44 @@ async def zillow_extract(url: str, zpid: str) -> dict:
     if not data.get("source_url"):
         data["source_url"] = url
     return data
+
+
+async def apify_agents(profile_urls: List[str]) -> List[dict]:
+    """
+    Fetch Zillow agent profiles with their listing catalogues. Raises ProviderError.
+
+    `forceFresh` matters: without it the actor serves a cached copy of the profile that
+    can be days old, which defeats the point of a daily price sync.
+    """
+    token = apify_token()
+    if not token:
+        raise ProviderError("APIFY_TOKEN is not set on the server", 503)
+    if not profile_urls:
+        raise ProviderError("No agent profiles configured", 422)
+
+    payload = {
+        "startUrls": list(profile_urls),
+        "getActiveListings": True,
+        "getRentalListings": True,
+        "getPastSales": True,
+        "forceFresh": True,
+        "maxItems": 1,
+        "maxRequestRetries": 3,
+    }
+    try:
+        async with httpx.AsyncClient(timeout=apify_timeout() + 120) as client:
+            resp = await client.post(APIFY_AGENTS_ENDPOINT, params={"token": token}, json=payload)
+    except httpx.TimeoutException:
+        raise ProviderError("The agent-profile provider timed out", 504)
+    except httpx.HTTPError as exc:
+        raise ProviderError(f"Could not reach the agent-profile provider ({exc.__class__.__name__})", 502)
+
+    if resp.status_code == 402:
+        raise ProviderError("The listing provider account is out of credit", 502)
+    if resp.status_code >= 400:
+        raise ProviderError(f"The agent-profile provider returned {resp.status_code}: {resp.text[:200]}", 502)
+    try:
+        items = resp.json()
+    except ValueError:
+        raise ProviderError("The agent-profile provider returned a response we could not read", 502)
+    return items if isinstance(items, list) else []

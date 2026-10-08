@@ -72,6 +72,28 @@ Zillow import runs the **demo extractor** unless `APIFY_TOKEN` is set. With a to
 `backend/media.py` copies the returned photos onto local storage under
 `backend/uploads/listings/<slug>/`. `RAPIDAPI_KEY` is recognised but not implemented.
 
+## Daily listing sync
+
+`backend/listing_sync.py` runs inside the web process every morning at 6am Eastern
+(`SYNC_HOUR`, `SYNC_TZ`). It reads Tracie Culver's and Alexis Strong's Zillow agent profiles
+through Apify, then:
+
+- updates prices on live for-sale listings and adds new ones listed by either agent;
+- adds recent sales where they represented the seller (last two years, `SYNC_SOLD_WINDOW_DAYS`);
+- marks listings pending or sold when they drop off the profiles;
+- re-checks every live rental for price changes and retires ones no longer for rent.
+
+Nothing is deleted. A listing that disappears goes `off-market` only after two runs in a
+row, and drafts are never touched. New rentals still come in through the admin import
+screen, because Culver files rentals under the company and the agent profiles never list
+them. On by default on Railway, off locally (`SYNC_ENABLED=1` to force). The admin
+dashboard shows the last run and has a Run now button. Locally:
+`python backend/listing_sync.py` (dry run) or `--apply`. Cost is a few cents a day.
+
+Photos written at runtime (imports, the sync, admin uploads) go to `backend/data/uploads`,
+which is on the Railway volume and survives redeploys. `backend/uploads` is baked into the
+image; `/api/uploads/*` checks the volume first, then the image.
+
 ## API contract (as consumed by the frontend)
 
 | Method | Path | Notes |
