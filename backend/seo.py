@@ -96,7 +96,7 @@ PAGES = {
             "Culver Realty & Property Management is a full-service real estate brokerage and property management company in Ormond Beach, Florida, serving Daytona Beach and communities across Volusia and Flagler Counties.",
         ],
         "sections": [
-            ("Buy & Sell", "From first homes to forever homes — strategic pricing, honest counsel, and seamless closings across the Halifax coast.", "/buyers"),
+            ("Buy & Sell", "From first homes to forever homes — strategic pricing, honest counsel, and seamless closings across Volusia and Flagler Counties.", "/buyers"),
             ("Invest", "Build a portfolio with local insight. We source, negotiate, and manage investment properties under one roof.", "/investors"),
             ("Property Management", "Careful tenant screening, proactive maintenance, and transparent reporting — peace of mind for owners.", "/management"),
             ("Home Away home watch", "Home watch and inspection services for second homeowners, snowbirds, and travelers.", "/home-away"),
@@ -110,14 +110,14 @@ PAGES = {
     "/listings": {
         "title": "Homes for Sale in Ormond Beach, Daytona & Flagler | Culver Realty",
         "description": "Browse homes for sale and recently sold properties in Ormond Beach, Daytona Beach, Volusia and Flagler Counties with Culver Realty & Property Management.",
-        "h1": "Properties on the Halifax coast",
+        "h1": "Homes for sale in Volusia and Flagler Counties",
         "crumb": "Sale Listings",
         "intro": ["Homes for sale and recently sold properties from Culver Realty & Property Management in Ormond Beach, Daytona Beach, and across Volusia and Flagler Counties."],
         "listings": [{"all": True}],
     },
     "/buyers": {
         "title": "Buy a Home in Ormond Beach & Volusia County | Culver Realty",
-        "description": "First-home and move-up buyers on the Halifax coast trust Culver Realty & Property Management for local expertise and honest guidance. Call 386.414.3445.",
+        "description": "First-home and move-up buyers in Volusia and Flagler Counties trust Culver Realty & Property Management for local expertise and honest guidance. Call 386.414.3445.",
         "h1": "Find your place on the coast — with someone who lives here",
         "crumb": "Buyers",
         "intro": ["We like to consider ourselves experts in the areas we serve — because we live here, shop here, and have fun here. Whether it's your first home or your forever home, we understand the unique needs that come with what could be the largest purchase of your life."],
@@ -192,7 +192,7 @@ PAGES = {
     "/about": {
         "title": "About Culver Realty & Property Management | Ormond Beach, FL",
         "description": "A full-service brokerage and property management company with deep roots in Volusia and Flagler Counties. Relationships come first.",
-        "h1": "Deep roots on the Halifax coast",
+        "h1": "Deep roots in Volusia and Flagler Counties",
         "crumb": "About",
         "intro": ["Culver Realty & Property Management is a full-service brokerage and property management company with deep roots in Volusia and Flagler Counties, led by Broker/Owner Tracie Culver."],
         "sections": [

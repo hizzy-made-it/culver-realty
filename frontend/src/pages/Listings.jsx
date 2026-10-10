@@ -91,11 +91,11 @@ export default function Listings() {
             />
             <PageHero
                 eyebrow="Sale Listings"
-                title="Properties on the Halifax coast"
-                sub="Homes for sale and a record of recent results across Ormond Beach, Daytona Beach, Volusia and Flagler Counties."
+                title="Homes for sale in Volusia and Flagler Counties"
+                sub="Current listings and a record of recent results, with a specialty in Ormond Beach."
                 video="/api/uploads/seed/video/listings-oceanfront"
                 poster="/api/uploads/seed/video/listings-oceanfront-poster.jpg"
-                alt="Aerial view of oceanfront condominiums on the Halifax coast"
+                alt="Aerial view of oceanfront condominiums in Ormond Beach"
                 size="sm"
                 minHeight="min-h-[52vh]"
                 testid="listings-header"

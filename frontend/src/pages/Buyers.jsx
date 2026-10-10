@@ -17,7 +17,7 @@ export default function Buyers() {
         <Page>
             <Seo
                 title="Buy a Home in Ormond Beach & Volusia County | Culver Realty"
-                description="First-home and move-up buyers on the Halifax coast trust Culver Realty & Property Management for local expertise and honest guidance. Call 386.414.3445."
+                description="First-home and move-up buyers in Volusia and Flagler Counties trust Culver Realty & Property Management for local expertise and honest guidance. Call 386.414.3445."
             />
             <PageHero
                 eyebrow="For buyers"

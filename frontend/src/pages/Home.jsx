@@ -38,7 +38,7 @@ const PILLARS = [
     {
         icon: KeyRound,
         title: "Buy & Sell",
-        copy: "From first homes to forever homes — strategic pricing, honest counsel, and seamless closings across the Halifax coast.",
+        copy: "From first homes to forever homes — strategic pricing, honest counsel, and seamless closings across Volusia and Flagler Counties.",
         to: "/buyers",
         img: "/api/uploads/seed/extra-home-1.jpg",
         testid: "pillar-buy-sell",

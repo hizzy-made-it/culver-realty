@@ -20,7 +20,7 @@ export default function About() {
             />
             <PageHero
                 eyebrow="About us"
-                title="Deep roots on the Halifax coast"
+                title="Deep roots in Volusia and Flagler Counties"
                 video="/api/uploads/seed/video/about-roots"
                 poster="/api/uploads/seed/video/about-roots-poster.jpg"
                 alt="Aerial view of the Halifax River and Ormond Beach"
