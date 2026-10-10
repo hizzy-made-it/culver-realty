@@ -25,7 +25,7 @@ import asyncio
 
 import media
 import providers
-from listing_sync import ListingSync, sync_enabled
+from listing_sync import ListingSync, norm_addr, sync_enabled
 from media import MediaError
 from providers import ProviderError
 from seed import seed_if_empty
@@ -204,6 +204,8 @@ async def list_properties(
     beds: Optional[float] = None,
     baths: Optional[float] = None,
 ):
+    if status == "draft":  # a draft is an admin's decision to hide a listing
+        return {"properties": [], "count": 0}
     flt: dict = {"status": {"$ne": "draft"}}
     if status:
         flt["status"] = status
@@ -399,7 +401,7 @@ async def ingest_preview(body: IngestPreviewIn, user=Depends(current_user)):
         await db.insert("imports", imp)
         raise
     await db.insert("imports", imp)
-    duplicate = await db.find_one("properties", {"zpid": zpid})
+    duplicate = await find_duplicate(zpid, data.get("address"), data.get("city"), data.get("listing_type") or "sale")
     return {
         "data": data,
         "mock": not PROVIDER_CONFIGURED,
@@ -408,8 +410,28 @@ async def ingest_preview(body: IngestPreviewIn, user=Depends(current_user)):
     }
 
 
+async def find_duplicate(zpid: Optional[str], address: Optional[str], city: Optional[str], listing_type: str) -> Optional[dict]:
+    """
+    The listing an import would duplicate: same home (Zillow id, or address for rows that
+    have none) and same type. A sale and a later rental of one home stay separate listings,
+    as in the daily sync (160 Roberta Rd).
+    """
+    key = norm_addr(address, city) if address else None
+    for row in await db.list("properties", {"listing_type": listing_type}):
+        if zpid and str(row.get("zpid") or "") == str(zpid):
+            return row
+        if key and norm_addr(row.get("address"), row.get("city")) == key:
+            return row
+    return None
+
+
 @app.post("/api/admin/ingest/publish", status_code=201)
 async def ingest_publish(body: PropertyIn, user=Depends(current_user)):
+    # A second import of the same home is how 1255 Riverbreeze was listed twice. The
+    # existing listing is edited under Properties, which keeps its photos and history.
+    dup = await find_duplicate(body.zpid, body.address, body.city, body.listing_type)
+    if dup:
+        raise HTTPException(409, f"{dup['address']} is already on the site. Edit it under Properties instead of importing it again.")
     ts = now_iso()
     slug = await unique_slug(slugify(f"{body.address} {body.city}"))
     doc = {
@@ -424,6 +446,8 @@ async def ingest_publish(body: PropertyIn, user=Depends(current_user)):
     # third-party CDN URL that can rotate. This is what the import screen promises.
     photos = doc.get("photos") or []
     if photos:
+        # The first stored photo becomes the cover, so download the chosen cover first.
+        photos = sorted(photos, key=lambda p: not p.get("cover"))
         result = await media.fetch_remote_images([p["url"] for p in photos], slug)
         if result["paths"]:
             doc["photos"] = [
@@ -503,15 +527,18 @@ async def llms_full_txt():
 # /api share one origin — same topology as the live host. Dev mode uses CRA's proxy instead.
 # Front-end routes get per-route meta, JSON-LD and a pre-rendered snapshot from seo.render().
 if BUILD_DIR.exists():
-    from fastapi.responses import FileResponse
+    from fastapi.responses import FileResponse, RedirectResponse
 
     app.mount("/static", StaticFiles(directory=str(BUILD_DIR / "static")), name="static")
     INDEX_HTML = (BUILD_DIR / "index.html").read_text(encoding="utf-8")
 
     @app.api_route("/{full_path:path}", methods=["GET", "HEAD"], include_in_schema=False)
-    async def spa(full_path: str):
+    async def spa(full_path: str, request: Request):
         if full_path == "api" or full_path.startswith("api/"):
             raise HTTPException(404, "Not found")
+        # Sale Listings dropped its For Rent tab; old links go to Rental Listings.
+        if full_path.strip("/") == "listings" and request.query_params.get("tab") == "rent":
+            return RedirectResponse("/rentals", status_code=301)
         candidate = (BUILD_DIR / full_path).resolve()
         if full_path and candidate.is_relative_to(BUILD_DIR.resolve()) and candidate.is_file():
             return FileResponse(candidate)

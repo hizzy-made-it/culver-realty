@@ -86,8 +86,8 @@ export default function ListingDetail() {
                 jsonLd={jsonLd}
             />
             <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-6" data-testid="listing-detail">
-                <Link to="/listings" className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-slate-500 hover:text-navy transition-colors min-h-[44px]" data-testid="back-to-listings-link">
-                    <ArrowLeft size={14} /> All listings
+                <Link to={p.listing_type === "rent" ? "/rentals" : "/listings"} className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-slate-500 hover:text-navy transition-colors min-h-[44px]" data-testid="back-to-listings-link">
+                    <ArrowLeft size={14} /> {p.listing_type === "rent" ? "All rental listings" : "All sale listings"}
                 </Link>
             </div>
 

@@ -27,7 +27,7 @@ export default function Rentals() {
                 description="Find your perfect rental home in Volusia and Flagler Counties. Exclusive rentals professionally managed by Culver Realty & Property Management."
             />
             <PageHero
-                eyebrow="Exclusive rentals"
+                eyebrow="Rental Listings"
                 title="Find your perfect rental home today"
                 sub="Culver Realty & Property Management specializes in helping you find rental homes in beautiful Volusia and Flagler Counties. Our dedicated team ensures a seamless rental process, with a variety of homes to suit your lifestyle and budget."
                 video="/api/uploads/seed/video/rentals-shoreline"

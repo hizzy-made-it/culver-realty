@@ -28,7 +28,7 @@ export default function Investors() {
                 testid="investors-hero"
             >
                 <div className="flex flex-wrap gap-4">
-                    <Link to="/listings?tab=rent" data-testid="investors-rentals-button" className="btn-sheen inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold text-white text-sm font-semibold tracking-wider uppercase hover:bg-gold-hover active:scale-[0.98] transition-all min-h-[44px]">
+                    <Link to="/rentals" data-testid="investors-rentals-button" className="btn-sheen inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold text-white text-sm font-semibold tracking-wider uppercase hover:bg-gold-hover active:scale-[0.98] transition-all min-h-[44px]">
                         See rental inventory <ArrowRight size={15} />
                     </Link>
                     <Link to="/management" data-testid="investors-management-button" className="inline-flex items-center justify-center px-7 py-3.5 border border-bone/40 text-bone text-sm font-semibold tracking-wider uppercase hover:bg-bone hover:text-navy transition-all min-h-[44px]">

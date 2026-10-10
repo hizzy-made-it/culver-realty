@@ -7,11 +7,12 @@ import { EASE, DUR, useReducedMotion } from "../motion";
 
 /**
  * Ten flat links crowded the bar, so the pages people rarely jump between are grouped.
- * Listings, Rentals and Home Away stay one click because they carry the traffic.
+ * Sale Listings, Rental Listings and Home Away stay one click because they carry the traffic.
  */
 const NAV = [
-    { to: "/listings", label: "Listings" },
-    { to: "/rentals", label: "Rentals" },
+    // `end`: detail pages share /listings/:slug for sales and rentals, so neither link claims them.
+    { to: "/listings", label: "Sale Listings", end: true },
+    { to: "/rentals", label: "Rental Listings" },
     { to: "/home-away", label: "Home Away" },
     {
         label: "Services",
@@ -208,7 +209,8 @@ export default function Nav() {
                     />
                 </Link>
 
-                <nav className="hidden lg:flex items-center gap-6 xl:gap-7">
+                {/* "Sale Listings" and "Rental Listings" need ~1150px; narrower screens use the menu. */}
+                <nav className="hidden min-[1150px]:flex items-center gap-6 xl:gap-7">
                     {NAV.map((item) =>
                         item.children ? (
                             <Dropdown key={item.label} group={item} reduce={reduce} />
@@ -216,6 +218,7 @@ export default function Nav() {
                             <NavLink
                                 key={item.to}
                                 to={item.to}
+                                end={item.end}
                                 data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}-link`}
                                 className={({ isActive }) => linkCls(isActive)}
                             >
@@ -240,7 +243,7 @@ export default function Nav() {
                     </a>
                     <HdConnexLink />
                     <button
-                        className="lg:hidden min-h-[44px] min-w-[44px] flex items-center justify-center text-navy"
+                        className="min-[1150px]:hidden min-h-[44px] min-w-[44px] flex items-center justify-center text-navy"
                         onClick={() => setOpen(!open)}
                         data-testid="nav-menu-toggle"
                         aria-label="Toggle menu"
@@ -258,7 +261,7 @@ export default function Nav() {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={reduce ? { opacity: 0 } : { opacity: 0, height: 0 }}
                         transition={{ duration: reduce ? DUR.fast : 0.25, ease: EASE }}
-                        className="lg:hidden overflow-hidden border-t border-navy/10 bg-bone"
+                        className="min-[1150px]:hidden overflow-hidden border-t border-navy/10 bg-bone"
                         data-testid="nav-mobile-menu"
                     >
                         <div className="px-4 py-4 flex flex-col">
@@ -288,6 +291,7 @@ export default function Nav() {
                                     <NavLink
                                         key={item.to}
                                         to={item.to}
+                                        end={item.end}
                                         onClick={() => setOpen(false)}
                                         data-testid={`nav-mobile-${item.label.toLowerCase().replace(/\s+/g, "-")}-link`}
                                         className={({ isActive }) =>

@@ -61,6 +61,28 @@ const PILLARS = [
     },
 ];
 
+// The home page shows sale and rental listings as separate groups, each leading with
+// featured listings and filled out with the newest live ones.
+const LISTING_GROUPS = [
+    {
+        type: "sale",
+        title: "Sale Listings",
+        to: "/listings",
+        empty: "New listings are on the way.",
+        emptyCta: "to hear about properties before they publish.",
+        testid: "home-sale-listings",
+    },
+    {
+        type: "rent",
+        title: "Rental Listings",
+        to: "/rentals",
+        empty: "Our rentals move quickly.",
+        emptyCta: "to join the list and hear about upcoming homes first.",
+        testid: "home-rental-listings",
+    },
+];
+const PER_GROUP = 3;
+
 const TESTIMONIALS = [
     { quote: "They knew every street we asked about — and steered us away from two homes before finding the right one.", name: "J.M.", detail: "Buyer, Ormond Beach" },
     { quote: "Our rental has been occupied and cared for since day one. The communication is exactly what we hoped for.", name: "R. & S. Dalton", detail: "Owners, Flagler County" },
@@ -68,7 +90,8 @@ const TESTIMONIALS = [
 ];
 
 export default function Home() {
-    const [featured, setFeatured] = useState([]);
+    // null while loading, so an empty group does not flash before its listings arrive.
+    const [groups, setGroups] = useState({ sale: null, rent: null });
     const reduce = useReducedMotion();
 
     // Hero copy fades and lifts as the footage scrolls away underneath it.
@@ -94,16 +117,22 @@ export default function Home() {
     const ctaImageY = useTransform(ctaProgress, [0, 1], [reduce ? "0%" : "-12%", reduce ? "0%" : "12%"]);
 
     useEffect(() => {
-        api.get("/properties", { params: { featured: true, status: "live" } })
-            .then((r) => setFeatured(r.data.properties.slice(0, 6)))
-            .catch(() => {});
+        LISTING_GROUPS.forEach(({ type }) => {
+            api.get("/properties", { params: { listing_type: type, status: "live" } })
+                .then((r) => r.data.properties)
+                .catch(() => [])
+                .then((rows) => {
+                    const ordered = [...rows.filter((p) => p.featured), ...rows.filter((p) => !p.featured)];
+                    setGroups((g) => ({ ...g, [type]: ordered.slice(0, PER_GROUP) }));
+                });
+        });
     }, []);
 
     return (
         <Page>
             <Seo
                 title="Culver Realty & Property Management | Ormond Beach Real Estate"
-                description="Residential sales, investments, rentals, and hands-on property management in Ormond Beach, Daytona Beach, Volusia and Flagler Counties. Call 386.414.3445."
+                description="Residential sales, rentals, and hands-on property management serving Volusia and Flagler Counties with a specialty in Ormond Beach. Call 386.414.3445."
                 jsonLd={LOCAL_BUSINESS_LD}
             />
 
@@ -116,24 +145,10 @@ export default function Home() {
                     style={{ opacity: heroContentOpacity, y: heroContentY }}
                     className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pb-20 pt-40 w-full"
                 >
-                    <motion.div
-                        initial={reduce ? { opacity: 0 } : { opacity: 0, y: 12 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, ease: EASE }}
-                        className="flex items-center gap-3 mb-5"
-                    >
-                        <motion.span
-                            className="h-px w-8 bg-gold origin-left"
-                            initial={reduce ? { opacity: 0 } : { scaleX: 0 }}
-                            animate={reduce ? { opacity: 1 } : { scaleX: 1 }}
-                            transition={{ duration: 0.8, ease: EASE, delay: 0.15 }}
-                        />
-                        <p className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">Ormond Beach · Halifax Coast · Florida</p>
-                    </motion.div>
                     <KineticHeading
                         as="h1"
                         title={[
-                            { text: "Realty and property management for Ormond Beach, done with " },
+                            { text: "Culver Realty & Property Management, done with " },
                             { text: "integrity.", className: "italic text-gold" },
                         ]}
                         className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.08] font-medium text-bone max-w-3xl"
@@ -146,7 +161,7 @@ export default function Home() {
                         transition={{ duration: 0.7, ease: EASE, delay: 0.75 }}
                         className="text-base md:text-lg text-bone/80 mt-6 max-w-xl leading-relaxed"
                     >
-                        Sales, investments, rentals, and hands-on management across Volusia and Flagler Counties.
+                        Sales, rentals, and hands-on management serving Volusia and Flagler Counties with a specialty in Ormond Beach.
                     </motion.p>
                     <motion.div
                         initial={reduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
@@ -156,17 +171,24 @@ export default function Home() {
                     >
                         <Link
                             to="/listings"
-                            data-testid="hero-view-listings-button"
-                            className="btn-sheen inline-flex items-center justify-center gap-3 px-10 py-4.5 bg-gold text-white text-sm font-semibold tracking-[0.2em] uppercase hover:bg-gold-hover active:scale-[0.98] transition-all duration-200 shadow-lg shadow-navy-deep/30 min-h-[52px]"
+                            data-testid="hero-sale-listings-button"
+                            className="btn-sheen w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4.5 bg-gold text-white text-sm font-semibold tracking-[0.2em] uppercase hover:bg-gold-hover active:scale-[0.98] transition-all duration-200 shadow-lg shadow-navy-deep/30 min-h-[52px]"
                         >
-                            View listings <ArrowRight size={16} />
+                            Sale Listings <ArrowRight size={16} />
+                        </Link>
+                        <Link
+                            to="/rentals"
+                            data-testid="hero-rental-listings-button"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4.5 bg-white/15 backdrop-blur-md border border-white/40 text-white text-sm font-semibold tracking-[0.2em] uppercase hover:bg-white/25 active:scale-[0.98] transition-all duration-200 shadow-lg shadow-navy-deep/30 min-h-[52px]"
+                        >
+                            Rental Listings <ArrowRight size={16} />
                         </Link>
                     </motion.div>
                 </motion.div>
 
                 <motion.a
                     href="#featured"
-                    aria-label="Scroll to featured listings"
+                    aria-label="Scroll to listings"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 1.6 }}
@@ -198,34 +220,38 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id="featured" className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-20 md:py-28 scroll-mt-20" data-testid="featured-listings">
-                <Reveal>
-                    <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
-                        <div>
-                            <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Featured</p>
-                            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-tight font-medium text-navy">
-                                Current listings on the coast
-                            </h2>
-                        </div>
-                        <Link to="/listings" className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-gold transition-colors" data-testid="featured-view-all-link">
-                            View all <ArrowRight size={15} />
-                        </Link>
+            <section id="featured" className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-20 md:py-28 scroll-mt-20 space-y-20 md:space-y-24" data-testid="featured-listings">
+                {LISTING_GROUPS.map((g) => (
+                    <div key={g.type} data-testid={g.testid}>
+                        <Reveal>
+                            <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
+                                <div>
+                                    <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Available now</p>
+                                    <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-tight font-medium text-navy">
+                                        {g.title}
+                                    </h2>
+                                </div>
+                                <Link to={g.to} className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-gold transition-colors" data-testid={`${g.testid}-view-all-link`}>
+                                    View all {g.title.toLowerCase()} <ArrowRight size={15} />
+                                </Link>
+                            </div>
+                        </Reveal>
+                        {groups[g.type] === null ? null : groups[g.type].length > 0 ? (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                                {groups[g.type].map((p, i) => (
+                                    <ListingCard key={p.id} property={p} index={i} />
+                                ))}
+                            </div>
+                        ) : (
+                            <Reveal className="border border-navy/10 bg-white p-14 text-center">
+                                <p className="font-serif text-2xl text-navy">{g.empty}</p>
+                                <p className="text-sm text-slate-500 mt-2">
+                                    Call <a href={BRAND.phoneHref} className="text-gold font-semibold">{BRAND.phone}</a> {g.emptyCta}
+                                </p>
+                            </Reveal>
+                        )}
                     </div>
-                </Reveal>
-                {featured.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-                        {featured.map((p, i) => (
-                            <ListingCard key={p.id} property={p} index={i} />
-                        ))}
-                    </div>
-                ) : (
-                    <Reveal className="border border-navy/10 bg-white p-14 text-center">
-                        <p className="font-serif text-2xl text-navy">New listings are on the way.</p>
-                        <p className="text-sm text-slate-500 mt-2">
-                            Call <a href={BRAND.phoneHref} className="text-gold font-semibold">{BRAND.phone}</a> to hear about properties before they publish.
-                        </p>
-                    </Reveal>
-                )}
+                ))}
             </section>
 
             <section className="bg-navy text-bone py-20 md:py-28" data-testid="service-pillars">

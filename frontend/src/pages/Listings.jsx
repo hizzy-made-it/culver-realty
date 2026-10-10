@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, PresenceContext, motion, useIsPresent } from "framer-motion";
 import { SlidersHorizontal, X, Phone } from "lucide-react";
 import api from "../lib/api";
 import { BRAND } from "../lib/site";
@@ -9,9 +9,9 @@ import ListingCard from "../components/site/ListingCard";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 
+// Sale listings only. Rentals have their own page, Rental Listings (/rentals).
 const TABS = [
     { key: "sale", label: "For Sale" },
-    { key: "rent", label: "For Rent" },
     { key: "all", label: "All" },
     { key: "sold", label: "Sold" },
 ];
@@ -26,14 +26,20 @@ const PRICE_OPTIONS = [
 ];
 
 export default function Listings() {
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [urlParams, setSearchParams] = useSearchParams();
+    // While this page fades out, the URL already belongs to the next page. Keep reading the
+    // params it was showing so it does not flip tabs and refetch mid-exit.
+    const isPresent = useIsPresent();
+    const shownParams = useRef(urlParams);
+    if (isPresent) shownParams.current = urlParams;
+    const searchParams = shownParams.current;
     const [properties, setProperties] = useState([]);
     const [cities, setCities] = useState([]);
     const [loading, setLoading] = useState(true);
     const [filtersOpen, setFiltersOpen] = useState(false);
     const reduce = useReducedMotion();
 
-    const tab = searchParams.get("tab") || "sale";
+    const tab = TABS.some((t) => t.key === searchParams.get("tab")) ? searchParams.get("tab") : "sale";
     const price = searchParams.get("price") || "";
     const beds = searchParams.get("beds") || "";
     const baths = searchParams.get("baths") || "";
@@ -52,12 +58,8 @@ export default function Listings() {
 
     useEffect(() => {
         setLoading(true);
-        const params = {};
+        const params = { listing_type: "sale" };
         if (tab === "sale") {
-            params.listing_type = "sale";
-            params.status = "live";
-        } else if (tab === "rent") {
-            params.listing_type = "rent";
             params.status = "live";
         } else if (tab === "sold") {
             params.status = "sold";
@@ -84,13 +86,13 @@ export default function Listings() {
     return (
         <Page>
             <Seo
-                title="Homes for Sale & Rent in Ormond Beach, Daytona & Flagler | Culver Realty"
-                description="Browse homes for sale and exclusive rentals in Ormond Beach, Daytona Beach, Volusia and Flagler Counties with Culver Realty & Property Management."
+                title="Homes for Sale in Ormond Beach, Daytona & Flagler | Culver Realty"
+                description="Browse homes for sale and recently sold properties in Ormond Beach, Daytona Beach, Volusia and Flagler Counties with Culver Realty & Property Management."
             />
             <PageHero
-                eyebrow="Listings"
+                eyebrow="Sale Listings"
                 title="Properties on the Halifax coast"
-                sub="Homes for sale, exclusive rentals, and a record of recent results across Ormond Beach, Daytona Beach, Volusia and Flagler Counties."
+                sub="Homes for sale and a record of recent results across Ormond Beach, Daytona Beach, Volusia and Flagler Counties."
                 video="/api/uploads/seed/video/listings-oceanfront"
                 poster="/api/uploads/seed/video/listings-oceanfront-poster.jpg"
                 alt="Aerial view of oceanfront condominiums on the Halifax coast"
@@ -101,23 +103,29 @@ export default function Listings() {
 
             <section className="sticky top-16 md:top-20 z-30 bg-bone/95 backdrop-blur-xl border-b border-navy/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-3 flex items-center justify-between gap-3">
-                    <div className="flex gap-1 overflow-x-auto no-scrollbar" data-testid="listing-tabs">
-                        {TABS.map((t) => (
-                            <button
-                                key={t.key}
-                                onClick={() => setParam("tab", t.key === "sale" ? "" : t.key)}
-                                data-testid={`listing-tab-${t.key}`}
-                                className={`relative px-4 py-2.5 text-xs font-semibold tracking-wider uppercase whitespace-nowrap transition-colors min-h-[44px] ${
-                                    tab === t.key ? "text-navy" : "text-slate-500 hover:text-navy"
-                                }`}
-                            >
-                                {t.label}
-                                {tab === t.key && (
-                                    <motion.span layoutId="tab-underline" transition={SPRING} className="absolute left-0 right-0 -bottom-[1px] h-[2px] bg-gold" />
-                                )}
-                            </button>
-                        ))}
-                    </div>
+                    {/*
+                      The sliding underline is a layoutId node. Once it has moved between tabs it
+                      never released the route crossfade, so the tabs sit outside the page's presence.
+                    */}
+                    <PresenceContext.Provider value={null}>
+                        <div className="flex gap-1 overflow-x-auto no-scrollbar" data-testid="listing-tabs">
+                            {TABS.map((t) => (
+                                <button
+                                    key={t.key}
+                                    onClick={() => setParam("tab", t.key === "sale" ? "" : t.key)}
+                                    data-testid={`listing-tab-${t.key}`}
+                                    className={`relative px-4 py-2.5 text-xs font-semibold tracking-wider uppercase whitespace-nowrap transition-colors min-h-[44px] ${
+                                        tab === t.key ? "text-navy" : "text-slate-500 hover:text-navy"
+                                    }`}
+                                >
+                                    {t.label}
+                                    {tab === t.key && (
+                                        <motion.span layoutId="tab-underline" transition={SPRING} className="absolute left-0 right-0 -bottom-[1px] h-[2px] bg-gold" />
+                                    )}
+                                </button>
+                            ))}
+                        </div>
+                    </PresenceContext.Provider>
                     <button
                         onClick={() => setFiltersOpen(!filtersOpen)}
                         data-testid="listing-filters-toggle"
@@ -195,13 +203,15 @@ export default function Listings() {
                         <p className="text-xs uppercase tracking-[0.2em] text-slate-500 font-semibold mb-8" data-testid="listings-count">
                             {properties.length} propert{properties.length === 1 ? "y" : "ies"}
                         </p>
-                        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-                            <AnimatePresence mode="popLayout">
-                                {properties.map((p, i) => (
-                                    <ListingCard key={p.id} property={p} index={i} />
-                                ))}
-                            </AnimatePresence>
-                        </motion.div>
+                        {/*
+                          A plain grid: it remounts on every tab or filter change, and a `layout`
+                          node here never released the route crossfade (blank page on leaving).
+                        */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                            {properties.map((p, i) => (
+                                <ListingCard key={p.id} property={p} index={i} />
+                            ))}
+                        </div>
                     </>
                 ) : (
                     <motion.div
