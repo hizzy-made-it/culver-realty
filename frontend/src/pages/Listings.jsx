@@ -39,7 +39,7 @@ export default function Listings() {
     const [filtersOpen, setFiltersOpen] = useState(false);
     const reduce = useReducedMotion();
 
-    const tab = searchParams.get("tab") || "sale";
+    const tab = TABS.some((t) => t.key === searchParams.get("tab")) ? searchParams.get("tab") : "sale";
     const price = searchParams.get("price") || "";
     const beds = searchParams.get("beds") || "";
     const baths = searchParams.get("baths") || "";
@@ -204,17 +204,14 @@ export default function Listings() {
                             {properties.length} propert{properties.length === 1 ? "y" : "ies"}
                         </p>
                         {/*
-                          No `layout` here: the grid remounts on every tab or filter change, and a
-                          remounted layout node never released the route crossfade, so leaving the
-                          page after using a tab or filter left a blank screen.
+                          A plain grid: it remounts on every tab or filter change, and a `layout`
+                          node here never released the route crossfade (blank page on leaving).
                         */}
-                        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-                            <AnimatePresence mode="popLayout">
-                                {properties.map((p, i) => (
-                                    <ListingCard key={p.id} property={p} index={i} />
-                                ))}
-                            </AnimatePresence>
-                        </motion.div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                            {properties.map((p, i) => (
+                                <ListingCard key={p.id} property={p} index={i} />
+                            ))}
+                        </div>
                     </>
                 ) : (
                     <motion.div

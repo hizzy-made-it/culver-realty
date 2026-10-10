@@ -219,7 +219,8 @@ export default function AdminImport() {
                             </div>
                             {duplicate && (
                                 <p className="text-xs bg-gold-soft text-gold-hover px-3 py-2 font-semibold" data-testid="import-duplicate-warning">
-                                    A listing with this zpid exists — publishing will update it.
+                                    {duplicate.address} is already on the site —{" "}
+                                    <Link to={`/admin/properties/${duplicate.id}`} className="underline">edit it there</Link> instead of importing it twice.
                                 </p>
                             )}
                         </div>

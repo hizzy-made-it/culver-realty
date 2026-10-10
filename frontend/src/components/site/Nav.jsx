@@ -10,7 +10,8 @@ import { EASE, DUR, useReducedMotion } from "../motion";
  * Sale Listings, Rental Listings and Home Away stay one click because they carry the traffic.
  */
 const NAV = [
-    { to: "/listings", label: "Sale Listings" },
+    // `end`: detail pages share /listings/:slug for sales and rentals, so neither link claims them.
+    { to: "/listings", label: "Sale Listings", end: true },
     { to: "/rentals", label: "Rental Listings" },
     { to: "/home-away", label: "Home Away" },
     {
@@ -217,6 +218,7 @@ export default function Nav() {
                             <NavLink
                                 key={item.to}
                                 to={item.to}
+                                end={item.end}
                                 data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}-link`}
                                 className={({ isActive }) => linkCls(isActive)}
                             >
@@ -289,6 +291,7 @@ export default function Nav() {
                                     <NavLink
                                         key={item.to}
                                         to={item.to}
+                                        end={item.end}
                                         onClick={() => setOpen(false)}
                                         data-testid={`nav-mobile-${item.label.toLowerCase().replace(/\s+/g, "-")}-link`}
                                         className={({ isActive }) =>

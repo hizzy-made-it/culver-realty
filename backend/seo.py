@@ -113,7 +113,7 @@ PAGES = {
         "h1": "Properties on the Halifax coast",
         "crumb": "Sale Listings",
         "intro": ["Homes for sale and recently sold properties from Culver Realty & Property Management in Ormond Beach, Daytona Beach, and across Volusia and Flagler Counties."],
-        "listings": {"all": True},
+        "listings": [{"all": True}],
     },
     "/buyers": {
         "title": "Buy a Home in Ormond Beach & Volusia County | Culver Realty",
@@ -172,7 +172,7 @@ PAGES = {
         "h1": "Find your perfect rental home today",
         "crumb": "Rental Listings",
         "intro": ["Culver Realty & Property Management specializes in helping you find rental homes in beautiful Volusia and Flagler Counties. Our dedicated team ensures a seamless rental process, with a variety of homes to suit your lifestyle and budget. Our rentals move quickly."],
-        "listings": {"listing_type": "rent", "status": "live", "heading": "Available rentals"},
+        "listings": [{"listing_type": "rent", "status": "live", "heading": "Available rentals"}],
         "service": ("Residential rental leasing", "Rental housing"),
     },
     "/home-away": {
@@ -486,12 +486,13 @@ def page_body(path: str, page: dict, props: list) -> str:
         h, txt = sec[0], sec[1]
         link = f' <a href="{sec[2]}">Learn more about {e(h.lower())}</a>' if len(sec) > 2 else ""
         out.append(f"<section><h2>{e(h)}</h2><p>{e(txt)}{link}</p></section>")
-    specs = page.get("listings")
-    pub = [p for p in props if public_listing(p)]
-    for lst in (specs if isinstance(specs, list) else [specs] if specs else []):
+    specs = page.get("listings", [])
+    pub = [p for p in props if public_listing(p)] if specs else []
+    for lst in specs:
         if lst.get("all"):  # /listings: sale listings only; rentals live on /rentals
-            out.append(listings_html([p for p in pub if p["status"] != "sold" and p.get("listing_type") == "sale"], "Homes for sale"))
-            out.append(listings_html([p for p in pub if p["status"] == "sold"], "Recently sold"))
+            sales = [p for p in pub if p.get("listing_type") == "sale"]
+            out.append(listings_html([p for p in sales if p["status"] != "sold"], "Homes for sale"))
+            out.append(listings_html([p for p in sales if p["status"] == "sold"], "Recently sold"))
         else:
             rows = [p for p in pub if p.get("status") == lst.get("status", p.get("status"))
                     and (not lst.get("listing_type") or p.get("listing_type") == lst["listing_type"])

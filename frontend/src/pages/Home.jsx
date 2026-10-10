@@ -188,7 +188,7 @@ export default function Home() {
 
                 <motion.a
                     href="#featured"
-                    aria-label="Scroll to featured listings"
+                    aria-label="Scroll to listings"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 1.6 }}
@@ -226,7 +226,7 @@ export default function Home() {
                         <Reveal>
                             <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
                                 <div>
-                                    <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Featured</p>
+                                    <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Available now</p>
                                     <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-tight font-medium text-navy">
                                         {g.title}
                                     </h2>
