@@ -204,6 +204,8 @@ async def list_properties(
     beds: Optional[float] = None,
     baths: Optional[float] = None,
 ):
+    if status == "draft":  # a draft is an admin's decision to hide a listing
+        return {"properties": [], "count": 0}
     flt: dict = {"status": {"$ne": "draft"}}
     if status:
         flt["status"] = status
@@ -411,12 +413,19 @@ async def ingest_preview(body: IngestPreviewIn, user=Depends(current_user)):
 @app.post("/api/admin/ingest/publish", status_code=201)
 async def ingest_publish(body: PropertyIn, user=Depends(current_user)):
     ts = now_iso()
-    slug = await unique_slug(slugify(f"{body.address} {body.city}"))
+    # Re-importing a zpid we already have updates that listing, as the import screen
+    # promises. Inserting a second row is how a rental ended up on the site twice.
+    existing = await db.find_one("properties", {"zpid": body.zpid}) if body.zpid else None
+    if existing:
+        slug = existing["slug"]
+        keep = {k: existing[k] for k in ("id", "created_at", "featured") if k in existing}
+    else:
+        slug = await unique_slug(slugify(f"{body.address} {body.city}"))
+        keep = {"id": str(uuid.uuid4()), "created_at": ts}
     doc = {
         **body.model_dump(),
-        "id": str(uuid.uuid4()),
+        **keep,
         "slug": slug,
-        "created_at": ts,
         "updated_at": ts,
         "imported_at": ts,
     }
@@ -431,7 +440,10 @@ async def ingest_publish(body: PropertyIn, user=Depends(current_user)):
                 for i, u in enumerate(result["paths"])
             ]
         doc["photo_import_errors"] = result["errors"] or None
-    await db.insert("properties", doc)
+    if existing:
+        doc = await db.update("properties", existing["id"], doc)
+    else:
+        await db.insert("properties", doc)
     if body.zpid:
         for imp in await db.list("imports", {"zpid": body.zpid}):
             await db.update("imports", imp["id"], {"status": "published"})

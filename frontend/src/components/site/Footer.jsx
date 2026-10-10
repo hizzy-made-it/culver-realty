@@ -33,8 +33,8 @@ export default function Footer() {
                     <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Explore</p>
                     <div className="grid grid-cols-2 gap-x-6">
                         {[
-                            ["Listings", "/listings"],
-                            ["Rentals", "/rentals"],
+                            ["Sale Listings", "/listings"],
+                            ["Rental Listings", "/rentals"],
                             ["Buyers", "/buyers"],
                             ["Sellers", "/sellers"],
                             ["Investors", "/investors"],
@@ -45,7 +45,7 @@ export default function Footer() {
                             ["FAQ", "/faq"],
                             ["Contact", "/contact"],
                         ].map(([label, to]) => (
-                            <Link key={to} to={to} className="py-1.5 text-bone/80 hover:text-gold transition-colors" data-testid={`footer-${label.toLowerCase()}-link`}>
+                            <Link key={to} to={to} className="py-1.5 text-bone/80 hover:text-gold transition-colors" data-testid={`footer-${label.toLowerCase().replace(/\s+/g, "-")}-link`}>
                                 {label}
                             </Link>
                         ))}

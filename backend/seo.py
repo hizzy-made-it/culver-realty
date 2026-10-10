@@ -90,7 +90,7 @@ TEAM = [
 PAGES = {
     "/": {
         "title": "Culver Realty & Property Management | Ormond Beach Real Estate",
-        "description": "Residential sales, investments, rentals, and hands-on property management in Ormond Beach, Daytona Beach, Volusia and Flagler Counties. Call 386.414.3445.",
+        "description": "Residential sales, rentals, and hands-on property management serving Volusia and Flagler Counties with a specialty in Ormond Beach. Call 386.414.3445.",
         "h1": "Ormond Beach real estate & property management",
         "intro": [
             "Culver Realty & Property Management is a full-service real estate brokerage and property management company in Ormond Beach, Florida, serving Daytona Beach and communities across Volusia and Flagler Counties.",
@@ -101,15 +101,18 @@ PAGES = {
             ("Property Management", "Careful tenant screening, proactive maintenance, and transparent reporting — peace of mind for owners.", "/management"),
             ("Home Away home watch", "Home watch and inspection services for second homeowners, snowbirds, and travelers.", "/home-away"),
         ],
-        "listings": {"featured": True, "status": "live", "limit": 6, "heading": "Featured properties"},
+        "listings": [
+            {"listing_type": "sale", "status": "live", "featured_first": True, "limit": 3, "heading": "Sale Listings"},
+            {"listing_type": "rent", "status": "live", "featured_first": True, "limit": 3, "heading": "Rental Listings"},
+        ],
         "priority": "1.0",
     },
     "/listings": {
-        "title": "Homes for Sale & Rent in Ormond Beach, Daytona & Flagler | Culver Realty",
-        "description": "Browse homes for sale and exclusive rentals in Ormond Beach, Daytona Beach, Volusia and Flagler Counties with Culver Realty & Property Management.",
+        "title": "Homes for Sale in Ormond Beach, Daytona & Flagler | Culver Realty",
+        "description": "Browse homes for sale and recently sold properties in Ormond Beach, Daytona Beach, Volusia and Flagler Counties with Culver Realty & Property Management.",
         "h1": "Properties on the Halifax coast",
-        "crumb": "Listings",
-        "intro": ["Homes for sale, exclusive rentals, and recently sold properties from Culver Realty & Property Management in Ormond Beach, Daytona Beach, and across Volusia and Flagler Counties."],
+        "crumb": "Sale Listings",
+        "intro": ["Homes for sale and recently sold properties from Culver Realty & Property Management in Ormond Beach, Daytona Beach, and across Volusia and Flagler Counties."],
         "listings": {"all": True},
     },
     "/buyers": {
@@ -167,7 +170,7 @@ PAGES = {
         "title": "Exclusive Rentals in Ormond Beach & Volusia County | Culver Realty",
         "description": "Find your perfect rental home in Volusia and Flagler Counties. Exclusive rentals professionally managed by Culver Realty & Property Management.",
         "h1": "Find your perfect rental home today",
-        "crumb": "Rentals",
+        "crumb": "Rental Listings",
         "intro": ["Culver Realty & Property Management specializes in helping you find rental homes in beautiful Volusia and Flagler Counties. Our dedicated team ensures a seamless rental process, with a variety of homes to suit your lifestyle and budget. Our rentals move quickly."],
         "listings": {"listing_type": "rent", "status": "live", "heading": "Available rentals"},
         "service": ("Residential rental leasing", "Rental housing"),
@@ -226,8 +229,8 @@ PAGES = {
     },
 }
 
-NAV = [("/listings", "Listings"), ("/buyers", "Buy"), ("/sellers", "Sell"), ("/investors", "Invest"),
-       ("/management", "Property Management"), ("/rentals", "Rentals"), ("/home-away", "Home Away"),
+NAV = [("/listings", "Sale Listings"), ("/rentals", "Rental Listings"), ("/buyers", "Buy"), ("/sellers", "Sell"),
+       ("/investors", "Invest"), ("/management", "Property Management"), ("/home-away", "Home Away"),
        ("/team", "Team"), ("/about", "About"), ("/faq", "FAQ"), ("/contact", "Contact")]
 
 
@@ -483,17 +486,18 @@ def page_body(path: str, page: dict, props: list) -> str:
         h, txt = sec[0], sec[1]
         link = f' <a href="{sec[2]}">Learn more about {e(h.lower())}</a>' if len(sec) > 2 else ""
         out.append(f"<section><h2>{e(h)}</h2><p>{e(txt)}{link}</p></section>")
-    lst = page.get("listings")
-    if lst:
-        pub = [p for p in props if public_listing(p)]
-        if lst.get("all"):
+    specs = page.get("listings")
+    pub = [p for p in props if public_listing(p)]
+    for lst in (specs if isinstance(specs, list) else [specs] if specs else []):
+        if lst.get("all"):  # /listings: sale listings only; rentals live on /rentals
             out.append(listings_html([p for p in pub if p["status"] != "sold" and p.get("listing_type") == "sale"], "Homes for sale"))
-            out.append(listings_html([p for p in pub if p["status"] != "sold" and p.get("listing_type") == "rent"], "Homes for rent"))
             out.append(listings_html([p for p in pub if p["status"] == "sold"], "Recently sold"))
         else:
             rows = [p for p in pub if p.get("status") == lst.get("status", p.get("status"))
                     and (not lst.get("listing_type") or p.get("listing_type") == lst["listing_type"])
                     and (not lst.get("featured") or p.get("featured"))]
+            if lst.get("featured_first"):
+                rows = [p for p in rows if p.get("featured")] + [p for p in rows if not p.get("featured")]
             out.append(listings_html(rows[: lst.get("limit", 100)], lst["heading"]))
     if page.get("team"):
         for m in TEAM:
@@ -610,12 +614,13 @@ async def render(path: str, template: str, db) -> tuple[str, int, dict]:
             description = (f'{status_label(p)}: {full_address(p)}. {" / ".join(b for b in bits if b)}. '
                            f'{(p.get("title") or "").rstrip(".")}. Culver Realty & Property Management, Ormond Beach.').replace(" . ", " ").replace("..", ".")
             similar = [x for x in props if x.get("status") == "live" and x.get("listing_type") == p.get("listing_type") and x["id"] != p["id"]][:3]
+            parent = ("Rental Listings", "/rentals") if p.get("listing_type") == "rent" else ("Sale Listings", "/listings")
             nodes = [org_ld(), website_ld(),
-                     breadcrumb_ld([("Listings", "/listings"), (full_address(p), path)]),
+                     breadcrumb_ld([parent, (full_address(p), path)]),
                      {"@type": "WebPage", "@id": canonical + "#webpage", "url": canonical, "name": title,
                       "isPartOf": {"@id": SITE_ID}, "mainEntity": {"@id": canonical + "#listing"}},
                      listing_ld(p, canonical)]
-            body = crumbs_html([("Listings", "/listings"), (full_address(p), path)]) + detail_body(p, similar)
+            body = crumbs_html([parent, (full_address(p), path)]) + detail_body(p, similar)
             head = head_tags(title=title, description=description, canonical=canonical, image=cover(p),
                              ld_json=graph(*nodes), path=path)
             return inject(template, title=title, description=description, head=head, body=body), 200, headers
