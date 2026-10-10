@@ -26,7 +26,7 @@ const NAV = [
     {
         label: "About",
         children: [
-            { to: "/about", label: "About Culver", blurb: "Deep roots on the Halifax coast" },
+            { to: "/about", label: "About Culver", blurb: "Deep roots in Volusia and Flagler Counties" },
             { to: "/team", label: "Meet the Team", blurb: "The people you'll work with" },
             { to: "/faq", label: "FAQ", blurb: "Straight answers, no runaround" },
         ],
