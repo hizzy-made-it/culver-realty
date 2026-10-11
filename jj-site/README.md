@@ -48,7 +48,7 @@ service instead (Formspree etc.), point `newsletterEndpoint` in `config.js` at i
 **Vercel (recommended):** import this repo, set *Root Directory* to `jj-site`, framework
 "Other", no build command. Add the env vars above. Custom domain → Project → Domains.
 
-After the domain is live, update `og:image` in `index.html` to the real domain.
+Live now at https://hopefully-jdj-hd-connex.vercel.app (Vercel project `hopefully-jdj`, HD Connex team, root directory `jj-site`). After a custom domain is added, update `og:image` in `index.html` to that domain.
 
 **Local preview:** `python3 -m http.server 8080` inside `jj-site/` (the form will 405
 without the serverless runtime — use `npx vercel dev` for that).
