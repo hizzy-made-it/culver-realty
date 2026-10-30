@@ -78,3 +78,9 @@ html:focus-within {
     }
 }
 
+/* A scroll reveal that hasn't played yet (opacity 0) must never hide the element holding keyboard
+   focus (WCAG 2.4.7). Reveal, StaggerItem and ListingCard carry data-reveal. */
+[data-reveal]:focus-within {
+    opacity: 1 !important;
+    transform: none !important;
+}

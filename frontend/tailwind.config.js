@@ -22,7 +22,11 @@ module.exports = {
           DEFAULT: "#C5A059",
           hover: "#B08B46",
           soft: "#F7F2E7",
+          // Gold for small text on bone/sand/white: #C5A059 there is ~2.3:1, this is 4.6:1+ (WCAG AA).
+          ink: "#82652E",
         },
+        // Stock slate-500 (#64748B) is 4.4:1 on bone; one step darker passes AA (5.0:1) and looks the same.
+        slate: { 500: "#5C6B80" },
         sand: {
           100: "#FAF7F2",
           200: "#F2ECE1",

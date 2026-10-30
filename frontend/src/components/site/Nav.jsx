@@ -37,8 +37,8 @@ const NAV = [
 const HD_CONNEX = "https://hdconnex.com";
 
 const linkCls = (isActive) =>
-    `relative text-sm font-medium tracking-wide transition-colors hover:text-gold ${
-        isActive ? "text-gold" : "text-navy"
+    `relative text-sm font-medium tracking-wide transition-colors hover:text-gold-ink ${
+        isActive ? "text-gold-ink" : "text-navy"
     }`;
 
 function Underline({ reduce }) {
@@ -131,7 +131,7 @@ function Dropdown({ group, reduce }) {
                                 <>
                                     <span
                                         className={`block text-sm font-semibold transition-colors ${
-                                            isActive ? "text-gold" : "text-navy group-hover/item:text-gold"
+                                            isActive ? "text-gold-ink" : "text-navy group-hover/item:text-gold-ink"
                                         }`}
                                     >
                                         {c.label}
@@ -156,11 +156,11 @@ function HdConnexLink({ mobile = false, onClick }) {
                 rel="noopener noreferrer"
                 onClick={onClick}
                 data-testid="nav-mobile-hdconnex-link"
-                className="mt-3 pt-4 border-t border-navy/10 flex items-center gap-3 text-navy/70 hover:text-gold transition-colors min-h-[44px]"
+                className="mt-3 pt-4 border-t border-navy/10 flex items-center gap-3 text-navy/70 hover:text-gold-ink transition-colors min-h-[44px]"
             >
                 <img src="/api/uploads/seed/hdconnex-logo.png" alt="" aria-hidden="true" className="h-8 w-8 rounded-md" />
                 <span className="flex flex-col leading-tight">
-                    <span className="text-[0.62rem] uppercase tracking-[0.18em] text-navy/40">Site by</span>
+                    <span className="text-[0.62rem] uppercase tracking-[0.18em] text-navy/65">Site by</span>
                     <span className="text-sm font-semibold">HD Connex</span>
                 </span>
                 <ExternalLink size={13} className="ml-auto opacity-50" />
@@ -182,8 +182,8 @@ function HdConnexLink({ mobile = false, onClick }) {
                 className="h-7 w-7 rounded-md transition-transform duration-200 group-hover/hd:scale-105"
             />
             <span className="hidden xl:flex flex-col leading-none">
-                <span className="text-[0.58rem] uppercase tracking-[0.18em] text-navy/40">Site by</span>
-                <span className="text-[0.72rem] font-semibold text-navy/70 group-hover/hd:text-gold transition-colors">
+                <span className="text-[0.58rem] uppercase tracking-[0.18em] text-navy/65">Site by</span>
+                <span className="text-[0.72rem] font-semibold text-navy/70 group-hover/hd:text-gold-ink transition-colors">
                     HD Connex
                 </span>
             </span>
@@ -268,7 +268,7 @@ export default function Nav() {
                             {NAV.map((item) =>
                                 item.children ? (
                                     <div key={item.label} className="py-2 border-b border-navy/5">
-                                        <p className="text-[0.62rem] uppercase tracking-[0.2em] text-navy/40 font-semibold py-1">
+                                        <p className="text-[0.62rem] uppercase tracking-[0.2em] text-navy/65 font-semibold py-1">
                                             {item.label}
                                         </p>
                                         {item.children.map((c) => (
@@ -279,7 +279,7 @@ export default function Nav() {
                                                 data-testid={`nav-mobile-${c.to.slice(1)}-link`}
                                                 className={({ isActive }) =>
                                                     `pl-3 py-2.5 text-base font-medium min-h-[44px] flex items-center ${
-                                                        isActive ? "text-gold" : "text-navy"
+                                                        isActive ? "text-gold-ink" : "text-navy"
                                                     }`
                                                 }
                                             >
@@ -296,7 +296,7 @@ export default function Nav() {
                                         data-testid={`nav-mobile-${item.label.toLowerCase().replace(/\s+/g, "-")}-link`}
                                         className={({ isActive }) =>
                                             `py-3 text-base font-medium border-b border-navy/5 min-h-[44px] flex items-center ${
-                                                isActive ? "text-gold" : "text-navy"
+                                                isActive ? "text-gold-ink" : "text-navy"
                                             }`
                                         }
                                     >

@@ -55,7 +55,7 @@ export default function Footer() {
             <div className="border-t border-bone/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-6">
                     <p className="text-xs text-bone/50 leading-relaxed" data-testid="footer-disclaimer">{BRAND.disclaimer}</p>
-                    <p className="text-xs text-bone/40 mt-3">
+                    <p className="text-xs text-bone/50 mt-3">
                         © {new Date().getFullYear()} {BRAND.name} · Ormond Beach, Florida
                     </p>
                 </div>

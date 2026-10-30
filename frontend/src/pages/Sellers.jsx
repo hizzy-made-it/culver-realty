@@ -32,7 +32,7 @@ export default function Sellers() {
                     {STEPS.map((s, i) => (
                         <StaggerItem key={s.title} className="h-full">
                             <div className="card-hover bg-white border border-navy/10 p-8 h-full" data-testid={`seller-step-${i}`}>
-                                <p className="font-serif text-5xl text-gold/60 font-semibold">{String(i + 1).padStart(2, "0")}</p>
+                                <p className="font-serif text-5xl text-gold-hover font-semibold">{String(i + 1).padStart(2, "0")}</p>
                                 <h3 className="font-serif text-2xl font-semibold text-navy mt-4">{s.title}</h3>
                                 <p className="text-sm text-slate-600 leading-relaxed mt-3">{s.copy}</p>
                             </div>
