@@ -3,7 +3,7 @@ import { Page, Reveal, StaggerGroup, StaggerItem } from "../components/motion";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 import InquiryForm from "../components/site/InquiryForm";
-import { BRAND } from "../lib/site";
+import { BRAND, MAP_URL, MAP_EMBED_URL } from "../lib/site";
 
 export default function Contact() {
     return (
@@ -55,13 +55,18 @@ export default function Contact() {
                     </StaggerGroup>
                     <div className="mt-6 border border-navy/10 overflow-hidden" data-testid="contact-map">
                         <iframe
-                            title="Map of Culver Realty office"
+                            title="Google Map of Culver Realty & Property Management, 2412 John Anderson Drive, Ormond Beach"
                             width="100%"
-                            height="260"
+                            height="300"
                             loading="lazy"
-                            src="https://www.openstreetmap.org/export/embed.html?bbox=-81.075%2C29.330%2C-81.045%2C29.355&layer=mapnik&marker=29.3425%2C-81.060"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            style={{ border: 0 }}
+                            src={MAP_EMBED_URL}
                         />
                     </div>
+                    <a href={MAP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-3 text-xs font-semibold tracking-wider uppercase text-navy hover:text-gold min-h-[44px]" data-testid="contact-directions">
+                        <MapPin size={14} /> Get directions on Google Maps
+                    </a>
                 </Reveal>
                 <Reveal className="lg:col-span-7" delay={0.1}>
                     <div className="bg-white border border-navy/10 p-7 md:p-10 shadow-sm">
