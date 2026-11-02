@@ -12,6 +12,7 @@ import Buyers from "@/pages/Buyers";
 import Sellers from "@/pages/Sellers";
 import Investors from "@/pages/Investors";
 import Management from "@/pages/Management";
+import CityManagement from "@/pages/CityManagement";
 import Rentals from "@/pages/Rentals";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
@@ -66,6 +67,7 @@ function App() {
                             <Route path="/sellers" element={<Sellers />} />
                             <Route path="/investors" element={<Investors />} />
                             <Route path="/management" element={<Management />} />
+                            <Route path="/property-management/:city" element={<CityManagement />} />
                             <Route path="/rentals" element={<Rentals />} />
                             <Route path="/about" element={<About />} />
                             <Route path="/contact" element={<Contact />} />

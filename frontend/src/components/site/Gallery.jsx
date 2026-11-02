@@ -2,8 +2,9 @@ import { useEffect, useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { EASE, DUR, useReducedMotion } from "../motion";
 import { ChevronLeft, ChevronRight, X, Expand } from "lucide-react";
+import { photoAlt } from "../../lib/site";
 
-export default function Gallery({ photos = [], address = "" }) {
+export default function Gallery({ photos = [], address = "", listing = null }) {
     const visible = photos.filter((p) => !p.hidden);
     const [index, setIndex] = useState(0);
     const [lightbox, setLightbox] = useState(false);
@@ -25,6 +26,8 @@ export default function Gallery({ photos = [], address = "" }) {
 
     if (visible.length === 0) return null;
     const current = visible[Math.min(index, visible.length - 1)];
+    const altFor = (photo, i) => (listing ? photoAlt(listing, photo, i, visible.length) : `${address} photo ${i + 1}`);
+    const currentAlt = altFor(current, Math.min(index, visible.length - 1));
 
     return (
         <div data-testid="listing-gallery">
@@ -33,7 +36,7 @@ export default function Gallery({ photos = [], address = "" }) {
                     <motion.img
                         key={current.url + index}
                         src={current.url}
-                        alt={address}
+                        alt={currentAlt}
                         initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.02 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0 }}
@@ -82,7 +85,7 @@ export default function Gallery({ photos = [], address = "" }) {
                                 i === index ? "border-gold" : "border-transparent opacity-70 hover:opacity-100"
                             }`}
                         >
-                            <img src={p.url} alt="" className="w-full h-full object-cover" loading="lazy" />
+                            <img src={p.url} alt={altFor(p, i)} className="w-full h-full object-cover" loading="lazy" />
                         </button>
                     ))}
                 </div>
@@ -111,7 +114,7 @@ export default function Gallery({ photos = [], address = "" }) {
                         <motion.img
                             key={current.url + index}
                             src={current.url}
-                            alt={address}
+                            alt={currentAlt}
                             initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.96 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0 }}

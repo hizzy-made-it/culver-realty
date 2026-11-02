@@ -39,6 +39,8 @@ BRAND = {
 }
 ADDRESS = f'{BRAND["street"]}, {BRAND["city"]}, {BRAND["region"]} {BRAND["zip"]}'
 OG_IMAGE = "/api/uploads/seed/video/home-intracoastal-poster.jpg"
+# The office's Google Maps link, as used in the site footer.
+MAP_URL = "https://maps.google.com/?q=2412+John+Anderson+Drive,+Ormond+Beach,+FL+32176"
 ORG_ID = f"{SITE}/#organization"
 SITE_ID = f"{SITE}/#website"
 
@@ -91,8 +93,10 @@ PAGES = {
     "/": {
         "title": "Culver Realty & Property Management | Ormond Beach Real Estate",
         "description": "Residential sales, rentals, and hands-on property management serving Volusia and Flagler Counties with a specialty in Ormond Beach. Call 386.414.3445.",
-        "h1": "Ormond Beach real estate & property management",
+        "h1": "Culver Realty & Property Management in Ormond Beach & Daytona Beach",
+        "subhead": "Done with integrity.",
         "intro": [
+            "Sales, rentals, and hands-on management serving Volusia and Flagler Counties with a specialty in Ormond Beach.",
             "Culver Realty & Property Management is a full-service real estate brokerage and property management company in Ormond Beach, Florida, serving Daytona Beach and communities across Volusia and Flagler Counties.",
         ],
         "sections": [
@@ -151,21 +155,7 @@ PAGES = {
         ],
         "service": ("Investment property acquisition", "Real estate investment services"),
     },
-    "/management": {
-        "title": "Property Management in Ormond Beach, Volusia & Flagler | Culver Realty",
-        "description": "Hands-on property management: tenant screening, proactive maintenance, and transparent reporting for owners across Volusia and Flagler Counties. Call 386.414.3445.",
-        "h1": "Your investment, managed like it's ours",
-        "crumb": "Property Management",
-        "intro": ["Our property management division offers hands-on, proactive management to ensure properties are well maintained, tenants are carefully screened, and owners enjoy peace of mind — all handled with transparency and professionalism."],
-        "sections": [
-            ("Tenant screening", "Careful, consistent screening — credit, background, rental history, and income verification — so the right tenants land in your home."),
-            ("Proactive maintenance", "Hands-on, proactive management keeps properties well maintained and small issues from becoming expensive ones."),
-            ("Transparent reporting", "Clear statements and honest communication. You'll always know how your property is performing."),
-            ("Owner peace of mind", "We treat your investment home like our own — with professionalism, strong ethics, and a long-term view."),
-        ],
-        "service": ("Residential property management", "Property management"),
-        "priority": "0.9",
-    },
+    "/management": {},  # filled from frontend/src/content/management.json below
     "/rentals": {
         "title": "Exclusive Rentals in Ormond Beach & Volusia County | Culver Realty",
         "description": "Find your perfect rental home in Volusia and Flagler Counties. Exclusive rentals professionally managed by Culver Realty & Property Management.",
@@ -247,14 +237,58 @@ def absu(path: str) -> str:
     return SITE + (path if path.startswith("/") else "/" + path)
 
 
-def load_faqs() -> list:
-    for p in (ROOT.parent / "frontend" / "src" / "content" / "faqs.json", ROOT / "content" / "faqs.json"):
+def load_content(name: str, default):
+    for p in (ROOT.parent / "frontend" / "src" / "content" / name, ROOT / "content" / name):
         if p.is_file():
             return json.loads(p.read_text(encoding="utf-8"))
-    return []
+    return default
+
+
+def load_faqs() -> list:
+    return load_content("faqs.json", [])
 
 
 FAQS = load_faqs()
+
+# Property management hub + city pages. Copy is shared with the React pages
+# (frontend/src/content/management.json and cities.json) so the snapshot matches the app.
+MANAGEMENT = load_content("management.json", {})
+CITIES = load_content("cities.json", [])
+
+PAGES["/management"] = {
+    "title": MANAGEMENT.get("title", "Property Management | Culver Realty"),
+    "description": MANAGEMENT.get("description", ""),
+    "h1": MANAGEMENT.get("h1", "Property management"),
+    "crumb": "Property Management",
+    "intro": [MANAGEMENT["answer"]] if MANAGEMENT.get("answer") else [],
+    "blocks": MANAGEMENT.get("sections", []),
+    "links": ("Areas we manage", [(f'{c["name"]} property management', f'/property-management/{c["slug"]}') for c in CITIES]),
+    "extra_links": [("Buying a rental first? See how we help investors acquire and manage under one roof", "/investors")],
+    "faqs": MANAGEMENT.get("faqs", []),
+    "faq_heading": "Property management questions",
+    "service": ("Residential property management", "Property management"),
+    "priority": "0.9",
+}
+
+for _c in CITIES:
+    _path = f'/property-management/{_c["slug"]}'
+    PAGES[_path] = {
+        "title": _c["title"],
+        "description": _c["description"],
+        "h1": _c["h1"],
+        "crumb": _c["name"],
+        "trail": [("Property Management", "/management"), (_c["name"], _path)],
+        "intro": [_c["answer"]],
+        "local": (f'Local management in {_c["name"]}', _c.get("local", [])),
+        "sections": [(b["heading"], b["intro"], f'/management#{b["id"]}') for b in MANAGEMENT.get("sections", [])],
+        "listings": [{"listing_type": "rent", "status": "live", "city": _c["name"], "limit": 6,
+                      "heading": f'Current rentals in {_c["name"]}'}],
+        "faqs": _c.get("faqs", []),
+        "faq_heading": f'{_c["name"]} property management questions',
+        "links": ("Also managing in", [(c["name"], f'/property-management/{c["slug"]}') for c in CITIES if c["slug"] != _c["slug"]]),
+        "service": (f'Property management in {_c["name"]}, FL', "Property management"),
+        "area": [("City", f'{_c["name"]}, FL'), ("AdministrativeArea", _c["county"])],
+    }
 
 
 def fmt_price(p: dict) -> str:
@@ -319,6 +353,7 @@ def org_ld() -> dict:
             "addressCountry": "US",
         },
         "areaServed": [{"@type": t, "name": n + ("" if "County" in n else ", FL")} for t, n in AREAS],
+        "hasMap": MAP_URL,
         "founder": {"@id": f"{SITE}/team#tracie-culver"},
         "employee": [{"@id": f"{SITE}/team#{slug(m['name'])}"} for m in TEAM],
         "knowsAbout": [
@@ -356,6 +391,29 @@ def breadcrumb_ld(trail: list) -> dict:
 def faq_ld() -> dict:
     return {"@type": "FAQPage", "@id": absu("/faq") + "#faq", "mainEntity": [
         {"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in FAQS]}
+
+
+def page_faq_ld(canonical: str, faqs: list) -> dict:
+    return {"@type": "FAQPage", "@id": canonical + "#faq", "url": canonical, "isPartOf": {"@id": SITE_ID},
+            "mainEntity": [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}}
+                           for f in faqs]}
+
+
+def listing_summary(p: dict) -> str:
+    """'3-bed, 2-bath single family home for sale' from the listing's own fields (mirrors lib/site.js)."""
+    bits = []
+    if p.get("beds") is not None:
+        bits.append(f'{num(p["beds"])}-bed')
+    if p.get("baths") is not None:
+        bits.append(f'{num(p["baths"])}-bath')
+    ptype = (p.get("property_type") or "home").lower()
+    noun = ptype if re.search(r"condo|townhome|townhouse|apartment", ptype) else f"{ptype} home".replace("home home", "home")
+    status = "sold" if p.get("status") == "sold" else ("for rent" if p.get("listing_type") == "rent" else "for sale")
+    return f'{", ".join(bits) + " " if bits else ""}{noun} {status}'
+
+
+def photo_alt(p: dict, photo: dict, i: int, total: int) -> str:
+    return photo.get("alt") or f"{full_address(p)} — {listing_summary(p)}, photo {i + 1} of {total}"
 
 
 def person_ld(m: dict) -> dict:
@@ -442,6 +500,7 @@ def header_html() -> str:
 
 
 def footer_html() -> str:
+    city_links = [f'<a href="/property-management/{e(c["slug"])}">{e(c["name"])} property management</a>' for c in CITIES]
     return (
         '<footer itemscope itemtype="https://schema.org/RealEstateAgent">'
         f'<p><strong itemprop="name">{e(BRAND["name"])}</strong></p>'
@@ -449,6 +508,7 @@ def footer_html() -> str:
         f'<p>Call <a itemprop="telephone" href="tel:{BRAND["tel"]}">{e(BRAND["phone"])}</a> · '
         f'<a itemprop="email" href="mailto:{BRAND["email"]}">{e(BRAND["email"])}</a></p>'
         "<p>Serving Ormond Beach, Daytona Beach, Holly Hill, Palm Coast, and all of Volusia and Flagler Counties, Florida.</p>"
+        f'<nav aria-label="Property management areas"><p>{" · ".join(city_links)}</p></nav>'
         "</footer>"
     )
 
@@ -480,8 +540,16 @@ def listings_html(rows: list, heading: str) -> str:
 
 def page_body(path: str, page: dict, props: list) -> str:
     out = [f'<h1>{e(page["h1"])}</h1>']
+    if page.get("subhead"):
+        out.append(f'<p><strong>{e(page["subhead"])}</strong></p>')
     for para in page.get("intro", []):
         out.append(f"<p>{e(para)}</p>")
+    if page.get("local"):
+        h, paras = page["local"]
+        out.append(f"<section><h2>{e(h)}</h2>" + "".join(f"<p>{e(x)}</p>" for x in paras) + "</section>")
+    for blk in page.get("blocks", []):
+        steps = "".join(f'<li><h3>{e(st["title"])}</h3><p>{e(st["text"])}</p></li>' for st in blk.get("steps", []))
+        out.append(f'<section id="{e(blk["id"])}"><h2>{e(blk["heading"])}</h2><p>{e(blk.get("intro", ""))}</p><ol>{steps}</ol></section>')
     for sec in page.get("sections", []):
         h, txt = sec[0], sec[1]
         link = f' <a href="{sec[2]}">Learn more about {e(h.lower())}</a>' if len(sec) > 2 else ""
@@ -496,17 +564,25 @@ def page_body(path: str, page: dict, props: list) -> str:
         else:
             rows = [p for p in pub if p.get("status") == lst.get("status", p.get("status"))
                     and (not lst.get("listing_type") or p.get("listing_type") == lst["listing_type"])
-                    and (not lst.get("featured") or p.get("featured"))]
+                    and (not lst.get("featured") or p.get("featured"))
+                    and (not lst.get("city") or p.get("city") == lst["city"])]
             if lst.get("featured_first"):
                 rows = [p for p in rows if p.get("featured")] + [p for p in rows if not p.get("featured")]
             out.append(listings_html(rows[: lst.get("limit", 100)], lst["heading"]))
     if page.get("team"):
         for m in TEAM:
             out.append(f'<section id="{slug(m["name"])}"><h2>{e(m["name"])}</h2><p><strong>{e(m["role"])}</strong></p><p>{e(m["bio"])}</p></section>')
+    if page.get("links"):
+        h, links = page["links"]
+        out.append(f"<section><h2>{e(h)}</h2><ul>" + "".join(f'<li><a href="{e(u)}">{e(n)}</a></li>' for n, u in links) + "</ul>"
+                   + "".join(f'<p><a href="{e(u)}">{e(n)}</a></p>' for n, u in page.get("extra_links", [])) + "</section>")
+    if page.get("faqs"):
+        out.append(f'<section id="faq"><h2>{e(page.get("faq_heading", "Frequently asked questions"))}</h2><dl>'
+                   + "".join(f"<dt><h3>{e(f['q'])}</h3></dt><dd><p>{e(f['a'])}</p></dd>" for f in page["faqs"]) + "</dl></section>")
     if page.get("faq"):
         out.append("<section><dl>" + "".join(f"<dt><h2>{e(f['q'])}</h2></dt><dd><p>{e(f['a'])}</p></dd>" for f in FAQS) + "</dl></section>")
     if path in ("/contact", "/about"):
-        out.append(f'<section><h2>Office</h2><p>{e(ADDRESS)}</p><p>Phone: <a href="tel:{BRAND["tel"]}">{e(BRAND["phone"])}</a><br>Email: <a href="mailto:{BRAND["email"]}">{e(BRAND["email"])}</a></p></section>')
+        out.append(f'<section><h2>Office</h2><p>{e(ADDRESS)}</p><p>Phone: <a href="tel:{BRAND["tel"]}">{e(BRAND["phone"])}</a><br>Email: <a href="mailto:{BRAND["email"]}">{e(BRAND["email"])}</a></p><p><a href="{e(MAP_URL)}">Get directions on Google Maps</a></p></section>')
     return "".join(out)
 
 
@@ -515,8 +591,9 @@ def detail_body(p: dict, similar: list) -> str:
              ("Bathrooms", num(p.get("baths"))), ("Square feet", f'{float(p["sqft"]):,.0f}' if p.get("sqft") else ""),
              ("Lot", p.get("lot")), ("Year built", p.get("year_built")), ("Property type", p.get("property_type"))]
     dl = "".join(f"<dt>{e(k)}</dt><dd>{e(v)}</dd>" for k, v in facts if v)
-    imgs = [x["url"] for x in (p.get("photos") or []) if not x.get("hidden")][:6]
-    gal = "".join(f'<img src="{e(u)}" alt="{e(full_address(p))} photo {i + 1}" width="400" height="267" loading="lazy">' for i, u in enumerate(imgs))
+    vis = [x for x in (p.get("photos") or []) if not x.get("hidden")]
+    gal = "".join(f'<img src="{e(x["url"])}" alt="{e(photo_alt(p, x, i, len(vis)))}" width="400" height="267" loading="lazy">'
+                  for i, x in enumerate(vis[:6]))
     feats = "".join(f"<li>{e(f)}</li>" for f in (p.get("features") or []))
     desc = "".join(f"<p>{e(x)}</p>" for x in (p.get("description") or "").split("\n") if x.strip())
     attrib = ""
@@ -581,13 +658,17 @@ async def render(path: str, template: str, db) -> tuple[str, int, dict]:
         wp = {"@type": page.get("page_type", "WebPage"), "@id": canonical + "#webpage", "url": canonical,
               "name": page["title"], "description": page["description"], "isPartOf": {"@id": SITE_ID},
               "about": {"@id": ORG_ID}, "inLanguage": "en-US"}
-        if page.get("crumb"):
-            nodes.append(breadcrumb_ld([(page["crumb"], path)]))
+        trail = page.get("trail") or ([(page["crumb"], path)] if page.get("crumb") else [])
+        if trail:
+            nodes.append(breadcrumb_ld(trail))
         if page.get("service"):
             name, stype = page["service"]
             nodes.append({"@type": "Service", "@id": canonical + "#service", "name": name, "serviceType": stype,
                           "description": page["description"], "provider": {"@id": ORG_ID}, "url": canonical,
-                          "areaServed": [{"@type": t, "name": n} for t, n in AREAS]})
+                          "areaServed": [{"@type": t, "name": n} for t, n in page.get("area") or AREAS]})
+        if page.get("faqs"):
+            nodes.append(page_faq_ld(canonical, page["faqs"]))
+            wp["mainEntity"] = {"@id": canonical + "#faq"}
         if page.get("faq"):
             faq = faq_ld()
             faq.update({"url": canonical, "name": page["title"], "isPartOf": {"@id": SITE_ID}})
@@ -597,7 +678,7 @@ async def render(path: str, template: str, db) -> tuple[str, int, dict]:
             nodes.extend(person_ld(m) for m in TEAM)
         if wp:
             nodes.append(wp)
-        body = (crumbs_html([(page["crumb"], path)]) if page.get("crumb") else "") + page_body(path, page, props)
+        body = (crumbs_html(trail) if trail else "") + page_body(path, page, props)
         head = head_tags(title=page["title"], description=page["description"], canonical=canonical,
                          image=None, ld_json=graph(*nodes), path=path)
         return inject(template, title=page["title"], description=page["description"], head=head, body=body), 200, headers
@@ -681,7 +762,8 @@ def llms_txt() -> str:
              f"> {BRAND['name']} is a full-service real estate brokerage and property management company in Ormond Beach, Florida, serving Daytona Beach, Holly Hill, Palm Coast, and all of Volusia and Flagler Counties. Broker/Owner: Tracie Culver. Phone {BRAND['phone']}.",
              "", "## Key facts", "", _facts_md().rstrip(), "", "## Pages", ""]
     for path, p in PAGES.items():
-        lines.append(f"- [{p.get('crumb') or 'Home'}]({SITE}{path if path != '/' else '/'}): {p['description']}")
+        label = p["h1"] if p.get("trail") else (p.get("crumb") or "Home")
+        lines.append(f"- [{label}]({SITE}{path if path != '/' else '/'}): {p['description']}")
     lines += ["", "## Optional", "", f"- [Full content for AI assistants]({SITE}/llms-full.txt): every page, FAQ, team bio, and current listings in plain text",
               f"- [Sitemap]({SITE}/sitemap.xml)", ""]
     return "\n".join(lines)
@@ -693,8 +775,15 @@ async def llms_full_txt(db) -> str:
     out = [f"# {BRAND['name']} — full site content", "", _facts_md(), ""]
     for path, p in PAGES.items():
         out += [f"## {p['h1']}", f"URL: {SITE}{path}", ""] + p.get("intro", [])
+        if p.get("local"):
+            out += ["", f"### {p['local'][0]}"] + p["local"][1]
+        for blk in p.get("blocks", []):
+            out += ["", f"### {blk['heading']}", blk.get("intro", "")]
+            out += [f"{i + 1}. {st['title']}: {st['text']}" for i, st in enumerate(blk.get("steps", []))]
         for sec in p.get("sections", []):
             out += ["", f"### {sec[0]}", sec[1]]
+        for f in p.get("faqs", []):
+            out += ["", f"### {f['q']}", f["a"]]
         out.append("")
     out += ["## Team", ""]
     for m in TEAM:

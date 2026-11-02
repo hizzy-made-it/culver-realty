@@ -1,0 +1,131 @@
+{
+  "title": "Ormond Beach & Daytona Property Management | Culver Realty",
+  "description": "Leasing, tenant screening, maintenance coordination, and clear owner statements for rental homes in Ormond Beach, Daytona Beach, Holly Hill, and Palm Coast.",
+  "eyebrow": "Property management",
+  "h1": "Property management in Ormond Beach & Daytona Beach",
+  "answer": "Culver Realty & Property Management manages residential rental homes for owners in Ormond Beach, Daytona Beach, Holly Hill, Palm Coast, and across Volusia and Flagler Counties. We market and lease your property, screen every applicant for credit, background, rental history, and income, coordinate repairs through our office, and keep you informed with clear statements.",
+  "sections": [
+    {
+      "id": "leasing",
+      "heading": "How leasing works",
+      "intro": "From the first conversation to a signed lease, one local team handles each step.",
+      "steps": [
+        {
+          "title": "Tell us about your property",
+          "text": "Share the address, current rent (if any), and your goals. We'll come back with expected rent, our approach to screening and maintenance, and a straightforward management agreement."
+        },
+        {
+          "title": "Your home joins our rental listings",
+          "text": "Available homes are listed on our Rental Listings page as Culver exclusive rentals, and prospective tenants reach our team directly with questions."
+        },
+        {
+          "title": "Viewings",
+          "text": "Interested renters contact our office to schedule a viewing of your home."
+        },
+        {
+          "title": "Screening and lease paperwork",
+          "text": "Applicants go through our screening, and once one is approved we take care of the necessary steps and paperwork to put the lease in place."
+        },
+        {
+          "title": "Rent collection",
+          "text": "Tenants drop rent off at our Ormond Beach office during regular business hours, in a sealed envelope marked with their name and property address, so every payment is credited properly."
+        }
+      ]
+    },
+    {
+      "id": "screening",
+      "heading": "Tenant screening, step by step",
+      "intro": "Careful, consistent screening is how the right tenants land in your home. Every applicant goes through the same four checks.",
+      "steps": [
+        {
+          "title": "Credit check",
+          "text": "We review the applicant's credit as part of every application."
+        },
+        {
+          "title": "Background check",
+          "text": "We run a background check on every applicant."
+        },
+        {
+          "title": "Rental history",
+          "text": "We review the applicant's rental history."
+        },
+        {
+          "title": "Income verification",
+          "text": "We verify the applicant's income."
+        }
+      ]
+    },
+    {
+      "id": "maintenance",
+      "heading": "Maintenance coordination",
+      "intro": "Hands-on, proactive management keeps properties well maintained and small issues from becoming expensive ones.",
+      "steps": [
+        {
+          "title": "One call to our office",
+          "text": "Tenants don't submit requests online. They call our office, and we coordinate the repair on your behalf."
+        },
+        {
+          "title": "The right professional for the job",
+          "text": "Our team reaches out right away to the maintenance professional best suited to the issue, so concerns are handled quickly and efficiently."
+        },
+        {
+          "title": "A builder's eye on the team",
+          "text": "Tom Culver is a Florida Certified Building Contractor with over 25 years in construction, insurance restoration, and property management, and that hands-on experience shapes how we care for your home."
+        }
+      ]
+    },
+    {
+      "id": "reporting",
+      "heading": "Owner reporting",
+      "intro": "Clear statements and honest communication. You'll always know how your property is performing.",
+      "steps": [
+        {
+          "title": "Clear statements",
+          "text": "Straightforward statements that show how your rental is performing, without jargon."
+        },
+        {
+          "title": "Honest communication",
+          "text": "We treat your investment home like our own, with professionalism, strong ethics, and a long-term view."
+        },
+        {
+          "title": "A manager you can reach",
+          "text": "Your property is overseen by Senior Property Manager Alexis Strong and Broker/Owner Tracie Culver. Call 386.414.3445 any time you have a question."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What does Culver Realty's property management include?",
+      "a": "Culver Realty & Property Management handles leasing and tenant placement, tenant screening (credit, background, rental history, and income verification), maintenance coordination through our office, rent collection, and clear owner statements for residential rental homes in Volusia and Flagler Counties."
+    },
+    {
+      "q": "Which areas does Culver Realty manage rental properties in?",
+      "a": "We manage rental homes in Ormond Beach, Daytona Beach, Holly Hill, Palm Coast, and communities across Volusia and Flagler Counties, from our office at 2412 John Anderson Drive, Ormond Beach, FL 32176."
+    },
+    {
+      "q": "How does Culver Realty screen tenants?",
+      "a": "Every applicant goes through the same careful, consistent screening: a credit check, a background check, a review of rental history, and income verification."
+    },
+    {
+      "q": "How do tenants request repairs?",
+      "a": "Tenants call our office directly. There's no online form to fill out: our team contacts the maintenance professional best suited to the issue and coordinates the repair on the owner's behalf."
+    },
+    {
+      "q": "How do tenants pay rent?",
+      "a": "Rent is dropped off at our Ormond Beach office during regular business hours, in a sealed envelope with the tenant's name and property address clearly noted so the payment is credited properly."
+    },
+    {
+      "q": "How much does property management cost?",
+      "a": "Terms are set out in a straightforward management agreement for your property. Call 386.414.3445 or send an owner inquiry with the property address, current rent (if any), and your goals, and we'll reply within one business day."
+    },
+    {
+      "q": "Who will manage my property?",
+      "a": "Your rental is overseen by Alexis Strong, Realtor and Senior Property Manager, and Tracie Culver, Broker/Owner and GRI SRES Property Manager, with support from the rest of the Culver Realty team."
+    },
+    {
+      "q": "Can Culver Realty help me buy a rental property too?",
+      "a": "Yes. Our investor services cover sourcing and acquiring rental properties in the Ormond Beach, Daytona Beach, and Flagler County area, and the same team can then manage the property for you."
+    }
+  ]
+}

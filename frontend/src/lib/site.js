@@ -34,3 +34,21 @@ export const statusLabel = (p) => {
 };
 
 export const fullAddress = (p) => `${p.address}, ${p.city}, ${p.state || "FL"} ${p.zip || ""}`.trim();
+
+export const MAP_URL = "https://maps.google.com/?q=2412+John+Anderson+Drive,+Ormond+Beach,+FL+32176";
+export const MAP_EMBED_URL = "https://maps.google.com/maps?q=2412+John+Anderson+Drive,+Ormond+Beach,+FL+32176&output=embed";
+
+// "3-bed, 2-bath single family home for sale" — built only from the listing's own fields.
+export const listingSummary = (p) => {
+    const bits = [];
+    if (p.beds != null) bits.push(`${p.beds}-bed`);
+    if (p.baths != null) bits.push(`${p.baths}-bath`);
+    const type = (p.property_type || "home").toLowerCase();
+    const noun = /condo|townhome|townhouse|apartment/.test(type) ? type : `${type} home`.replace("home home", "home");
+    const status = p.status === "sold" ? "sold" : p.listing_type === "rent" ? "for rent" : "for sale";
+    return `${bits.length ? bits.join(", ") + " " : ""}${noun} ${status}`;
+};
+
+// Descriptive alt text for listing photos. A photo's own `alt` (if an admin ever sets one) wins.
+export const photoAlt = (p, photo, i, total) =>
+    (photo && photo.alt) || `${fullAddress(p)} — ${listingSummary(p)}, photo ${i + 1} of ${total}`;

@@ -92,7 +92,7 @@ export default function ListingDetail() {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 mt-2">
-                <Gallery photos={p.photos || []} address={fullAddress(p)} />
+                <Gallery photos={p.photos || []} address={fullAddress(p)} listing={p} />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-10 md:py-14 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">

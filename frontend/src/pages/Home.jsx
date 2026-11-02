@@ -31,7 +31,8 @@ const LOCAL_BUSINESS_LD = {
         postalCode: "32176",
         addressCountry: "US",
     },
-    areaServed: ["Ormond Beach", "Daytona Beach", "Volusia County", "Flagler County"],
+    areaServed: ["Ormond Beach", "Daytona Beach", "Holly Hill", "Palm Coast", "Volusia County", "Flagler County"],
+    hasMap: "https://maps.google.com/?q=2412+John+Anderson+Drive,+Ormond+Beach,+FL+32176",
 };
 
 const PILLARS = [
@@ -147,14 +148,20 @@ export default function Home() {
                 >
                     <KineticHeading
                         as="h1"
-                        title={[
-                            { text: "Culver Realty & Property Management, done with " },
-                            { text: "integrity.", className: "italic text-gold" },
-                        ]}
+                        title="Culver Realty & Property Management in Ormond Beach & Daytona Beach"
                         className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.08] font-medium text-bone max-w-3xl"
                         delay={0.15}
                         data-testid="hero-headline"
                     />
+                    <motion.p
+                        initial={reduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, ease: EASE, delay: 0.6 }}
+                        className="font-serif text-2xl sm:text-3xl text-bone mt-5"
+                        data-testid="hero-subhead"
+                    >
+                        Done with <span className="italic text-gold">integrity.</span>
+                    </motion.p>
                     <motion.p
                         initial={reduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}

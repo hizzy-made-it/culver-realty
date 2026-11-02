@@ -1,54 +1,77 @@
-import { ShieldCheck, Wrench, FileText, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight, MapPin } from "lucide-react";
 import { Page, Reveal, StaggerGroup, StaggerItem } from "../components/motion";
 import Seo from "../components/site/Seo";
 import PageHero from "../components/site/PageHero";
 import InquiryForm from "../components/site/InquiryForm";
+import ServiceSteps from "../components/site/ServiceSteps";
+import FaqList from "../components/site/FaqList";
+import MANAGEMENT from "../content/management.json";
+import CITIES from "../content/cities.json";
 
-const SERVICES = [
-    { icon: Users, title: "Tenant screening", copy: "Careful, consistent screening — credit, background, rental history, and income verification — so the right tenants land in your home." },
-    { icon: Wrench, title: "Proactive maintenance", copy: "Hands-on, proactive management keeps properties well maintained and small issues from becoming expensive ones." },
-    { icon: FileText, title: "Transparent reporting", copy: "Clear statements and honest communication. You'll always know how your property is performing." },
-    { icon: ShieldCheck, title: "Owner peace of mind", copy: "We treat your investment home like our own — with professionalism, strong ethics, and a long-term view." },
-];
+// Server JSON-LD (backend/seo.py) is richer and wins on the landing request; this covers in-app navigation.
+const FAQ_LD = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: MANAGEMENT.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
 
 export default function Management() {
     return (
         <Page>
-            <Seo
-                title="Property Management in Ormond Beach, Volusia & Flagler | Culver Realty"
-                description="Hands-on property management: tenant screening, proactive maintenance, and transparent reporting for owners across Volusia and Flagler Counties. Call 386.414.3445."
-            />
+            <Seo title={MANAGEMENT.title} description={MANAGEMENT.description} jsonLd={FAQ_LD} />
             <PageHero
-                eyebrow="Property management"
-                title="Your investment, managed like it's ours"
-                sub="Our property management division offers hands-on, proactive management to ensure properties are well maintained, tenants are carefully screened, and owners enjoy peace of mind — all handled with transparency and professionalism."
+                eyebrow={MANAGEMENT.eyebrow}
+                title={MANAGEMENT.h1}
+                sub={MANAGEMENT.answer}
                 video="/api/uploads/seed/video/management-towers"
                 poster="/api/uploads/seed/video/management-towers-poster.jpg"
                 alt="Aerial view of beachfront condominium towers in Daytona Beach"
                 testid="management-hero"
             />
-            <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 md:py-24">
-                <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {SERVICES.map((s, i) => (
-                        <StaggerItem key={s.title} className="h-full">
-                            <div className="card-hover border border-navy/10 bg-white p-8 h-full flex gap-5" data-testid={`management-service-${i}`}>
-                                <span className="inline-flex items-center justify-center w-11 h-11 bg-seaglass-muted text-seaglass shrink-0">
-                                    <s.icon size={20} />
+
+            {MANAGEMENT.sections.map((s, i) => (
+                <ServiceSteps key={s.id} section={s} tone={i % 2 ? "dark" : "light"} />
+            ))}
+
+            <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-14 md:py-20" data-testid="management-areas">
+                <Reveal>
+                    <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-tight font-medium text-navy">Areas we manage</h2>
+                    <p className="text-base text-slate-600 leading-relaxed mt-4 max-w-2xl">
+                        Rental homes across Volusia and Flagler Counties, managed from our office in Ormond Beach.
+                    </p>
+                </Reveal>
+                <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8" stagger={0.05}>
+                    {CITIES.map((c) => (
+                        <StaggerItem key={c.slug}>
+                            <Link
+                                to={`/property-management/${c.slug}`}
+                                className="card-hover flex items-center justify-between gap-3 border border-navy/10 bg-white p-5 hover:border-gold transition-colors min-h-[44px]"
+                                data-testid={`management-area-${c.slug}`}
+                            >
+                                <span className="flex items-center gap-3">
+                                    <MapPin size={16} className="text-gold shrink-0" />
+                                    <span className="font-serif text-lg font-semibold text-navy">{c.name}</span>
                                 </span>
-                                <div>
-                                    <h3 className="font-serif text-2xl font-semibold text-navy">{s.title}</h3>
-                                    <p className="text-sm text-slate-600 leading-relaxed mt-2">{s.copy}</p>
-                                </div>
-                            </div>
+                                <ArrowRight size={15} className="text-navy/50" />
+                            </Link>
                         </StaggerItem>
                     ))}
                 </StaggerGroup>
+                <p className="text-sm text-slate-600 mt-6">
+                    Buying a rental first?{" "}
+                    <Link to="/investors" className="text-navy font-semibold underline decoration-gold underline-offset-4 hover:text-gold">
+                        See how we help investors acquire and manage under one roof
+                    </Link>
+                    .
+                </p>
             </section>
+
             <section className="bg-sand-200 py-16 md:py-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                     <Reveal className="lg:col-span-5">
                         <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-tight font-medium text-navy">
-                            Own a rental on the coast?
+                            Your investment, managed like it's ours
                         </h2>
                         <p className="text-base text-slate-600 leading-relaxed mt-5">
                             Tell us about your property and we'll share how we'd care for it — expected rent, our
@@ -70,6 +93,8 @@ export default function Management() {
                     </Reveal>
                 </div>
             </section>
+
+            <FaqList heading="Property management questions" faqs={MANAGEMENT.faqs} testid="management-faq" />
         </Page>
     );
 }

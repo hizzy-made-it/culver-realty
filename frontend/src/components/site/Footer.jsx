@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { BRAND } from "../../lib/site";
+import { BRAND, MAP_URL } from "../../lib/site";
 import { StaggerGroup, StaggerItem } from "../motion";
+import CITIES from "../../content/cities.json";
 
 export default function Footer() {
     return (
         <footer className="bg-navy text-bone" data-testid="site-footer">
-            <StaggerGroup className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-14 grid grid-cols-1 md:grid-cols-3 gap-10" margin="0px">
+            <StaggerGroup className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10" margin="0px">
                 <StaggerItem>
                     <p className="font-serif text-2xl font-semibold">
                         Culver <span className="italic text-gold">Realty</span>
@@ -19,7 +20,7 @@ export default function Footer() {
                 </StaggerItem>
                 <StaggerItem className="text-sm">
                     <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Visit &amp; Contact</p>
-                    <a href="https://maps.google.com/?q=2412+John+Anderson+Drive,+Ormond+Beach,+FL+32176" target="_blank" rel="noreferrer" className="flex items-start gap-3 py-1.5 text-bone/80 hover:text-gold transition-colors" data-testid="footer-address">
+                    <a href={MAP_URL} target="_blank" rel="noreferrer" className="flex items-start gap-3 py-1.5 text-bone/80 hover:text-gold transition-colors" data-testid="footer-address">
                         <MapPin size={16} className="mt-0.5 shrink-0" /> {BRAND.address}
                     </a>
                     <a href={BRAND.phoneHref} className="flex items-center gap-3 py-1.5 text-bone/80 hover:text-gold transition-colors" data-testid="footer-phone">
@@ -47,6 +48,16 @@ export default function Footer() {
                         ].map(([label, to]) => (
                             <Link key={to} to={to} className="py-1.5 text-bone/80 hover:text-gold transition-colors" data-testid={`footer-${label.toLowerCase().replace(/\s+/g, "-")}-link`}>
                                 {label}
+                            </Link>
+                        ))}
+                    </div>
+                </StaggerItem>
+                <StaggerItem className="text-sm">
+                    <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Property Management Areas</p>
+                    <div className="flex flex-col">
+                        {CITIES.map((c) => (
+                            <Link key={c.slug} to={`/property-management/${c.slug}`} className="py-1.5 text-bone/80 hover:text-gold transition-colors" data-testid={`footer-pm-${c.slug}-link`}>
+                                {c.name} property management
                             </Link>
                         ))}
                     </div>
