@@ -233,7 +233,7 @@ export default function Home() {
                         <Reveal>
                             <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
                                 <div>
-                                    <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Available now</p>
+                                    <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold-ink mb-3">Available now</p>
                                     <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-tight font-medium text-navy">
                                         {g.title}
                                     </h2>
@@ -253,7 +253,7 @@ export default function Home() {
                             <Reveal className="border border-navy/10 bg-white p-14 text-center">
                                 <p className="font-serif text-2xl text-navy">{g.empty}</p>
                                 <p className="text-sm text-slate-500 mt-2">
-                                    Call <a href={BRAND.phoneHref} className="text-gold font-semibold">{BRAND.phone}</a> {g.emptyCta}
+                                    Call <a href={BRAND.phoneHref} className="text-gold-ink font-semibold">{BRAND.phone}</a> {g.emptyCta}
                                 </p>
                             </Reveal>
                         )}
@@ -300,7 +300,7 @@ export default function Home() {
             <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-20 md:py-28" data-testid="about-preview">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                     <Reveal className="lg:col-span-7">
-                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Our promise</p>
+                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold-ink mb-3">Our promise</p>
                         <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-tight font-medium text-navy leading-tight">
                             Relationships come first. Always.
                         </h2>
@@ -343,7 +343,7 @@ export default function Home() {
             <section className="bg-sand-200 py-20 md:py-28" data-testid="testimonials">
                 <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
                     <Reveal>
-                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Kind words</p>
+                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold-ink mb-3">Kind words</p>
                         <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-tight font-medium text-navy">
                             A history of happy homeowners
                         </h2>
@@ -357,7 +357,7 @@ export default function Home() {
                                         “{t.quote}”
                                     </blockquote>
                                     <figcaption className="mt-5 text-xs uppercase tracking-[0.2em] text-slate-500 font-semibold">
-                                        {t.name} · <span className="text-gold">{t.detail}</span>
+                                        {t.name} · <span className="text-gold-ink">{t.detail}</span>
                                     </figcaption>
                                 </figure>
                             </StaggerItem>

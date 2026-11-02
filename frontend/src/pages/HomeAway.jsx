@@ -77,7 +77,7 @@ export default function HomeAway() {
             <section className="bg-sand-200 py-16 md:py-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                     <Reveal className="lg:col-span-5">
-                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold mb-3">Get started</p>
+                        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold-ink mb-3">Get started</p>
                         <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-tight font-medium text-navy">
                             Tell us about your home
                         </h2>

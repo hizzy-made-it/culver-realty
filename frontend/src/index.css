@@ -44,6 +44,15 @@
 }
 
 @layer base {
+    /* Keyboard focus ring (WCAG 2.4.7). :focus-visible only, so mouse and touch users see no change.
+       #A27F3D is a deeper gold that holds 3:1 against bone, sand, white and navy. */
+    :focus-visible {
+        outline: 2px solid #a27f3d;
+        outline-offset: 2px;
+    }
+}
+
+@layer base {
     [data-debug-wrapper="true"] {
         display: contents !important;
     }

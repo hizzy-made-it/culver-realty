@@ -91,7 +91,7 @@ export default function Team() {
                                     </div>
                                 </div>
                                 <div className="md:col-span-8 [direction:ltr]">
-                                    <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold">{member.role}</p>
+                                    <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold-ink">{member.role}</p>
                                     <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-navy mt-2">{member.name}</h2>
                                     <div className="w-12 h-[2px] bg-gold mt-5" />
                                     {member.bio.map((para, j) => (

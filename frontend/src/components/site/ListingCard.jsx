@@ -16,6 +16,7 @@ export default function ListingCard({ property, index = 0 }) {
             exit={{ opacity: 0, scale: 0.98, transition: { duration: DUR.fast, ease: EASE } }}
             transition={{ duration: DUR.base, ease: EASE, delay: Math.min(index % 3, 2) * 0.07 }}
             className="h-full"
+            data-reveal=""
         >
             <Link
                 to={`/listings/${property.slug}`}
