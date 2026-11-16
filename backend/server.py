@@ -18,6 +18,7 @@ import jwt
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, File, HTTPException, Request, Response, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, EmailStr, Field
 
@@ -49,6 +50,34 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Canonical host is https://www.culverrealtygroup.com. The live apex HTTPS
+# 301 to http://www (Server: ip-10-…ec2.internal, not uvicorn) is issued
+# outside this app — Heath needs to fix Railway custom-domain / DNS / registrar
+# forwarding so apex goes straight to https://www (path and query preserved).
+# This middleware is defense in depth if an apex or http request reaches the app.
+CANONICAL_HOST = "www.culverrealtygroup.com"
+_PRODUCTION_HOSTS = {CANONICAL_HOST, "culverrealtygroup.com"}
+
+
+@app.middleware("http")
+async def redirect_apex_and_http_to_https_www(request: Request, call_next):
+    host = (request.headers.get("host") or "").split(":")[0].lower()
+    if host not in _PRODUCTION_HOSTS:
+        return await call_next(request)
+    proto = (
+        (request.headers.get("x-forwarded-proto") or request.url.scheme or "https")
+        .split(",")[0]
+        .strip()
+        .lower()
+    )
+    if host == CANONICAL_HOST and proto == "https":
+        return await call_next(request)
+    target = f"https://{CANONICAL_HOST}{request.url.path or '/'}"
+    if request.url.query:
+        target += f"?{request.url.query}"
+    return RedirectResponse(target, status_code=301)
+
 
 db = make_store()
 sync = ListingSync(db)
@@ -495,7 +524,7 @@ BUILD_DIR = ROOT.parent / "frontend" / "build"
 
 
 # ---------------------------------------------------------------- crawler files (SEO / GEO / AEO)
-from fastapi.responses import HTMLResponse, PlainTextResponse  # noqa: E402
+from fastapi.responses import HTMLResponse, PlainTextResponse, RedirectResponse  # noqa: E402
 
 import seo  # noqa: E402
 

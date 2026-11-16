@@ -39,6 +39,10 @@ BRAND = {
 }
 ADDRESS = f'{BRAND["street"]}, {BRAND["city"]}, {BRAND["region"]} {BRAND["zip"]}'
 OG_IMAGE = "/api/uploads/seed/video/home-intracoastal-poster.jpg"
+OG_IMAGE_ALT = (
+    "Aerial view of the Intracoastal Waterway lined with Florida homes, docks, "
+    "and a bridge, with the Atlantic Ocean in the distance"
+)
 # The office's Google Maps link, as used in the site footer.
 MAP_URL = "https://maps.google.com/?q=2412+John+Anderson+Drive,+Ormond+Beach,+FL+32176"
 ORG_ID = f"{SITE}/#organization"
@@ -606,8 +610,9 @@ def detail_body(p: dict, similar: list) -> str:
 
 
 # ---------------------------------------------------------------- head + render
-def head_tags(*, title, description, canonical, image, ld_json, robots="index, follow, max-image-preview:large, max-snippet:-1", og_type="website", path="") -> str:
+def head_tags(*, title, description, canonical, image, ld_json, robots="index, follow, max-image-preview:large, max-snippet:-1", og_type="website", path="", image_alt=None) -> str:
     img = absu(image or OG_IMAGE)
+    alt = image_alt or OG_IMAGE_ALT
     tags = [
         f'<link rel="canonical" href="{e(canonical)}">' if canonical else "",
         f'<meta name="robots" content="{robots}">',
@@ -617,11 +622,13 @@ def head_tags(*, title, description, canonical, image, ld_json, robots="index, f
         f'<meta property="og:description" content="{e(description)}">',
         f'<meta property="og:url" content="{e(canonical)}">' if canonical else "",
         f'<meta property="og:image" content="{e(img)}">',
+        f'<meta property="og:image:alt" content="{e(alt)}">',
         '<meta property="og:locale" content="en_US">',
         '<meta name="twitter:card" content="summary_large_image">',
         f'<meta name="twitter:title" content="{e(title)}">',
         f'<meta name="twitter:description" content="{e(description)}">',
         f'<meta name="twitter:image" content="{e(img)}">',
+        f'<meta name="twitter:image:alt" content="{e(alt)}">',
         '<meta name="geo.region" content="US-FL"><meta name="geo.placename" content="Ormond Beach">',
         f'<script type="application/ld+json" data-ssr-path="{e(path)}">{ld_json}</script>' if ld_json else "",
         SSR_CSS,
@@ -704,7 +711,7 @@ async def render(path: str, template: str, db) -> tuple[str, int, dict]:
                      listing_ld(p, canonical)]
             body = crumbs_html([parent, (full_address(p), path)]) + detail_body(p, similar)
             head = head_tags(title=title, description=description, canonical=canonical, image=cover(p),
-                             ld_json=graph(*nodes), path=path)
+                             image_alt=full_address(p), ld_json=graph(*nodes), path=path)
             return inject(template, title=title, description=description, head=head, body=body), 200, headers
 
     title = f'Page not found | {BRAND["short"]}'
